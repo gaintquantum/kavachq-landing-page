@@ -1,0 +1,71 @@
+kavachq-next/
+│
+├── app/
+│   ├── layout.jsx
+│   ├── page.jsx
+│   ├── globals.css
+│   │
+│   ├── demo/
+│   │   └── page.jsx
+│   │
+│   ├── contact/
+│   │   └── page.jsx
+│   │
+│   └── api/
+│       └── contact/
+│           └── route.js
+│
+├── components/
+│   │
+│   ├── layout/
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── hero/
+│   │   ├── Hero.jsx
+│   │   ├── ParticleBackground.jsx
+│   │   └── Shield3D.jsx
+│   │
+│   ├── sections/
+│   │   ├── StatsStrip.jsx
+│   │   ├── PipelineSection.jsx
+│   │   ├── QVSSection.jsx
+│   │   ├── ScannerModules.jsx
+│   │   ├── ComplianceSection.jsx
+│   │   ├── LiveTerminal.jsx
+│   │   ├── DeploymentSection.jsx
+│   │   ├── TargetSectorSection.jsx
+│   │   └── CTASection.jsx
+│   │
+│   ├── ui/
+│   │   ├── Button.jsx
+│   │   ├── SectionTitle.jsx
+│   │   ├── GlassCard.jsx
+│   │   ├── RiskBadge.jsx
+│   │   └── MetricCard.jsx
+│
+├── lib/
+│   ├── constants.js
+│   ├── data.js
+│   └── utils.js
+│
+├── public/
+│   ├── images/
+│   │   ├── logo.svg
+│   │   ├── shield.svg
+│   │   └── hero-bg.png
+│   │
+│   └── icons/
+│
+├── styles/
+│   ├── variables.css
+│   ├── animations.css
+│   └── sections.css
+│
+├── hooks/
+│   ├── useScrollReveal.js
+│   └── useParallax.js
+│
+├── package.json
+├── next.config.js
+└── jsconfig.json

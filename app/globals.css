@@ -1,6 +1,58 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --foreground: #ffffff;
+
+  --primary: #00e5ff;
+  --secondary: #7c3aed;
+  --accent: #14f195;
+
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #f1f5f9;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #00e5ff,
+    #7c3aed,
+    #14f195
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
 }
