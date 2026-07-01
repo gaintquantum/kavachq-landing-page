@@ -1,111 +1,81 @@
 "use client";
 
+import Shield3D from "./Shield3D";
+
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+    <section className="relative min-h-screen overflow-hidden bg-[#1f4a75] pt-24 text-white">
+      {/* Background glow */}
+      <div className="absolute left-[-10%] top-[20%] h-105 w-105 rounded-full bg-cyan-500/10 blur-3xl" />
+      <div className="absolute right-[-10%] top-[10%] h-105 w-105 rounded-full bg-blue-600/10 blur-3xl" />
 
-      {/* Grid Background */}
+      {/* Grid background */}
       <div className="hero-grid absolute inset-0 opacity-30" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          
+        <div className="grid min-h-[calc(100vh-96px)] items-center gap-8 lg:grid-cols-[1fr_0.9fr]">
           {/* Left Content */}
-          <div>
-            <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
-              Quantum-Safe Security Platform
-            </span>
-
-            <h1 className="mt-8 text-5xl font-extrabold leading-tight md:text-7xl">
-              Secure Your Enterprise For The
-              <span className="gradient-text block">
-                Post-Quantum Era
+          <div className="relative z-30 max-w-2xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.9)]" />
+              <span className="text-xs uppercase tracking-[0.22em] text-cyan-200">
+                GAINT · National PQC Platform · 2026
               </span>
+            </div>
+
+            <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl">
+              Secure Your
+              <br />
+              Enterprise For
+              <br />
+              The <span className="gradient-text">Quantum Era</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg text-slate-300">
-              Discover cryptographic risks, calculate Quantum Vulnerability
-              Scores (QVS), plan migrations, and achieve compliance with
-              future-ready security standards.
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+              KAVACH-Q discovers vulnerable cryptography, calculates Quantum
+              Vulnerability Scores, and helps enterprises migrate to
+              post-quantum-safe algorithms with audit-ready compliance.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:scale-105">
-                Request Demo
-              </button>
+              <a
+                href="#ctabanner"
+                className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-white"
+              >
+                Request Pilot Access
+              </a>
 
-              <button className="rounded-xl border border-white/10 px-6 py-3 text-white transition hover:border-cyan-400">
-                View Architecture
-              </button>
+              <a
+                href="#pipeline"
+                className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
+              >
+                Watch the Pipeline
+              </a>
             </div>
 
-            {/* Stats */}
-            <div className="mt-12 flex flex-wrap gap-8">
-              <div>
-                <h3 className="text-3xl font-bold text-cyan-400">7+</h3>
-                <p className="text-sm text-slate-400">Scanner Modules</p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-cyan-400">100%</h3>
-                <p className="text-sm text-slate-400">Crypto Visibility</p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-cyan-400">QVS</h3>
-                <p className="text-sm text-slate-400">
-                  Risk Quantification Engine
-                </p>
-              </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <TrustChip text="CERT-IN Aligned" />
+              <TrustChip text="RBI Framework" />
+              <TrustChip text="ISO 27001:2022" />
+              <TrustChip text="NIST FIPS 203/204/205" />
             </div>
           </div>
 
-          {/* Right Card */}
-          <div className="flex justify-center">
-            <div className="glass w-full max-w-md rounded-3xl p-8">
-              <div className="mb-6 flex items-center justify-between">
-                <span className="text-sm text-slate-400">
-                  Quantum Vulnerability Score
-                </span>
-
-                <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs text-red-300">
-                  HIGH RISK
-                </span>
-              </div>
-
-              <div className="text-center">
-                <h2 className="text-8xl font-bold gradient-text">
-                  78
-                </h2>
-
-                <p className="mt-2 text-slate-400">
-                  Current QVS Score
-                </p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="flex justify-between text-sm">
-                  <span>RSA-2048</span>
-                  <span className="text-red-400">Quantum Vulnerable</span>
-                </div>
-
-                <div className="flex justify-between text-sm">
-                  <span>TLS Audit</span>
-                  <span className="text-yellow-400">Review Needed</span>
-                </div>
-
-                <div className="flex justify-between text-sm">
-                  <span>PQC Readiness</span>
-                  <span className="text-green-400">In Progress</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Animation */}
+          <div className="relative z-20 flex justify-center lg:justify-end">
+            <Shield3D />
           </div>
-
         </div>
       </div>
     </section>
+  );
+}
+
+function TrustChip({ text }) {
+  return (
+    <div className="rounded-md border border-cyan-400/15 bg-cyan-400/5 px-3 py-2 text-xs uppercase tracking-[0.16em] text-slate-300">
+      <span className="mr-2 text-emerald-400">✓</span>
+      {text}
+    </div>
   );
 }

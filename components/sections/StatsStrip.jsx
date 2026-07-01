@@ -19,12 +19,12 @@ export default function StatsStrip() {
   ];
 
   return (
-    <section className="border-y border-cyan-100 bg-cyan-50/95">
+    <section className="border-y border-cyan-100 bg-slate-50">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-10 md:grid-cols-4">
         {stats.map((item) => (
           <div
             key={item.label}
-            className="rounded-2xl border border-cyan-100 bg-white/85 p-6 text-center shadow-sm shadow-cyan-900/5"
+            className="rounded-2xl border border-cyan-100 bg-white p-6 text-center shadow-sm shadow-cyan-900/5"
           >
             <h3 className="text-4xl font-bold gradient-text">
               {item.value}

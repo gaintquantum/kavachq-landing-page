@@ -1,39 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050816;
-  --foreground: #ffffff;
+  --background: #1f4a75;
+  --foreground: #f8fafc;
 
-  --primary: #00e5ff;
-  --secondary: #7c3aed;
-  --accent: #14f195;
+  --primary: #5cc6ff;
+  --secondary: #9d7dff;
+  --accent: #6ee7b7;
 
-  --card: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.1);
+  --card: rgba(255, 255, 255, 0.16);
+  --border: rgba(255, 255, 255, 0.22);
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
 }
 
 .glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    #00e5ff,
-    #7c3aed,
-    #14f195
-  );
+  background: linear-gradient(90deg, #00e5ff, #7c3aed, #14f195);
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -44,15 +41,274 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 
   background-size: 40px 40px;
+}
+
+.shield-root {
+  width: 100%;
+  max-width: 45rem;
+  height: 45rem;
+}
+
+.shield-offset {
+  transform: translate(18%, 12%);
+}
+
+.shield-glow {
+  width: 28.75rem;
+  height: 28.75rem;
+}
+
+.scan-ring {
+  width: 26.875rem;
+  height: 26.875rem;
+  animation: shieldSpin 18s linear infinite;
+}
+
+.scan-ring-fast {
+  width: 20.625rem;
+  height: 20.625rem;
+  animation: shieldSpinReverse 8s linear infinite;
+}
+
+.scan-ring-reverse {
+  width: 33.75rem;
+  height: 33.75rem;
+  animation: shieldSpinReverse 30s linear infinite;
+}
+
+.orbit-one {
+  width: 17.5rem;
+  height: 31.25rem;
+  animation: orbitOne 16s linear infinite;
+}
+
+.orbit-two {
+  width: 32.5rem;
+  height: 17.5rem;
+  animation: orbitTwo 22s linear infinite;
+}
+
+.shield-float {
+  width: 16.25rem;
+  height: 20.625rem;
+  animation: shieldFloat 4s ease-in-out infinite;
+}
+
+.shield-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 35px rgba(0, 212, 255, 0.7));
+}
+
+.inner-qvs-center {
+  top: 52%;
+}
+
+.inner-qvs-ring {
+  border-width: 7px;
+}
+
+.scanner-dot-shadow {
+  box-shadow: 0 0 18px #00d4ff;
+}
+
+.card-float {
+  width: 220px;
+  animation: cardFloat 3.5s ease-in-out infinite;
+}
+
+.text-meta-xs {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+}
+
+.text-meta-sm {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.card-pos-1 {
+  left: 4%;
+  top: 14%;
+}
+
+.card-pos-2 {
+  right: 4%;
+  top: 14%;
+}
+
+.card-pos-3 {
+  left: 8%;
+  top: 58%;
+}
+
+.card-pos-4 {
+  right: 8%;
+  top: 58%;
+}
+
+.inner-ring {
+  animation: innerPulse 2s ease-in-out infinite;
+}
+
+.scanner-dot {
+  animation: scannerOrbit 3s linear infinite;
+  transform-origin: 0 72px;
+}
+
+.shield-float {
+  animation: shieldFloat 4s ease-in-out infinite;
+}
+
+.shield-glow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.card-float {
+  animation: cardFloat 3.5s ease-in-out infinite;
+}
+
+.pulse-score {
+  animation: scoreGlow 2s ease-in-out infinite;
+}
+
+.metrics-bar {
+  animation: metricsRise 0.9s ease-out both;
+}
+
+@keyframes shieldSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes shieldSpinReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes orbitOne {
+  from {
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(380deg);
+  }
+}
+
+@keyframes orbitTwo {
+  from {
+    transform: translate(-50%, -50%) rotate(-14deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-374deg);
+  }
+}
+
+@keyframes scannerOrbit {
+  from {
+    transform: rotate(0deg) translateY(72px);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(72px);
+  }
+}
+
+@keyframes shieldFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-14px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes innerPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes scoreGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+  }
+
+  50% {
+    text-shadow: 0 0 35px rgba(0, 212, 255, 1);
+  }
+}
+
+@keyframes metricsRise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-float {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+  }
+
+  .metrics-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
