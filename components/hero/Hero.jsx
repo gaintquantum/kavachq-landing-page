@@ -28,7 +28,10 @@ export default function Hero() {
               <br />
               Enterprise For
               <br />
-              The <span className="gradient-text">Quantum Era</span>
+              The{" "}
+              <span className="inline-block rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)]">
+                Quantum Era
+              </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">

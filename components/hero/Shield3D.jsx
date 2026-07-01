@@ -121,12 +121,14 @@ export default function Shield3D() {
       />
 
       {/* Bottom metrics */}
-      <div className="metrics-bar absolute bottom-8 left-1/2 grid -translate-x-1/2 grid-cols-5 gap-2 rounded-2xl border border-cyan-400/20 p-4 backdrop-blur-xl">
-        <Metric value="1,248" label="Repositories" />
-        <Metric value="3,592" label="Servers" />
-        <Metric value="842" label="Containers" />
-        <Metric value="2,116" label="Documents" />
-        <Metric value="98.7%" label="Coverage" />
+      <div className="metrics-bar absolute bottom-0 ml-10 left-1/2 w-212.5 max-w-[95%] -translate-x-1/2 rounded-2xl border border-cyan-400/20 p-4 backdrop-blur-xl">
+        <div className="flex items-center justify-between">
+          <Metric value="1,248" label="Repositories" />
+          <Metric value="3,592" label="Servers" />
+          <Metric value="842" label="Containers" />
+          <Metric value="2,116" label="Documents" />
+          <Metric value="98.7%" label="Coverage" />
+        </div>
       </div>
     </div>
   );
@@ -163,7 +165,7 @@ function Metric({ value, label }) {
     <div className="text-center">
       <div className="text-xl font-bold text-cyan-300">{value}</div>
 
-      <div className="mt-1 text-meta-xs uppercase text-slate-400">{label}</div>
+      <div className="mt-0 text-meta-s font-bold text-white">{label}</div>
     </div>
   );
 }
