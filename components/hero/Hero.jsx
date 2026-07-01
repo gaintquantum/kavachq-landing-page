@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#ctabanner"
-                className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-white"
+                className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
               >
                 Request Pilot Access
               </a>

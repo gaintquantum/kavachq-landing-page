@@ -5,7 +5,7 @@ export default function Shield3D() {
     <div className="relative mx-auto shield-root overflow-visible">
       <div className="absolute inset-0 flex items-center justify-center shield-offset">
         {/* Main glow */}
-        <div className="shield-glow absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/3 rounded-full bg-cyan-500/20 blur-3xl" />
+        <div className="shield-glow absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/3 rounded-full bg-red-50 blur-3xl" />
 
         {/* Animated rings */}
         <div className="scan-ring absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-400/25" />
@@ -53,6 +53,31 @@ export default function Shield3D() {
               <div className="text-meta-xs uppercase text-cyan-100/70">
                 Quantum Risk
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="status-switcher">
+        <div className="status-card">
+          <div className="status-state status-red">
+            <div className="status-title text-2xl font-black text-red-600">
+              RSA-2048
+            </div>
+            <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-red-300">
+              Quantum Vulnerable · QVS 91
+            </div>
+          </div>
+
+          <div className="status-state status-green">
+            <div className="status-label uppercase tracking-[0.22em] text-xs text-cyan-200">
+              Algorithm
+            </div>
+            <div className="status-title text-2xl font-black text-green-600 ">
+              ML-KEM-768
+            </div>
+            <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-emerald-300">
+              Migrated · PQC Safe
             </div>
           </div>
         </div>

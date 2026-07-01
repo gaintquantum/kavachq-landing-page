@@ -131,24 +131,116 @@ body {
   letter-spacing: 0.18em;
 }
 
+.status-switcher {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.status-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(240px, 65vw);
+  max-width: 240px;
+  transform: translate(-50%, -50%) translateX(12rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(7, 20, 38, 0.95);
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  will-change: transform, opacity;
+  animation: statusOrbit 14s linear infinite;
+}
+
+.status-state {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+@keyframes statusOrbit {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateX(12rem);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translateY(-12rem);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateX(-12rem);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translateY(12rem);
+  }
+}
+
+.status-red {
+  animation: statusRed 10s ease-in-out infinite both;
+}
+
+.status-green {
+  animation: statusGreen 10s ease-in-out infinite both;
+}
+
+.status-title {
+  line-height: 1;
+}
+
+@keyframes statusRed {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes statusGreen {
+  0%,
+  49% {
+    opacity: 0;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
 .card-pos-1 {
-  left: 4%;
-  top: 14%;
+  left: -10%;
+  top: 10%;
 }
 
 .card-pos-2 {
-  right: 4%;
+  right: -10%;
   top: 14%;
 }
 
 .card-pos-3 {
-  left: 8%;
-  top: 58%;
+  left: -12%;
+  top: 66%;
 }
 
 .card-pos-4 {
-  right: 8%;
-  top: 58%;
+  right: -12%;
+  top: 66%;
 }
 
 .inner-ring {
