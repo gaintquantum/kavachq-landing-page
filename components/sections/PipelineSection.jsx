@@ -65,7 +65,7 @@ export default function AutomationStages() {
   return (
     <section
       id="pipeline"
-      className="relative overflow-hidden bg-[#042f52] px-6 py-24 text-white"
+      className="relative overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-position-[44px_44px]" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/60 to-transparent" />
@@ -120,7 +120,9 @@ function StageCard({ stage, isLast }) {
 
       <div className="relative">
         <div className="flex items-start justify-between gap-4">
-          <div className={`flex h-14 w-14 items-center justify-center rounded-xl border ${tone.iconBox}`}>
+          <div
+            className={`flex h-14 w-14 items-center justify-center rounded-2xl border shadow-lg shadow-black/20 ring-1 ring-white/10 transition duration-300 group-hover:scale-105 ${tone.iconBox}`}
+          >
             <Icon className={`h-7 w-7 ${tone.icon}`} strokeWidth={1.8} />
           </div>
 
@@ -150,7 +152,8 @@ function getTone(color) {
     cyan: {
       bar: "bg-cyan-300",
       icon: "text-cyan-200",
-      iconBox: "border-cyan-300/30 bg-cyan-300/12",
+      iconBox:
+        "border-cyan-300/35 bg-cyan-300/15 shadow-cyan-300/20",
       badge: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       tag: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       watermark: "text-cyan-100/5",
@@ -158,7 +161,8 @@ function getTone(color) {
     blue: {
       bar: "bg-sky-400",
       icon: "text-sky-200",
-      iconBox: "border-sky-300/30 bg-sky-300/12",
+      iconBox:
+        "border-sky-300/35 bg-sky-300/15 shadow-sky-300/20",
       badge: "border-sky-300/25 bg-sky-300/10 text-sky-100",
       tag: "border-sky-300/25 bg-sky-300/10 text-sky-100",
       watermark: "text-sky-100/5",
@@ -166,7 +170,8 @@ function getTone(color) {
     violet: {
       bar: "bg-violet-400",
       icon: "text-violet-200",
-      iconBox: "border-violet-300/30 bg-violet-300/12",
+      iconBox:
+        "border-violet-300/35 bg-violet-300/15 shadow-violet-300/20",
       badge: "border-violet-300/25 bg-violet-300/10 text-violet-100",
       tag: "border-violet-300/25 bg-violet-300/10 text-violet-100",
       watermark: "text-violet-100/5",
@@ -174,7 +179,8 @@ function getTone(color) {
     emerald: {
       bar: "bg-emerald-300",
       icon: "text-emerald-200",
-      iconBox: "border-emerald-300/30 bg-emerald-300/12",
+      iconBox:
+        "border-emerald-300/35 bg-emerald-300/15 shadow-emerald-300/20",
       badge: "border-emerald-300/25 bg-emerald-300/10 text-emerald-100",
       tag: "border-emerald-300/25 bg-emerald-300/10 text-emerald-100",
       watermark: "text-emerald-100/5",
@@ -182,7 +188,8 @@ function getTone(color) {
     amber: {
       bar: "bg-amber-300",
       icon: "text-amber-200",
-      iconBox: "border-amber-300/30 bg-amber-300/12",
+      iconBox:
+        "border-amber-300/35 bg-amber-300/15 shadow-amber-300/20",
       badge: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       tag: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       watermark: "text-amber-100/5",
@@ -190,7 +197,8 @@ function getTone(color) {
     rose: {
       bar: "bg-rose-300",
       icon: "text-rose-200",
-      iconBox: "border-rose-300/30 bg-rose-300/12",
+      iconBox:
+        "border-rose-300/35 bg-rose-300/15 shadow-rose-300/20",
       badge: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       tag: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       watermark: "text-rose-100/5",

@@ -7,7 +7,7 @@ import ScannerModules from "@/components/sections/ScannerModules";
 import ComplianceSection from "@/components/sections/ComplianceSection";
 import LiveTerminal from "@/components/sections/LiveTerminal";
 import DeploymentSection from "@/components/sections/DeploymentSection";
-import TargetSectorSection from "@/components/sections/TargetSectorSection";
+// import TargetSectorSection from "@/components/sections/TargetSectorSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/layout/Footer";
 
@@ -23,7 +23,7 @@ export default function Home() {
       <ComplianceSection />
       <LiveTerminal />
       <DeploymentSection />
-      <TargetSectorSection />
+      {/* <TargetSectorSection /> */}
       <CTASection />
       <Footer />
     </>

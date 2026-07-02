@@ -2,9 +2,9 @@
 
 export default function StatsStrip() {
   const stats = [
-    { value: "7+", label: "Scanner Modules" },
-    { value: "6", label: "Migration Stages" },
-    { value: "100%", label: "Crypto Asset Visibility" },
+    { value: "6", label: "pipeline Stages" },
+    { value: "7", label: "Scanner Modules" },
+    { value: ">=95%", label: "Detection Accuracy" },
     { value: "QVS", label: "Quantum Risk Score" },
   ];
 

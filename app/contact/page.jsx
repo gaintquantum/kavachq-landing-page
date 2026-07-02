@@ -8,7 +8,10 @@ export default function ContactPage() {
           <input className="w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Your Name" />
           <input className="w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Email" />
           <input className="w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Company" />
-          <textarea className="h-40 w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Message" />
+          <textarea
+            className="h-40 w-full rounded-xl border border-white/10 bg-white/5 p-4"
+            placeholder="Message"
+          ></textarea>
 
           <button className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950">
             Send Message
