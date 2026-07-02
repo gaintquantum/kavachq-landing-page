@@ -19,15 +19,15 @@ export default function Home() {
       <Hero />
       <StatsStrip />
       <PipelineSection />
-      <QVSSection />
       <ScannerModules />
-      <ComplianceSection />
+      <QVSSection />
       <LiveTerminal />
-      <DeploymentSection />
+      <ComplianceSection />
       <TargetSectorSection />
+      <DeploymentSection />
       <CTASection />
-      <Footer />
       <FloatingButton />
+      <Footer />
     </>
   );
 }
