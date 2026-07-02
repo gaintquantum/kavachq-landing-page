@@ -107,9 +107,9 @@ export default function ComplianceSection() {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[760px] border-collapse">
+              <table className="w-full min-w-190 border-collapse">
                 <thead>
-                  <tr className="bg-white/[0.04]">
+                  <tr className="bg-white/4">
                     {["Finding", "CERT-IN", "RBI Clause", "Severity"].map((head) => (
                       <th
                         key={head}
@@ -125,7 +125,7 @@ export default function ComplianceSection() {
                   {rows.map(([finding, cert, rbi, severity]) => (
                     <tr
                       key={finding}
-                      className="transition duration-200 hover:bg-cyan-300/[0.065]"
+                      className="transition duration-200 hover:bg-cyan-300/6.5"
                     >
                       <td className="border-b border-white/[0.07] px-5 py-4 text-sm font-semibold text-white">
                         <div className="flex items-center gap-3">
