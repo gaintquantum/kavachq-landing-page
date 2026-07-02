@@ -1,6 +1,32 @@
 "use client";
 
 export default function Navbar() {
+  const demoRequestBody = encodeURIComponent(`Dear KAVACH-Q Team,
+
+I would like to request a technical demonstration of the KAVACH-Q platform for our organization.
+
+Organization Name:
+Industry:
+Contact Person:
+Designation:
+Phone Number:
+Email Address:
+Estimated Assets/Repositories:
+
+We are interested in understanding:
+- Cryptographic Discovery & Inventory
+- Quantum Vulnerability Scoring (QVS)
+- PQC Migration Planning
+- Compliance & Reporting
+
+Preferred Demo Date:
+
+Regards,`);
+
+  const demoRequestHref = `mailto:gaintquantum@gmail.com?subject=${encodeURIComponent(
+    "KAVACH-Q Enterprise Demo Request"
+  )}&body=${demoRequestBody}`;
+
   return (
     <header className="fixed left-10 right-0 top-5 z-50">
       <div className="mx-auto max-w-7xl px-6">
@@ -50,9 +76,12 @@ export default function Navbar() {
             </a>
           </nav>
 
-          <button className="rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-5 py-2 text-sm font-medium text-cyan-300 transition hover:bg-cyan-500/20 hover:text-white">
+          <a
+            href={demoRequestHref}
+            className="rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-5 py-2 text-sm font-medium text-cyan-300 transition hover:bg-cyan-500/20 hover:text-white"
+          >
             Request Demo
-          </button>
+          </a>
         </div>
       </div>
     </header>

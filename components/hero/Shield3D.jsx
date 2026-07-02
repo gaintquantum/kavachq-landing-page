@@ -121,8 +121,8 @@ export default function Shield3D() {
       />
 
       {/* Bottom metrics */}
-      <div className="metrics-bar absolute bottom-0 ml-10 left-1/2 w-212.5 max-w-[95%] -translate-x-1/2 rounded-2xl border border-cyan-400/20 p-4 backdrop-blur-xl">
-        <div className="flex items-center justify-between">
+      <div className="metrics-bar absolute bottom-0 left-1/2 w-[min(850px,95%)] -translate-x-1/2 rounded-2xl border border-cyan-400/20 bg-[#071426]/70 p-4 backdrop-blur-xl">
+        <div className="grid grid-cols-5 items-stretch divide-x divide-cyan-200/20">
           <Metric value="1,248" label="Repositories" />
           <Metric value="3,592" label="Servers" />
           <Metric value="842" label="Containers" />
@@ -162,10 +162,12 @@ function InfoCard({ className, icon, iconClass, title, titleClass, subtitle }) {
 
 function Metric({ value, label }) {
   return (
-    <div className="text-center">
+    <div className="flex min-h-14 flex-col items-center justify-center px-3 text-center">
       <div className="text-xl font-bold text-cyan-300">{value}</div>
 
-      <div className="mt-0 text-meta-s font-bold text-white">{label}</div>
+      <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/85">
+        {label}
+      </div>
     </div>
   );
 }

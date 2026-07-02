@@ -72,8 +72,8 @@ export default function PatentedScoring() {
 
   return (
     <section
-      id="qvs-formula"
-      className="relative overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
+      id="qvs"
+      className="relative scroll-mt-20 overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
     >
       <div className="absolute inset-0">
         <div className="absolute left-1/4 top-24 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
