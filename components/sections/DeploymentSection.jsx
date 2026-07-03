@@ -75,14 +75,13 @@ export default function DeploymentSection() {
         </div>
 
         <div className="relative mt-16">
-          <div className="absolute left-8 top-0 h-full border-l-2 border-dashed border-cyan-100/50 shadow-[0_0_22px_rgba(103,232,249,0.22)] xl:left-0 xl:right-0 xl:top-11 xl:h-px xl:border-l-0 xl:border-t-2" />
+          <div className="absolute left-0 right-0 top-11 hidden h-px border-t-2 border-dashed border-cyan-100/50 shadow-[0_0_22px_rgba(103,232,249,0.22)] xl:block" />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <StepCard
                 key={step.no}
                 step={step}
-                isLast={index === steps.length - 1}
               />
             ))}
           </div>
@@ -92,16 +91,12 @@ export default function DeploymentSection() {
   );
 }
 
-function StepCard({ step, isLast }) {
+function StepCard({ step }) {
   const Icon = step.icon;
   const tone = getTone(step.tone);
 
   return (
     <article className="group relative rounded-3xl border border-cyan-100/15 bg-slate-950/68 p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-slate-950/82">
-      {!isLast && (
-        <div className="absolute left-8 top-20 h-[calc(100%+1.25rem)] border-l-2 border-dashed border-cyan-100/50 shadow-[0_0_18px_rgba(103,232,249,0.22)] xl:hidden" />
-      )}
-
       <div className="relative z-10">
         <div className="flex items-center justify-between gap-4">
           <div

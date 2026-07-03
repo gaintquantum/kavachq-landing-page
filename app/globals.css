@@ -396,7 +396,7 @@ body {
   }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .shield-root {
     display: flex;
     width: min(100%, 24rem);
@@ -518,16 +518,20 @@ body {
     position: relative !important;
     left: auto !important;
     bottom: auto !important;
-    width: 100% !important;
+    width: min(100%, calc(100vw - 2rem)) !important;
+    max-width: 100%;
+    align-self: center;
+    translate: none !important;
     transform: none !important;
     border-radius: 0.9rem;
     padding: 0.75rem;
+    overflow: hidden;
     animation: none;
   }
 
   .metrics-bar > div {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: 0.5rem;
   }
@@ -546,10 +550,6 @@ body {
     padding: 0.55rem !important;
   }
 
-  .metrics-bar > div > div:last-child {
-    grid-column: 1 / -1;
-  }
-
   .metrics-bar .text-xl {
     font-size: 1rem;
     line-height: 1.25;
@@ -562,7 +562,7 @@ body {
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .shield-root {
     max-width: 36rem;
     height: 42rem;
