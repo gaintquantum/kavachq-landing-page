@@ -11,6 +11,7 @@ import TargetSectorSection from "@/components/sections/TargetSectorSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/layout/Footer";
 import FloatingButton from "@/components/sections/FloatingButton";
+import QueueSection from "@/components/sections/QueueSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <StatsStrip />
       <PipelineSection />
       <ScannerModules />
+      <QueueSection />
       <QVSSection />
       <LiveTerminal />
       <ComplianceSection />

@@ -56,28 +56,28 @@ export default function Shield3D() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="status-switcher">
-        <div className="status-card">
-          <div className="status-state status-red">
-            <div className="status-title text-2xl font-black text-red-600">
-              RSA-2048
+        <div className="status-switcher">
+          <div className="status-card">
+            <div className="status-state status-red">
+              <div className="status-title text-2xl font-black text-red-600">
+                RSA-2048
+              </div>
+              <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-red-300">
+                Quantum Vulnerable · QVS 91
+              </div>
             </div>
-            <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-red-300">
-              Quantum Vulnerable · QVS 91
-            </div>
-          </div>
 
-          <div className="status-state status-green">
-            <div className="status-label uppercase tracking-[0.22em] text-xs text-cyan-200">
-              Algorithm
-            </div>
-            <div className="status-title text-2xl font-black text-green-600 ">
-              ML-KEM-768
-            </div>
-            <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-emerald-300">
-              Migrated · PQC Safe
+            <div className="status-state status-green">
+              <div className="status-label uppercase tracking-[0.22em] text-xs text-cyan-200">
+                Algorithm
+              </div>
+              <div className="status-title text-2xl font-black text-green-600 ">
+                ML-KEM-768
+              </div>
+              <div className="status-subtitle mt-2 uppercase tracking-[0.18em] text-emerald-300">
+                Migrated · PQC Safe
+              </div>
             </div>
           </div>
         </div>
