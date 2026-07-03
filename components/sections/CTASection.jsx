@@ -107,7 +107,7 @@ Regards,`);
 
           <div className="border-t border-white/10 px-7 py-6 text-center md:px-10 lg:px-12">
             <p className="text-sm font-bold uppercase tracking-[0.28em] text-cyan-100/75">
-              Built in India. Built for India.
+              Built in India.for India.
             </p>
           </div>
         </div>

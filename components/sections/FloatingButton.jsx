@@ -84,6 +84,10 @@ export default function ScrollNavigatorButton() {
           hover:bg-cyan-500
           hover:text-black
           hover:shadow-[0_0_45px_rgba(0,212,255,0.45)]
+          max-sm:bottom-4
+          max-sm:right-4
+          max-sm:h-11
+          max-sm:w-11
         "
       >
         {atBottom ? (

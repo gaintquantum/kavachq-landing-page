@@ -36,14 +36,14 @@ export default function Footer() {
               discovery, QVS scoring, migration planning, and audit-ready
               compliance evidence.
             </p>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.24em] text-cyan-100/70">
-              Built in India. Built for India.
+            <p className="mt-5 text-xs font-bold tracking-[0.24em] text-cyan-100/70">
+              Built in India.for India.
             </p>
           </div>
 
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-cyan-100">
+              <h3 className="text-sm font-black tracking-[0.2em] text-cyan-100">
                 {group.title}
               </h3>
               <div className="mt-5 grid gap-3">
@@ -61,13 +61,13 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-6 border-t border-white/10 pt-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <div className="flex flex-wrap gap-2">
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <div className="text-center">
+            <div className="flex flex-wrap justify-center gap-2">
               {standards.map((standard) => (
                 <span
                   key={standard}
-                  className="rounded-full border border-cyan-200/15 bg-white/5 px-3 py-1 text-xs font-bold text-cyan-100"
+                  className="rounded-full border border-cyan-200/15 bg-white/5 px-3 py-1 text-center text-xs font-bold text-cyan-100"
                 >
                   {standard}
                 </span>
@@ -78,12 +78,25 @@ export default function Footer() {
             </p>
           </div>
 
-          <a
-            href="mailto:gaintquantum@gmail.com"
-            className="text-sm font-semibold text-cyan-200 transition hover:text-white"
-          >
-            gaintquantum@gmail.com
-          </a>
+          <div className="mx-auto mt-8 max-w-2xl text-center">
+            <div>
+              <h2 className="text-lg font-bold text-cyan-100">
+                CIN: U62013TS2024PTCC186957
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                Gaint Clout Technologies Private Limited Sy No 83/1, Plot No:
+                25 30/C, Knowledge City Rd, Panmaktha, <span className="text-cyan-100 text-right">Hyderabad,Rai Durg,
+                Telangana 500032</span>
+              </p>
+            </div>
+
+            <a
+              href="mailto:info@gaintclout.com"
+              className="mt-4 inline-block text-sm font-semibold text-cyan-200 transition hover:text-white"
+            >
+              info@gaintclout.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -396,11 +396,209 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 639px) {
+  .shield-root {
+    display: flex;
+    width: min(100%, 24rem);
+    max-width: 24rem;
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding-top: 28.5rem;
+  }
+
+  .shield-offset {
+    inset: 4.8rem auto auto 78%;
+    width: 24rem;
+    height: 24rem;
+    transform: translateX(-50%) scale(0.88);
+    transform-origin: top center;
+  }
+
+  .shield-glow {
+    width: 23rem;
+    height: 23rem;
+  }
+
+  .scan-ring {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .scan-ring-fast {
+    width: 16.75rem;
+    height: 16.75rem;
+  }
+
+  .scan-ring-reverse {
+    width: 27rem;
+    height: 27rem;
+  }
+
+  .orbit-one {
+    width: 14.5rem;
+    height: 25.5rem;
+  }
+
+  .orbit-two {
+    width: 26.5rem;
+    height: 14.5rem;
+  }
+
+  .shield-float {
+    width: 15.5rem;
+    height: 19.5rem;
+  }
+
+  .inner-qvs-ring {
+    width: 8.25rem;
+    height: 8.25rem;
+    border-width: 5px;
+  }
+
+  .inner-ring {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .pulse-score {
+    font-size: 2.75rem;
+  }
+
+  .scanner-dot {
+    transform-origin: 0 66px;
+  }
+
+  .status-card {
+    display: none;
+  }
+
   .card-float {
     position: relative !important;
     inset: auto !important;
-    width: 100% !important;
+    z-index: 30;
+    width: 100%;
+    min-height: 4.5rem;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    animation: none;
   }
 
+  .card-float > div {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .card-float > div > div:first-child {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .card-float .text-xl {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .card-float .text-meta-sm {
+    margin-top: 0.3rem;
+    font-size: 0.58rem;
+    line-height: 1.35;
+    letter-spacing: 0.14em;
+    white-space: normal;
+  }
+
+  .metrics-bar {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 0.9rem;
+    padding: 0.75rem;
+    animation: none;
+  }
+
+  .metrics-bar > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .metrics-bar > div > :not([hidden]) ~ :not([hidden]) {
+    border-left-width: 0 !important;
+    border-inline-start-width: 0 !important;
+  }
+
+  .metrics-bar > div > div {
+    width: 100%;
+    min-width: 0;
+    min-height: 3.75rem;
+    border: 1px solid rgba(103, 232, 249, 0.14) !important;
+    border-radius: 0.65rem;
+    padding: 0.55rem !important;
+  }
+
+  .metrics-bar > div > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .metrics-bar .text-xl {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .metrics-bar .text-\[10px\] {
+    font-size: 0.55rem;
+    line-height: 1.25;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .shield-root {
+    max-width: 36rem;
+    height: 42rem;
+  }
+
+  .shield-offset {
+    transform: translate(4%, 10%) scale(0.86);
+    transform-origin: center;
+  }
+
+  .card-float {
+    width: 190px;
+  }
+
+  .card-pos-1 {
+    left: 0;
+    top: 8%;
+  }
+
+  .card-pos-2 {
+    right: 0;
+    top: 12%;
+  }
+
+  .card-pos-3 {
+    left: 0;
+    top: 64%;
+  }
+
+  .card-pos-4 {
+    right: 0;
+    top: 56%;
+  }
+
+  .metrics-bar {
+    width: min(34rem, 96%);
+    padding: 0.85rem;
+  }
 }
