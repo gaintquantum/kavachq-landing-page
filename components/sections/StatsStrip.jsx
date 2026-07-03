@@ -3,8 +3,8 @@
 export default function StatsStrip() {
   const stats = [
     { value: "6", label: "Pipeline Stages", tone: "cyan" },
-    { value: "7", label: "Scanner Modules", tone: "blue" },
-    { value: ">=95%", label: "Detection Accuracy", tone: "emerald" },
+    { value: "7", label: "Scanner Modules", tone: "emerald" },
+    { value: ">=95%", label: "Detection Accuracy", tone: "blue" },
     { value: "QVS", label: "Quantum Risk Score", tone: "violet" },
   ];
 

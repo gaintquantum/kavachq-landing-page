@@ -28,8 +28,11 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr_1fr]">
           <div>
             <h2 className="bg-linear-to-r from-cyan-200 via-sky-300 to-emerald-200 bg-clip-text text-2xl font-black text-transparent">
-              KAVACH-Q
-            </h2>
+  KAVACH-Q
+  <sup className="relative text-cyan-200 -top-2 ml-0 text-[18px] font-semibold tracking-wide">
+    ™
+  </sup>
+</h2>
 
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
               GAINT's quantum-safe security platform for cryptographic
