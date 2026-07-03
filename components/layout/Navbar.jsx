@@ -44,27 +44,29 @@ Regards,`);
     <header className="fixed left-0 right-0 top-4 z-50 px-3 sm:px-4">
       <div className="mx-auto max-w-7xl">
         <div className="flex h-16 items-center justify-between rounded-full border border-cyan-400/20 bg-linear-to-r from-[#055085] via-[#17a0ca] to-[#055085] px-4 shadow-[0_0_40px_rgba(6,182,212,0.12)] backdrop-blur-2xl lg:h-20 lg:px-8">
-          {/* Logo */}
-          <a href="#" className="flex items-center">
-            <img
-              src="/KAVACH-Q logo with TM.png"
-              alt="KAVACH-Q"
-              className="h-12 w-12 object-contain lg:h-16 lg:w-16"
-            />
-          </a>
+          <div className="flex min-w-0 items-center gap-8 xl:gap-10">
+            {/* Logo */}
+            <a href="#" className="flex shrink-0 items-center">
+              <img
+                src="/KAVACH-Q logo with TM.png"
+                alt="KAVACH-Q"
+                className="h-12 w-12 object-contain lg:h-16 lg:w-16"
+              />
+            </a>
 
-          {/* Desktop Menu */}
-          <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
-            {navItems.map(([label, href]) => (
-              <a
-                key={label}
-                href={href}
-                className="text-sm font-medium text-slate-300 transition-all duration-300 hover:text-cyan-300 hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+            {/* Desktop Menu */}
+            <nav className="hidden items-center justify-start gap-5 lg:flex xl:gap-8">
+              {navItems.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="text-sm font-medium text-slate-300 transition-all duration-300 hover:text-cyan-300 hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
 
           {/* Desktop Button */}
           <a
