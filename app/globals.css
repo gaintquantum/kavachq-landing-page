@@ -133,9 +133,8 @@ body {
 
 .status-switcher {
   position: absolute;
-  left: -16%;
-  top: -10%;
-  right:-16%;
+  left: 16%;
+  top: 20%;
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;

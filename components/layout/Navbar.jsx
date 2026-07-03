@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   ["Pipeline", "#pipeline"],
-  ["QVS", "#qvs"],
   ["Modules", "#modules"],
+  ["QVS", "#qvs"],
   ["Compliance", "#compliance"],
   ["Deployment", "#deployment"],
 ];

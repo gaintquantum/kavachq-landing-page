@@ -102,23 +102,24 @@ export default function Shield3D() {
         subtitle="Post Quantum Ready"
       />
 
-      <InfoCard
-        className="card-pos-3 border-amber-500/40"
-        icon="⌕"
-        iconClass="bg-amber-500/15 text-amber-400"
-        title="14,821"
-        titleClass="text-amber-300"
-        subtitle="Assets Scanned"
-      />
+<InfoCard
+  className="card-pos-3 border-amber-500/40"
+  icon="🔐"
+  iconClass="bg-amber-500/15 text-amber-400"
+  title="ML-DSA"
+  titleClass="text-amber-300"
+  subtitle="Dilithium Standard"
+/>
 
-      <InfoCard
-        className="card-pos-4 border-cyan-500/40"
-        icon="78"
-        iconClass="bg-cyan-500/15 text-cyan-300"
-        title="QVS Score"
-        titleClass="text-cyan-300"
-        subtitle="Enterprise Risk"
-      />
+      
+<InfoCard
+  className="card-pos-4 border-cyan-500/40"
+  icon="◈"
+  iconClass="bg-cyan-500/15 text-cyan-300"
+  title="SLH-DSA"
+  titleClass="text-cyan-300"
+  subtitle="Hash-Based PQC"
+/>
 
       {/* Bottom metrics */}
       <div className="metrics-bar absolute bottom-0 left-1/2 w-[min(850px,95%)] -translate-x-1/2 rounded-2xl border border-cyan-400/20 bg-[#071426]/70 p-4 backdrop-blur-xl">

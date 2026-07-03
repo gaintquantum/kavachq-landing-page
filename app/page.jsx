@@ -12,15 +12,15 @@ import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/layout/Footer";
 import FloatingButton from "@/components/sections/FloatingButton";
 import QueueSection from "@/components/sections/QueueSection";
-
+import ComplianceMarquee from "@/components/sections/ComplianceMarquee";
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <StatsStrip />
-      <PipelineSection />
+      <PipelineSection /> 
       <ScannerModules />
+      <StatsStrip />
       <QueueSection />
       <QVSSection />
       <LiveTerminal />
@@ -29,6 +29,7 @@ export default function Home() {
       <DeploymentSection />
       <CTASection />
       <FloatingButton />
+      {/* <ComplianceMarquee /> */}
       <Footer />
     </>
   );

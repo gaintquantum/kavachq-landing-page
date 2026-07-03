@@ -2,73 +2,80 @@
 
 export default function StatsStrip() {
   const stats = [
-    { value: "6", label: "pipeline Stages" },
-    { value: "7", label: "Scanner Modules" },
-    { value: ">=95%", label: "Detection Accuracy" },
-    { value: "QVS", label: "Quantum Risk Score" },
+    { value: "6", label: "Pipeline Stages", tone: "cyan" },
+    { value: "7", label: "Scanner Modules", tone: "blue" },
+    { value: ">=95%", label: "Detection Accuracy", tone: "emerald" },
+    { value: "QVS", label: "Quantum Risk Score", tone: "violet" },
   ];
 
   return (
-    <section className="border-y border-cyan-100 bg-slate-50">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-10 md:grid-cols-4 shadow-[0_0_32px_rgba(34,211,238,0.22)]">
+    <section className="relative overflow-hidden border-y border-cyan-100/10 bg-[#1f4a75] px-6 py-12 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(34,211,238,0.12),transparent_28%),radial-gradient(circle_at_85%_45%,rgba(16,185,129,0.1),transparent_26%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/45 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/25 to-transparent" />
+
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((item, index) => (
-          <div
+          <article
             key={item.label}
-            className="group relative overflow-hidden rounded-2xl border border-cyan-100 bg-white p-6 shadow-sm shadow-cyan-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group relative min-h-44 overflow-hidden rounded-2xl border border-cyan-100/15 bg-slate-950/64 p-6 shadow-[0_20px_70px_rgba(2,8,23,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-slate-950/76"
           >
-            {/* Top Number */}
-            <div className="absolute right-4 top-3 text-5xl font-black text-slate-100">
+            <div className={`absolute inset-x-0 top-0 h-1 ${getTone(item.tone).bar}`} />
+            <div className={`absolute -right-14 -top-14 h-32 w-32 rounded-full blur-2xl transition duration-300 ${getTone(item.tone).glow}`} />
+
+            <div className="absolute right-5 top-5 text-6xl font-black leading-none text-white/[0.035] transition duration-300 group-hover:text-white/6">
               {String(index + 1).padStart(2, "0")}
             </div>
 
-            {/* Accent Bar */}
-            <div
-              className={`mb-4 h-1 w-16 rounded-full ${
-                index === 0
-                  ? "bg-cyan-500"
-                  : index === 1
-                    ? "bg-blue-500"
-                    : index === 2
-                      ? "bg-emerald-500"
-                      : "bg-violet-500"
-              }`}
-            />
+            <div className="relative flex h-full flex-col justify-between">
+              <div className={`mb-8 inline-flex h-11 w-11 items-center justify-center rounded-xl border text-xs font-black tracking-[0.18em] ${getTone(item.tone).badge}`}>
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-            {/* Value */}
-            <h3
-              className={`text-4xl font-bold ${
-                index === 0
-                  ? "text-cyan-600"
-                  : index === 1
-                    ? "text-blue-600"
-                    : index === 2
-                      ? "text-emerald-600"
-                      : "text-violet-600"
-              }`}
-            >
-              {item.value}
-            </h3>
+              <div>
+                <h3 className={`text-4xl font-black tracking-tight md:text-5xl ${getTone(item.tone).value}`}>
+                  {item.value}
+                </h3>
 
-            {/* Label */}
-            <p className="mt-3 text-sm font-medium text-slate-600">
-              {item.label}
-            </p>
-          </div>
+                <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-cyan-50/70">
+                  {item.label}
+                </p>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
-
-      <style jsx>{`
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(24px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
+}
+
+function getTone(tone) {
+  const tones = {
+    cyan: {
+      bar: "bg-cyan-300",
+      glow: "bg-cyan-300/20 group-hover:bg-cyan-300/30",
+      badge: "border-cyan-300/30 bg-cyan-300/10 text-cyan-200",
+      value: "text-cyan-200",
+    },
+    blue: {
+      bar: "bg-sky-300",
+      glow: "bg-sky-300/20 group-hover:bg-sky-300/30",
+      badge: "border-sky-300/30 bg-sky-300/10 text-sky-200",
+      value: "text-sky-200",
+    },
+    emerald: {
+      bar: "bg-emerald-300",
+      glow: "bg-emerald-300/18 group-hover:bg-emerald-300/28",
+      badge: "border-emerald-300/30 bg-emerald-300/10 text-emerald-200",
+      value: "text-emerald-200",
+    },
+    violet: {
+      bar: "bg-violet-300",
+      glow: "bg-violet-300/20 group-hover:bg-violet-300/30",
+      badge: "border-violet-300/30 bg-violet-300/10 text-violet-200",
+      value: "text-violet-200",
+    },
+  };
+
+  return tones[tone] ?? tones.cyan;
 }

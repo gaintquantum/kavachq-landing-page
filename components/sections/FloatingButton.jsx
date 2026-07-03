@@ -11,11 +11,12 @@ export default function ScrollNavigatorButton() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      setAtBottom(
-        scrollTop + windowHeight >= documentHeight - 100
+      const documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
       );
+
+      setAtBottom(scrollTop + windowHeight >= documentHeight - 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,6 +28,11 @@ export default function ScrollNavigatorButton() {
   }, []);
 
   const handleClick = () => {
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+
     if (atBottom) {
       window.scrollTo({
         top: 0,
@@ -34,7 +40,7 @@ export default function ScrollNavigatorButton() {
       });
     } else {
       window.scrollTo({
-        top: document.documentElement.scrollHeight,
+        top: documentHeight,
         behavior: "smooth",
       });
     }
@@ -60,6 +66,7 @@ export default function ScrollNavigatorButton() {
       </style>
 
       <button
+        type="button"
         aria-label={atBottom ? "Scroll to top" : "Scroll to bottom"}
         onClick={handleClick}
         className="
@@ -67,7 +74,7 @@ export default function ScrollNavigatorButton() {
           fixed
           bottom-8
           right-8
-          z-999
+          z-[999]
           flex
           h-14
           w-14

@@ -106,14 +106,20 @@ export default function ComplianceSection() {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-190 border-collapse">
+            <div className="overflow-hidden">
+              <table className="w-full table-fixed border-collapse">
                 <thead>
                   <tr className="bg-white/4">
-                    {["Finding", "CERT-IN", "RBI Clause", "Severity"].map((head) => (
+                    {["Finding", "CERT-IN", "RBI Clause", "Severity"].map((head, index) => (
                       <th
                         key={head}
-                        className="border-b border-white/10 px-5 py-4 text-left text-[11px] font-bold uppercase tracking-[0.16em] text-cyan-100/62"
+                        className={`border-b border-white/10 px-4 py-4 text-left text-[10px] font-bold uppercase tracking-[0.12em] text-cyan-100/62 sm:px-5 sm:text-[11px] sm:tracking-[0.16em] ${
+                          index === 0
+                            ? "w-[34%]"
+                            : index === 3
+                              ? "w-[18%]"
+                              : "w-[24%]"
+                        }`}
                       >
                         {head}
                       </th>
@@ -127,21 +133,21 @@ export default function ComplianceSection() {
                       key={finding}
                       className="transition duration-200 hover:bg-cyan-300/6.5"
                     >
-                      <td className="border-b border-white/[0.07] px-5 py-4 text-sm font-semibold text-white">
+                      <td className="border-b border-white/[0.07] px-4 py-4 text-sm font-semibold text-white sm:px-5">
                         <div className="flex items-center gap-3">
                           <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.75)]" />
-                          <span>{finding}</span>
+                          <span className="min-w-0 wrap-break-word">{finding}</span>
                         </div>
                       </td>
-                      <td className="border-b border-white/[0.07] px-5 py-4 text-sm text-slate-300">
+                      <td className="wrap-break-word border-b border-white/[0.07] px-4 py-4 text-sm text-slate-300 sm:px-5">
                         {cert}
                       </td>
-                      <td className="border-b border-white/[0.07] px-5 py-4 text-sm text-slate-300">
+                      <td className="wrap-break-word border-b border-white/[0.07] px-4 py-4 text-sm text-slate-300 sm:px-5">
                         {rbi}
                       </td>
-                      <td className="border-b border-white/[0.07] px-5 py-4">
+                      <td className="border-b border-white/[0.07] px-4 py-4 sm:px-5">
                         <span
-                          className={`inline-flex min-w-20 justify-center rounded-full border px-3 py-1.5 text-[11px] font-black uppercase tracking-wider ${severityClass[severity]}`}
+                          className={`inline-flex w-full max-w-24 justify-center rounded-full border px-2 py-1.5 text-[10px] font-black uppercase tracking-wide sm:min-w-20 sm:px-3 sm:text-[11px] sm:tracking-wider ${severityClass[severity]}`}
                         >
                           {severity}
                         </span>

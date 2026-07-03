@@ -39,7 +39,7 @@ export default function QueueSection() {
   return (
     <section
       id="queue"
-      className="relative overflow-hidden border-t border-cyan-400/10 bg-[#1f4a75] py-28 text-white"
+      className="relative overflow-hidden border-t border-cyan-400/10 [#1f4a75] py-28 text-white"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,212,255,0.18),transparent_45%)]" />
       <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" />
