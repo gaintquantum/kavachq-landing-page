@@ -9,7 +9,6 @@ import LiveTerminal from "@/components/sections/LiveTerminal";
 import DeploymentSection from "@/components/sections/DeploymentSection";
 import TargetSectorSection from "@/components/sections/TargetSectorSection";
 import CTASection from "@/components/sections/CTASection";
-import Footer from "@/components/layout/Footer";
 import FloatingButton from "@/components/sections/FloatingButton";
 import QueueSection from "@/components/sections/QueueSection";
 import ComplianceMarquee from "@/components/sections/ComplianceMarquee";
@@ -30,7 +29,6 @@ export default function Home() {
       <CTASection />
       <FloatingButton />
       {/* <ComplianceMarquee /> */}
-      <Footer />
     </>
   );
 }

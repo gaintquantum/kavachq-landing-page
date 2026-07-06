@@ -73,8 +73,8 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="text-center">
-            <p className="text-sm text-slate-400">
-              © 2026 KAVACH-Q. Quantum Safe Security Platform.
+            <p className="text-sm text-white">
+             © 2026 KAVACH-Q™. All Rights Reserved. | Proprietary & Confidential | Intellectual Property Protected
             </p>
           </div>
 
@@ -84,9 +84,9 @@ export default function Footer() {
                 CIN: U62013TS2024PTC186957
               </h2>
 
-              <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-300">
-                Gaint Clout Technologies Private Limited, Sy No 83/1, Plot No:
-                25 30/C, Knowledge City Road, Panmaktha,{" "}
+              <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-white">
+                GAINT Clout Technologies Private Limited, Sy No 83/1, Plot No:
+                25 30/C, Knowledge City, Raidurg Panmaktha,{" "}
                 <span className="text-cyan-100">
                   Hyderabad, Rai Durg, Telangana 500032
                 </span>
