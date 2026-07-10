@@ -16,11 +16,19 @@ export default function Hero() {
         <div className="grid min-h-[calc(100vh-96px)] items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1fr_0.9fr] lg:gap-8 lg:py-0">
           {/* Left Content */}
           <div className="relative z-30 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-            <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:mb-6 sm:px-4">
-              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.9)]" />
-              <span className="text-[10px] uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
-                GAINT · National PQC Platform · 2026
-              </span>
+            <div className="mb-5 flex flex-wrap items-center justify-center gap-2 sm:mb-6 lg:justify-start">
+              <div className="inline-flex items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:px-4">
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
+                 🛡️ ISO/IEC 27001:2022
+                </span>
+              </div>
+
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:px-4">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.9)]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
+                  GAINT · National PQC Platform · 2026
+                </span>
+              </div>
             </div>
 
             <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
