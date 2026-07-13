@@ -73,8 +73,8 @@ export default function Hero() {
           </div>
 
           {/* Right Animation */}
-          <div className="relative z-20 flex justify-center lg:justify-end">
-            <div className="relative z-20 flex w-full max-w-2xl items-center justify-center py-10">
+          <div className="relative z-20 flex min-w-0 justify-center lg:justify-end">
+            <div className="relative z-20 flex min-w-0 w-full max-w-2xl items-center justify-center py-10">
               <Shield3D />
             </div>
           </div>
