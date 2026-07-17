@@ -293,6 +293,11 @@ body {
 }
 
 .metrics-bar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: min(850px, 95%);
+  transform: translateX(-50%);
   animation: metricsRise 0.9s ease-out both;
 }
 
@@ -555,14 +560,13 @@ body {
   }
 
   .metrics-bar {
-    position: relative !important;
-    left: auto !important;
-    bottom: auto !important;
-    width: min(100%, calc(100vw - 2rem)) !important;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: min(100%, calc(100vw - 2rem));
     max-width: 100%;
     align-self: center;
-    translate: none !important;
-    transform: none !important;
+    transform: none;
     border-radius: 0.9rem;
     padding: 0.75rem;
     overflow: hidden;

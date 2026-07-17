@@ -122,7 +122,7 @@ export default function Shield3D() {
 />
 
       {/* Bottom metrics */}
-      <div className="metrics-bar absolute bottom-0 left-1/2 w-[min(850px,95%)] -translate-x-1/2 rounded-2xl border border-cyan-400/20 bg-[#071426]/70 p-4 backdrop-blur-xl">
+      <div className="metrics-bar rounded-2xl border border-cyan-400/20 bg-[#071426]/70 p-4 backdrop-blur-xl">
         <div className="grid grid-cols-5 items-stretch divide-x divide-cyan-200/20">
           <Metric value="1,248" label="Repositories" />
           <Metric value="3,592" label="Servers" />
