@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --font-century-gothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+
   --background: #1f4a75;
   --foreground: #f8fafc;
 
@@ -10,6 +12,23 @@
 
   --card: rgba(255, 255, 255, 0.16);
   --border: rgba(255, 255, 255, 0.22);
+}
+
+@theme {
+  --font-sans: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  --font-mono: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+html,
+body,
+*,
+button,
+input,
+textarea,
+select,
+*::before,
+*::after {
+  font-family: var(--font-century-gothic) !important;
 }
 
 html {

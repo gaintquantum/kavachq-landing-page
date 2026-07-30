@@ -11,7 +11,7 @@ export default function TerminalLine({
   };
 
   return (
-    <p className={`font-mono text-sm ${styles[type] || styles.success}`}>
+    <p className={`text-sm ${styles[type] || styles.success}`}>
       {children}
     </p>
   );

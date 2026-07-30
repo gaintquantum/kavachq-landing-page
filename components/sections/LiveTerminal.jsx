@@ -38,7 +38,7 @@ export default function LiveOperations() {
               Live Operations
             </div>
 
-            <h2 className="font-syne text-3xl font-black leading-tight tracking-tight text-white md:text-5xl">
+            <h2 className="text-3xl font-black leading-tight tracking-tight text-white md:text-5xl">
               Real-time detection.
               <br />
               Zero-touch response.
@@ -81,12 +81,12 @@ export default function LiveOperations() {
               <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
               <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
-              <span className="ml-auto font-mono text-[11px] uppercase tracking-wider text-[#6b8faf]">
+              <span className="ml-auto text-[11px] uppercase tracking-wider text-[#6b8faf]">
                 kavachq-scanner v1.0 · LIVE
               </span>
             </div>
 
-            <div className="space-y-1 p-5 font-mono text-xs leading-7">
+            <div className="space-y-1 p-5 text-xs leading-7">
               <p>
                 <span className="text-cyan-300">scanner@kavachq:~$</span>{" "}
                 <span className="text-[#c8dced]">
