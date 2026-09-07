@@ -44,6 +44,10 @@ body {
   overflow-x: hidden;
 }
 
+.kavachq-logo-wordmark {
+  font-family: var(--font-michroma), sans-serif !important;
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
