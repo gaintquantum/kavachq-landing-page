@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="mb-5 flex flex-wrap items-center justify-center gap-2 sm:mb-6 lg:justify-start">
               <div className="inline-flex mt-2 items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:px-4">
                 <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
-                 🛡️ ISO/IEC 27001:2022
+                  🛡️ ISO/IEC 27001:2022
                 </span>
               </div>
 
@@ -76,16 +76,21 @@ export default function Hero() {
             <div className="mb-5 flex justify-center sm:mb-6 lg:justify-start">
               <KavachQLogo3D />
             </div>
-            <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              Secure Your
-              <br />
-              Enterprise For
-              <br />
-              The{" "}
-              <span className="mt-2 inline-block rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:rounded-2xl sm:px-3">
-                Quantum Era
-              </span>
-            </h1>
+<h1
+  style={{
+    fontFamily: '"Michroma", Futura, "Trebuchet MS", sans-serif',
+  }}
+  className="text-xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
+>
+  Secure Your
+  <br />
+  Enterprise For
+  <br />
+  The{" "}
+  <span className="mt-2 inline-block text-6xl rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:px-3">
+    Quantum Era
+  </span>
+</h1>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#c5d9e8] sm:mt-6 sm:text-lg sm:leading-8 lg:mx-0">
               KAVACH-Q discovers vulnerable cryptography, calculates Quantum
@@ -133,7 +138,12 @@ function TrustChip({ text }) {
   return (
     <div className="flex min-h-8 items-center justify-center gap-1.5 rounded-md border border-cyan-400/15 bg-cyan-400/5 px-2 py-1.5 text-center text-[8px] uppercase tracking-[0.08em] text-[#c5d9e8] sm:min-h-0 sm:gap-2 sm:px-3 sm:py-2 sm:text-xs sm:tracking-[0.16em] lg:justify-start lg:text-left">
       <span className="grid h-4 w-4 shrink-0 place-items-center text-emerald-400 sm:h-5 sm:w-5">
-        <svg viewBox="0 0 24 24" className="h-full w-full" fill="none" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+          fill="none"
+          aria-hidden="true"
+        >
           <path
             d="M12 3.5 18.5 6v5.1c0 4.1-2.6 7.2-6.5 8.7-3.9-1.5-6.5-4.6-6.5-8.7V6L12 3.5Z"
             stroke="currentColor"

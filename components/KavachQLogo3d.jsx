@@ -1,3 +1,11 @@
+import { Michroma } from "next/font/google";
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export default function KavachQLogo3D() {
   return (
     <a
@@ -5,7 +13,9 @@ export default function KavachQLogo3D() {
       aria-label="KAVACH-Q Home"
       className="inline-flex max-w-full items-start no-underline"
     >
-      <span className="kavachq-logo-wordmark whitespace-nowrap text-[clamp(1.75rem,5vw,3.5rem)] font-normal uppercase leading-none tracking-[0.12em] text-white sm:tracking-[0.16em]">
+      <span
+        className={`${michroma.className} whitespace-nowrap text-[clamp(1.75rem,5vw,3.5rem)] font-normal uppercase leading-none text-white sm:tracking-widest`}
+      >
         KAVACH-
         <span className="relative inline-block text-cyan-200">
           Q

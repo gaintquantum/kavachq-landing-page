@@ -21,13 +21,10 @@
 
 html,
 body,
-*,
 button,
 input,
 textarea,
-select,
-*::before,
-*::after {
+select {
   font-family: var(--font-century-gothic) !important;
 }
 
@@ -42,10 +39,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-}
-
-.kavachq-logo-wordmark {
-  font-family: var(--font-michroma), sans-serif !important;
 }
 
 .glass {
