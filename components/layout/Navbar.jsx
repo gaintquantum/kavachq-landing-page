@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navItems = [
   ["Pipeline", "#pipeline"],
@@ -13,6 +14,20 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [contrastTheme, setContrastTheme] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("kavachq-theme");
+    const useLightTheme = savedTheme === "light";
+    setContrastTheme(useLightTheme);
+    document.documentElement.dataset.theme = useLightTheme ? "light" : "blue";
+  }, []);
+
+  const changeTheme = (enabled) => {
+    setContrastTheme(enabled);
+    document.documentElement.dataset.theme = enabled ? "light" : "blue";
+    window.localStorage.setItem("kavachq-theme", enabled ? "light" : "blue");
+  };
 
   const demoRequestBody = encodeURIComponent(`Dear KAVACH-Q Team,
 
@@ -68,24 +83,28 @@ Regards,`);
             </nav>
           </div>
 
-          {/* Desktop Button */}
-          <a
-            href={demoRequestHref}
-            className="hidden rounded-full border border-cyan-500/30 bg-cyan-500 px-5 py-2 text-sm font-medium text-white transition hover:bg-cyan-600 lg:block"
-          >
-            Request Demo
-          </a>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle checked={contrastTheme} onChange={changeTheme} />
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-cyan-200/60 hover:text-cyan-100 lg:hidden"
-          >
-            {open ? <X size={26} /> : <Menu size={26} />}
-          </button>
+            {/* Desktop Button */}
+            <a
+              href={demoRequestHref}
+              className="hidden rounded-full border border-cyan-500/30 bg-cyan-500 px-5 py-2 text-sm font-medium text-white transition hover:bg-cyan-600 lg:block"
+            >
+              Request Demo
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={open}
+              onClick={() => setOpen(!open)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-cyan-200/60 hover:text-cyan-100 lg:hidden"
+            >
+              {open ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Drawer */}

@@ -76,21 +76,21 @@ export default function Hero() {
             <div className="mb-5 flex justify-center sm:mb-6 lg:justify-start">
               <KavachQLogo3D />
             </div>
-<h1
-  style={{
-    fontFamily: '"Michroma", Futura, "Trebuchet MS", sans-serif',
-  }}
-  className="text-xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
->
-  Secure Your
-  <br />
-  Enterprise For
-  <br />
-  The{" "}
-  <span className="mt-2 inline-block text-6xl rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:px-3">
-    Quantum Era
-  </span>
-</h1>
+            <h1
+              style={{
+                fontFamily: '"Michroma", Futura, "Trebuchet MS", sans-serif',
+              }}
+              className="text-xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
+            >
+              Secure Your
+              <br />
+              Enterprise For
+              <br />
+              The{" "}
+              <span className="mt-2 inline-block text-6xl rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:px-3">
+                Quantum Era
+              </span>
+            </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#c5d9e8] sm:mt-6 sm:text-lg sm:leading-8 lg:mx-0">
               KAVACH-Q discovers vulnerable cryptography, calculates Quantum

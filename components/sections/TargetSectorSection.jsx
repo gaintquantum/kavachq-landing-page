@@ -12,7 +12,7 @@ const sectors = [
     title: "Central & State Government",
     label: "Government",
     description:
-      "NIC-hosted portals, ministry APIs, Aadhaar-linked services, and classified document systems, including legacy documents only readable through vision-assisted analysis.",
+      "NIC-hosted portals, ministry APIs, and citizen-services platforms — including legacy documents readable only through vision-assisted analysis.",
     icon: Landmark,
     tone: "cyan",
     points: [
@@ -97,7 +97,7 @@ function SectorCard({ sector }) {
   const tone = getTone(sector.tone);
 
   return (
-    <article className="group relative flex min-h-107.5 flex-col overflow-hidden rounded-3xl border border-cyan-100/15 bg-slate-950/68 p-7 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-slate-950/82">
+    <article className={`group relative flex min-h-107.5 flex-col overflow-hidden rounded-3xl border p-7 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
       <div className={`absolute inset-x-0 top-0 h-1 ${tone.bar}`} />
       <div className={`absolute -right-8 -top-8 h-32 w-32 rounded-full blur-3xl ${tone.glow}`} />
 
@@ -142,6 +142,7 @@ function getTone(tone) {
       badge: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       check: "text-cyan-200",
       glow: "bg-cyan-300/18",
+      card: "border-cyan-300/20 bg-cyan-400/10 hover:border-cyan-200/35 hover:bg-cyan-400/15",
     },
     amber: {
       bar: "bg-amber-300",
@@ -150,6 +151,7 @@ function getTone(tone) {
       badge: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       check: "text-amber-200",
       glow: "bg-amber-300/16",
+      card: "border-amber-300/20 bg-amber-400/10 hover:border-amber-200/35 hover:bg-amber-400/15",
     },
     rose: {
       bar: "bg-rose-300",
@@ -158,6 +160,7 @@ function getTone(tone) {
       badge: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       check: "text-rose-200",
       glow: "bg-rose-300/16",
+      card: "border-rose-300/20 bg-rose-400/10 hover:border-rose-200/35 hover:bg-rose-400/15",
     },
   };
 

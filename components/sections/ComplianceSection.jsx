@@ -169,7 +169,7 @@ function FrameworkCard({ framework }) {
   const tone = getTone(framework.tone);
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-cyan-100/15 bg-slate-950/58 p-5 shadow-[0_18px_60px_rgba(2,8,23,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35">
+    <article className={`group relative overflow-hidden rounded-2xl border p-5 shadow-[0_18px_60px_rgba(2,8,23,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
       <div className={`absolute inset-y-0 left-0 w-1 ${tone.bar}`} />
 
       <div className="flex items-start gap-4">
@@ -202,24 +202,28 @@ function getTone(tone) {
       icon: "text-cyan-200",
       iconBox: "border-cyan-300/35 bg-cyan-300/15 shadow-cyan-300/20",
       kicker: "text-cyan-100/70",
+      card: "border-cyan-300/20 bg-cyan-400/10 hover:border-cyan-200/35 hover:bg-cyan-400/15",
     },
     amber: {
       bar: "bg-amber-300",
       icon: "text-amber-200",
       iconBox: "border-amber-300/35 bg-amber-300/15 shadow-amber-300/20",
       kicker: "text-amber-100/70",
+      card: "border-amber-300/20 bg-amber-400/10 hover:border-amber-200/35 hover:bg-amber-400/15",
     },
     emerald: {
       bar: "bg-emerald-300",
       icon: "text-emerald-200",
       iconBox: "border-emerald-300/35 bg-emerald-300/15 shadow-emerald-300/20",
       kicker: "text-emerald-100/70",
+      card: "border-emerald-300/20 bg-emerald-400/10 hover:border-emerald-200/35 hover:bg-emerald-400/15",
     },
     violet: {
       bar: "bg-violet-300",
       icon: "text-violet-200",
       iconBox: "border-violet-300/35 bg-violet-300/15 shadow-violet-300/20",
       kicker: "text-violet-100/70",
+      card: "border-violet-300/20 bg-violet-400/10 hover:border-violet-200/35 hover:bg-violet-400/15",
     },
   };
 

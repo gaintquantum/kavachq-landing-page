@@ -16,19 +16,21 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <PipelineSection /> 
-      <ScannerModules />
-      <StatsStrip />
-      <QueueSection />
-      <QVSSection />
-      <LiveTerminal />
-      <ComplianceSection />
-      <TargetSectorSection />
-      <DeploymentSection />
-      <CTASection />
-      <FloatingButton />
-      {/* <ComplianceMarquee /> */}
+      <main>
+        <Hero />
+        <PipelineSection />
+        <ScannerModules />
+        <StatsStrip />
+        <QueueSection />
+        <QVSSection />
+        <LiveTerminal />
+        <ComplianceSection />
+        <TargetSectorSection />
+        <DeploymentSection />
+        <CTASection />
+        <FloatingButton />
+        {/* <ComplianceMarquee /> */}
+      </main>
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function DeploymentSection() {
       no: "03",
       title: "Scan & Score",
       description:
-        "All 7 scanner modules run against internal targets. QVS scores computed in real time. CRITICAL findings trigger CISO alerts within 4 hours. Coverage report flags <98% gaps.",
+        "All 7 scanner modules run against internal targets. QVS scores computed in real time.CRITICAL findings trigger CISO alerts within 4 hours; remediation follows the applicable severity-based SLA. Coverage reports identify and flag coverage gaps",
       icon: ScanSearch,
       tone: "violet",
     },
@@ -96,7 +96,7 @@ function StepCard({ step }) {
   const tone = getTone(step.tone);
 
   return (
-    <article className="group relative rounded-3xl border border-cyan-100/15 bg-slate-950/68 p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-slate-950/82">
+    <article className={`group relative rounded-3xl border p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
       <div className="relative z-10">
         <div className="flex items-center justify-between gap-4">
           <div
@@ -127,18 +127,22 @@ function getTone(tone) {
     cyan: {
       icon: "text-cyan-200",
       iconBox: "border-cyan-300/35 bg-cyan-300/15 shadow-cyan-300/20",
+      card: "border-cyan-300/20 bg-cyan-400/10 hover:border-cyan-200/35 hover:bg-cyan-400/15",
     },
     emerald: {
       icon: "text-emerald-200",
       iconBox: "border-emerald-300/35 bg-emerald-300/15 shadow-emerald-300/20",
+      card: "border-emerald-300/20 bg-emerald-400/10 hover:border-emerald-200/35 hover:bg-emerald-400/15",
     },
     violet: {
       icon: "text-violet-200",
       iconBox: "border-violet-300/35 bg-violet-300/15 shadow-violet-300/20",
+      card: "border-violet-300/20 bg-violet-400/10 hover:border-violet-200/35 hover:bg-violet-400/15",
     },
     amber: {
       icon: "text-amber-200",
       iconBox: "border-amber-300/35 bg-amber-300/15 shadow-amber-300/20",
+      card: "border-amber-300/20 bg-amber-400/10 hover:border-amber-200/35 hover:bg-amber-400/15",
     },
   };
 

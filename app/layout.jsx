@@ -1,5 +1,6 @@
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import CursorField from "@/components/layout/CursorField";
 
 export const metadata = {
   title: "KAVACH-Q",
@@ -13,8 +14,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.dataset.theme=localStorage.getItem("kavachq-theme")==="light"?"light":"blue"}catch(e){document.documentElement.dataset.theme="blue"}`,
+          }}
+        />
+      </head>
       <body>
+        <CursorField />
         {children}
         <Footer />
       </body>

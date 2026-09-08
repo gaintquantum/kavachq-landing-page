@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 @import "tailwindcss";
+@source "../components";
+@source "../app";
+
+/* Drive Tailwind's dark utilities from the site toggle, not the OS setting. */
+@custom-variant dark (&:where([data-theme=blue], [data-theme=blue] *));
 
 :root {
   --font-century-gothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  --font-heading: "Michroma", Futura, "Trebuchet MS", sans-serif;
+  --cursor-x: 65%;
+  --cursor-y: 45%;
 
   --background: #1f4a75;
   --foreground: #f8fafc;
@@ -28,6 +37,19 @@ select {
   font-family: var(--font-century-gothic) !important;
 }
 
+h1,
+h2 {
+  font-family: var(--font-heading) !important;
+}
+
+main h1,
+main h1 span,
+main h2,
+main h2 span {
+  font-size: clamp(2rem, 4vw, 3.5rem) !important;
+  font-weight: 400 !important;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--background);
@@ -39,6 +61,224 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+}
+
+.cursor-field {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
+  background:
+    radial-gradient(
+      circle at var(--cursor-x) var(--cursor-y),
+      rgba(219, 242, 255, 0.16),
+      transparent 13rem
+    ),
+    radial-gradient(
+      circle at var(--cursor-x) var(--cursor-y),
+      rgba(25, 216, 242, 0.08),
+      transparent 28rem
+    );
+  mix-blend-mode: screen;
+  transition: opacity 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-field {
+    display: none;
+  }
+}
+
+/* Light theme: keep the brand colors while replacing the blue canvas. */
+html[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --surface-cyan: #f0fbfc;
+  --surface-violet: #f7f5ff;
+  --surface-amber: #fffbeb;
+  --surface-border: #d7e2ea;
+  color-scheme: light;
+}
+
+html[data-theme="light"] body,
+html[data-theme="light"] section,
+html[data-theme="light"] footer,
+html[data-theme="light"] main {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] section,
+html[data-theme="light"] footer,
+html[data-theme="light"] main {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+html[data-theme="light"] section [class~="text-white"],
+html[data-theme="light"] section [class*="text-white/"],
+html[data-theme="light"] section [class~="text-slate-200"],
+html[data-theme="light"] section [class~="text-slate-300"],
+html[data-theme="light"] section [class~="text-slate-400"],
+html[data-theme="light"] section [class~="text-[#c5d9e8]"],
+html[data-theme="light"] footer [class~="text-white"],
+html[data-theme="light"] footer [class*="text-white/"],
+html[data-theme="light"] footer [class~="text-slate-300"],
+html[data-theme="light"] footer [class~="text-slate-400"],
+html[data-theme="light"] main [class~="text-white"],
+html[data-theme="light"] main [class*="text-white/"],
+html[data-theme="light"] main [class~="text-slate-300"],
+html[data-theme="light"] main [class~="text-slate-400"] {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] section [class*="text-[#f5fbff]"],
+html[data-theme="light"] section [class*="text-[#c8dced]"],
+html[data-theme="light"] section [class*="text-[#7fefff]"],
+html[data-theme="light"] section [class*="text-cyan-"],
+html[data-theme="light"] footer [class*="text-cyan-"] {
+  color: #0e7490 !important;
+}
+
+html[data-theme="light"] section [class*="text-emerald-"],
+html[data-theme="light"] section [class*="text-green-"],
+html[data-theme="light"] footer [class*="text-emerald-"] {
+  color: #047857 !important;
+}
+
+html[data-theme="light"] section [class*="text-violet-"] {
+  color: #6d28d9 !important;
+}
+
+html[data-theme="light"] section [class*="text-sky-"] {
+  color: #0369a1 !important;
+}
+
+html[data-theme="light"] section [class*="text-[#6b8faf]"] {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] section [class*="text-[#ffb491b8]"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] section [class*="text-amber-"],
+html[data-theme="light"] section [class*="text-yellow-"] {
+  color: #a16207 !important;
+}
+
+html[data-theme="light"] section [class*="text-orange-"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] section [class*="text-red-"],
+html[data-theme="light"] section [class*="text-rose-"] {
+  color: #be123c !important;
+}
+
+html[data-theme="light"] section [class*="bg-[#071426]"],
+html[data-theme="light"] section [class*="bg-[#06101f]"],
+html[data-theme="light"] section [class*="bg-[#091628]"],
+html[data-theme="light"] section [class*="bg-[#010a16]"],
+html[data-theme="light"] section [class*="bg-[#081223]"],
+html[data-theme="light"] section [class*="bg-[#08233e5c]"],
+html[data-theme="light"] section [class*="bg-[rgba(11,49,83"],
+html[data-theme="light"] section [class*="bg-slate-950"],
+html[data-theme="light"] footer [class*="bg-slate-950"] {
+  background-color: rgba(248, 250, 252, 0.94) !important;
+}
+
+html[data-theme="light"] section [class*="bg-white/"],
+html[data-theme="light"] footer [class*="bg-white/"],
+html[data-theme="light"] main [class*="bg-white/"] {
+  background-color: rgba(241, 245, 249, 0.78) !important;
+}
+
+html[data-theme="light"] section [class*="border-white"],
+html[data-theme="light"] footer [class*="border-white"],
+html[data-theme="light"] main [class*="border-white"] {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] .glass,
+html[data-theme="light"] .status-card,
+html[data-theme="light"] .metrics-bar {
+  background: rgba(248, 250, 252, 0.92) !important;
+  border-color: rgba(8, 145, 178, 0.18) !important;
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .hero-grid {
+  background-image:
+    linear-gradient(rgba(8, 145, 178, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 145, 178, 0.07) 1px, transparent 1px);
+}
+
+html[data-theme="light"] section [class*="bg-[radial-gradient(ellipse"] {
+  opacity: 0.08 !important;
+}
+
+/* Pipeline cards use gradient stops, so give them an explicit light surface. */
+html[data-theme="light"] #pipeline article {
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-via: #f8fafc !important;
+  --tw-gradient-to: #e2e8f0 !important;
+  border-color: rgba(8, 145, 178, 0.22) !important;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] #pipeline article:hover {
+  border-color: rgba(8, 145, 178, 0.42) !important;
+  box-shadow: 0 24px 60px rgba(8, 145, 178, 0.16) !important;
+}
+
+html[data-theme="light"] #pipeline article [class*="text-7xl"] {
+  opacity: 0.1 !important;
+}
+
+html[data-theme="light"] #pipeline > div > svg path {
+  fill: #ffffff !important;
+}
+
+/* Flat light surfaces for cards that use dark or translucent theme fills. */
+html[data-theme="light"] section [class*="bg-[#010a16"],
+html[data-theme="light"] section [class*="bg-[#06101f"],
+html[data-theme="light"] section [class*="bg-[#071426"],
+html[data-theme="light"] section [class*="bg-[#091628"],
+html[data-theme="light"] section [class*="bg-slate-950"],
+html[data-theme="light"] section [class*="bg-slate-250"] {
+  background: var(--surface) !important;
+  border-color: var(--surface-border) !important;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: none !important;
+}
+
+html[data-theme="light"] section [class*="bg-cyan-400/5"],
+html[data-theme="light"] section [class*="bg-cyan-400/10"],
+html[data-theme="light"] section [class*="bg-cyan-500/5"],
+html[data-theme="light"] section [class*="bg-cyan-500/10"] {
+  background: var(--surface-cyan) !important;
+  border-color: #b8e3ed !important;
+}
+
+html[data-theme="light"] section [class*="bg-violet-400/10"],
+html[data-theme="light"] section [class*="bg-violet-500/10"] {
+  background: var(--surface-violet) !important;
+  border-color: #d8ccff !important;
+}
+
+html[data-theme="light"] section [class*="bg-amber-400/4"],
+html[data-theme="light"] section [class*="bg-amber-400/10"] {
+  background: var(--surface-amber) !important;
+  border-color: #f5d98b !important;
+}
+
+html[data-theme="light"] section [class*="bg-blue-400/10"],
+html[data-theme="light"] section [class*="bg-emerald-400/10"] {
+  background: #f0f9ff !important;
+  border-color: #bfdbfe !important;
 }
 
 .glass {
