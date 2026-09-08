@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  BadgeCheck,
-  Landmark,
-  RadioTower,
-  ShieldCheck,
-} from "lucide-react";
+import { BadgeCheck, Landmark, RadioTower, ShieldCheck } from "lucide-react";
 
 const sectors = [
   {
@@ -76,9 +71,9 @@ export default function TargetSectorsSection() {
           </div>
 
           <p className="max-w-2xl text-lg leading-8 text-white/78 lg:justify-self-end">
-            KAVACH-Q focuses on sectors where cryptographic failure has national,
-            regulatory, or public-service impact, from government systems to
-            finance and infrastructure.
+            KAVACH-Q focuses on sectors where cryptographic failure has
+            national, regulatory, or public-service impact, from government
+            systems to finance and infrastructure.
           </p>
         </div>
 
@@ -97,9 +92,13 @@ function SectorCard({ sector }) {
   const tone = getTone(sector.tone);
 
   return (
-    <article className={`group relative flex min-h-107.5 flex-col overflow-hidden rounded-3xl border p-7 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
+    <article
+      className={`group relative flex min-h-107.5 flex-col overflow-hidden rounded-3xl border p-7 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}
+    >
       <div className={`absolute inset-x-0 top-0 h-1 ${tone.bar}`} />
-      <div className={`absolute -right-8 -top-8 h-32 w-32 rounded-full blur-3xl ${tone.glow}`} />
+      <div
+        className={`absolute -right-8 -top-8 h-32 w-32 rounded-full blur-3xl ${tone.glow}`}
+      />
 
       <div className="relative flex items-start justify-between gap-4">
         <div
@@ -108,7 +107,9 @@ function SectorCard({ sector }) {
           <Icon className={`h-7 w-7 ${tone.icon}`} strokeWidth={1.8} />
         </div>
 
-        <span className={`rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] ${tone.badge}`}>
+        <span
+          className={`rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] ${tone.badge}`}
+        >
           {sector.label}
         </span>
       </div>
@@ -123,8 +124,14 @@ function SectorCard({ sector }) {
 
       <ul className="relative mt-7 space-y-3 border-t border-white/10 pt-6">
         {sector.points.map((point) => (
-          <li key={point} className="flex items-start gap-3 text-sm leading-6 text-slate-300">
-            <ShieldCheck className={`mt-0.5 h-4 w-4 shrink-0 ${tone.check}`} strokeWidth={2} />
+          <li
+            key={point}
+            className="flex items-start gap-3 text-sm leading-6 text-slate-300"
+          >
+            <ShieldCheck
+              className={`mt-0.5 h-4 w-4 shrink-0 ${tone.check}`}
+              strokeWidth={2}
+            />
             <span>{point}</span>
           </li>
         ))}

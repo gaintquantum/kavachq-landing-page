@@ -1,22 +1,37 @@
 "use client";
 
-import {
-  BadgeCheck,
-  Banknote,
-  Landmark,
-  ShieldCheck,
-} from "lucide-react";
+import { BadgeCheck, Banknote, Landmark, ShieldCheck } from "lucide-react";
 
 const rows = [
-  ["RSA-1024 in production", "Crypto Policy §3.1", "IT Framework §5.2", "CRITICAL"],
+  [
+    "RSA-1024 in production",
+    "Crypto Policy §3.1",
+    "IT Framework §5.2",
+    "CRITICAL",
+  ],
   ["RSA-2048 in production", "Crypto Policy §3.1", "IT Framework §5.2", "HIGH"],
   ["TLS < 1.3 enabled", "TLS Guidelines §2.4", "Cyber Sec §4.1", "HIGH"],
   ["No PQC migration plan", "PQC Advisory §1.3", "Future-Ready §3.2", "HIGH"],
-  ["Expired certificates", "PKI Guidelines §5.1", "PKI Policy §7.3", "CRITICAL"],
+  [
+    "Expired certificates",
+    "PKI Guidelines §5.1",
+    "PKI Policy §7.3",
+    "CRITICAL",
+  ],
   ["SHA-1 in use", "Hash Standards §4.2", "Crypto Baseline §2.1", "HIGH"],
-  ["Hardcoded keys in source", "SDLC Security §4.3", "SDLC Framework §3.1", "CRITICAL"],
+  [
+    "Hardcoded keys in source",
+    "SDLC Security §4.3",
+    "SDLC Framework §3.1",
+    "CRITICAL",
+  ],
   ["DPDPA data unencrypted", "—", "Data Privacy §2.3", "CRITICAL"],
-  ["ECDH without PQC upgrade", "PQC Advisory §2.1", "Future-Ready §3.4", "MEDIUM"],
+  [
+    "ECDH without PQC upgrade",
+    "PQC Advisory §2.1",
+    "Future-Ready §3.4",
+    "MEDIUM",
+  ],
 ];
 
 const frameworks = [
@@ -82,8 +97,8 @@ export default function ComplianceSection() {
 
           <p className="mt-6 text-lg leading-8 text-white/78">
             Claude Citations API maps every finding to the relevant regulatory
-            clause, page, and section. Reports are digitally signed, timestamped,
-            and archived for audit review.
+            clause, page, and section. Reports are digitally signed,
+            timestamped, and archived for audit review.
           </p>
         </div>
 
@@ -110,20 +125,22 @@ export default function ComplianceSection() {
               <table className="w-full table-fixed border-collapse">
                 <thead>
                   <tr className="bg-white/4">
-                    {["Finding", "CERT-IN", "RBI Clause", "Severity"].map((head, index) => (
-                      <th
-                        key={head}
-                        className={`border-b border-white/10 px-4 py-4 text-left text-[10px] font-bold uppercase tracking-[0.12em] text-cyan-100/62 sm:px-5 sm:text-[11px] sm:tracking-[0.16em] ${
-                          index === 0
-                            ? "w-[34%]"
-                            : index === 3
-                              ? "w-[18%]"
-                              : "w-[24%]"
-                        }`}
-                      >
-                        {head}
-                      </th>
-                    ))}
+                    {["Finding", "CERT-IN", "RBI Clause", "Severity"].map(
+                      (head, index) => (
+                        <th
+                          key={head}
+                          className={`border-b border-white/10 px-4 py-4 text-left text-[10px] font-bold uppercase tracking-[0.12em] text-cyan-100/62 sm:px-5 sm:text-[11px] sm:tracking-[0.16em] ${
+                            index === 0
+                              ? "w-[34%]"
+                              : index === 3
+                                ? "w-[18%]"
+                                : "w-[24%]"
+                          }`}
+                        >
+                          {head}
+                        </th>
+                      ),
+                    )}
                   </tr>
                 </thead>
 
@@ -136,7 +153,9 @@ export default function ComplianceSection() {
                       <td className="border-b border-white/[0.07] px-4 py-4 text-sm font-semibold text-white sm:px-5">
                         <div className="flex items-center gap-3">
                           <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.75)]" />
-                          <span className="min-w-0 wrap-break-word">{finding}</span>
+                          <span className="min-w-0 wrap-break-word">
+                            {finding}
+                          </span>
                         </div>
                       </td>
                       <td className="wrap-break-word border-b border-white/[0.07] px-4 py-4 text-sm text-slate-300 sm:px-5">
@@ -169,7 +188,9 @@ function FrameworkCard({ framework }) {
   const tone = getTone(framework.tone);
 
   return (
-    <article className={`group relative overflow-hidden rounded-2xl border p-5 shadow-[0_18px_60px_rgba(2,8,23,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
+    <article
+      className={`group relative overflow-hidden rounded-2xl border p-5 shadow-[0_18px_60px_rgba(2,8,23,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}
+    >
       <div className={`absolute inset-y-0 left-0 w-1 ${tone.bar}`} />
 
       <div className="flex items-start gap-4">
@@ -180,7 +201,9 @@ function FrameworkCard({ framework }) {
         </div>
 
         <div className="min-w-0">
-          <p className={`text-xs font-bold uppercase tracking-[0.2em] ${tone.kicker}`}>
+          <p
+            className={`text-xs font-bold uppercase tracking-[0.2em] ${tone.kicker}`}
+          >
             {framework.subtitle}
           </p>
           <h3 className="mt-2 text-xl font-black tracking-tight text-white">

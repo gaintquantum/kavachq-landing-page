@@ -79,10 +79,7 @@ export default function DeploymentSection() {
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {steps.map((step) => (
-              <StepCard
-                key={step.no}
-                step={step}
-              />
+              <StepCard key={step.no} step={step} />
             ))}
           </div>
         </div>
@@ -96,7 +93,9 @@ function StepCard({ step }) {
   const tone = getTone(step.tone);
 
   return (
-    <article className={`group relative rounded-3xl border p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}>
+    <article
+      className={`group relative rounded-3xl border p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}
+    >
       <div className="relative z-10">
         <div className="flex items-center justify-between gap-4">
           <div
