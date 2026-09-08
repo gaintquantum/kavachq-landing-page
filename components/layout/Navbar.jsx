@@ -70,17 +70,29 @@ Regards,`);
             </a>
 
             {/* Desktop Menu */}
-            <nav className="hidden items-center justify-start gap-5 lg:flex xl:gap-8">
-              {navItems.map(([label, href]) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="text-sm font-medium text-slate-300 transition-all duration-300 hover:text-cyan-300 hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
+        
+
+<nav className="hidden items-center rounded-full border border-white/10 bg-white/8 p-1.5 shadow-inner backdrop-blur-md lg:flex">
+  {navItems.map(([label, href]) => (
+    <a
+      key={label}
+      href={href}
+      className="
+        rounded-full
+        px-4 py-2
+        text-sm font-medium
+        text-white/80
+        transition-all duration-300
+        hover:bg-white/12
+        hover:text-white
+        hover:shadow-[0_0_16px_rgba(34,211,238,0.18)]
+        xl:px-5
+      "
+    >
+      {label}
+    </a>
+  ))}
+</nav>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">

@@ -147,24 +147,24 @@ export default function AutomationStages() {
           </div>
 
           <h2 className="mt-6 text-3xl font-normal leading-tight tracking-wider text-white md:text-5xl lg:text-6xl">
-  <span className="block bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
-    Six <span className="text-white">Stages</span>
-  </span>
+            <span className="block bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+              Six <span className="text-white">Stages</span>
+            </span>
 
-  <span className="block">
-    <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
-      One
-    </span>{" "}
-    platform.
-  </span>
+            <span className="block">
+              <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+                One
+              </span>{" "}
+              platform.
+            </span>
 
-  <span className="block">
-    <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
-      Zero
-    </span>{" "}
-    quantum blindspots.
-  </span>
-</h2>
+            <span className="block">
+              <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+                Zero
+              </span>{" "}
+              quantum blindspots.
+            </span>
+          </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
             Each stage automatically hands off to the next—from discovery and
@@ -237,7 +237,7 @@ function StageCard({ stage, isLast }) {
       <div
         aria-hidden="true"
         className={`
-          absolute right-5 top-4
+          absolute right-5 top-20
           text-7xl font-black leading-none
           transition-all duration-500
           group-hover:-translate-y-1 group-hover:scale-105
@@ -290,9 +290,7 @@ function StageCard({ stage, isLast }) {
           {stage.title}
         </h3>
 
-        <p className="mt-4 text-sm leading-7 text-white/70">
-          {stage.desc}
-        </p>
+        <p className="mt-4 text-sm leading-7 text-white/70">{stage.desc}</p>
 
         <div className="mt-auto flex items-end justify-between gap-4 pt-7">
           <div
@@ -332,8 +330,7 @@ function getTone(color) {
       glow: "bg-cyan-300",
       line: "via-cyan-200/80",
       icon: "text-cyan-100",
-      iconBox:
-        "border-cyan-300/35 bg-cyan-300/14 shadow-cyan-400/20",
+      iconBox: "border-cyan-300/35 bg-cyan-300/14 shadow-cyan-400/20",
       badge: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       tag: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       watermark: "text-cyan-100/7",
@@ -355,8 +352,7 @@ function getTone(color) {
       glow: "bg-violet-400",
       line: "via-violet-200/80",
       icon: "text-violet-100",
-      iconBox:
-        "border-violet-300/35 bg-violet-300/14 shadow-violet-400/20",
+      iconBox: "border-violet-300/35 bg-violet-300/14 shadow-violet-400/20",
       badge: "border-violet-300/25 bg-violet-300/10 text-violet-100",
       tag: "border-violet-300/25 bg-violet-300/10 text-violet-100",
       watermark: "text-violet-100/7",
@@ -367,8 +363,7 @@ function getTone(color) {
       glow: "bg-emerald-300",
       line: "via-emerald-200/80",
       icon: "text-emerald-100",
-      iconBox:
-        "border-emerald-300/35 bg-emerald-300/14 shadow-emerald-400/20",
+      iconBox: "border-emerald-300/35 bg-emerald-300/14 shadow-emerald-400/20",
       badge: "border-emerald-300/25 bg-emerald-300/10 text-emerald-100",
       tag: "border-emerald-300/25 bg-emerald-300/10 text-emerald-100",
       watermark: "text-emerald-100/7",
@@ -379,8 +374,7 @@ function getTone(color) {
       glow: "bg-amber-300",
       line: "via-amber-200/80",
       icon: "text-amber-100",
-      iconBox:
-        "border-amber-300/35 bg-amber-300/14 shadow-amber-400/20",
+      iconBox: "border-amber-300/35 bg-amber-300/14 shadow-amber-400/20",
       badge: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       tag: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       watermark: "text-amber-100/7",
@@ -391,8 +385,7 @@ function getTone(color) {
       glow: "bg-rose-300",
       line: "via-rose-200/80",
       icon: "text-rose-100",
-      iconBox:
-        "border-rose-300/35 bg-rose-300/14 shadow-rose-400/20",
+      iconBox: "border-rose-300/35 bg-rose-300/14 shadow-rose-400/20",
       badge: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       tag: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       watermark: "text-rose-100/7",

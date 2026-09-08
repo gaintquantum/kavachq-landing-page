@@ -72,8 +72,8 @@ export default function ScrollNavigatorButton() {
         className="
           float-y
           fixed
-          bottom-8
-          right-8
+          bottom-[max(1rem,env(safe-area-inset-bottom))]
+          right-[max(1rem,env(safe-area-inset-right))]
           z-[999]
           flex
           h-14
@@ -91,7 +91,8 @@ export default function ScrollNavigatorButton() {
           hover:bg-cyan-500
           hover:text-black
           hover:shadow-[0_0_45px_rgba(0,212,255,0.45)]
-          max-sm:hidden
+          sm:bottom-8
+          sm:right-8
         "
       >
         {atBottom ? (
