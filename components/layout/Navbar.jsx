@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navItems = [
-  ["Pipeline", "#pipeline"],
-  ["Modules", "#modules"],
-  ["QVS", "#qvs"],
-  ["Compliance", "#compliance"],
-  ["Deployment", "#deployment"],
+  ["Pipeline", "/#pipeline"],
+  ["Modules", "/#modules"],
+  ["QVS", "/#qvs"],
+  ["Compliance", "/#compliance"],
+  ["Deployment", "/#deployment"],
 ];
 
 export default function Navbar() {
@@ -61,20 +62,20 @@ Regards,`);
         <div className="flex h-16 items-center justify-between rounded-full border border-cyan-400/20 bg-linear-to-r from-[#055085] via-[#17a0ca] to-[#055085] px-4 shadow-[0_0_40px_rgba(6,182,212,0.12)] backdrop-blur-2xl lg:h-20 lg:px-8">
           <div className="flex min-w-0 items-center gap-8 xl:gap-10">
             {/* Logo */}
-            <a href="#" className="flex shrink-0 items-center">
+            <Link href="/" aria-label="KAVACH-Q home" className="flex shrink-0 items-center">
               <img
                 src="/KAVACH-Q logo with TM.png"
                 alt="KAVACH-Q"
                 className="h-12 w-12 object-contain lg:h-16 lg:w-16"
               />
-            </a>
+            </Link>
 
             {/* Desktop Menu */}
         
 
 <nav className="hidden items-center rounded-full border border-white/10 bg-white/8 p-1.5 shadow-inner backdrop-blur-md lg:flex">
   {navItems.map(([label, href]) => (
-    <a
+    <Link
       key={label}
       href={href}
       className="
@@ -90,7 +91,7 @@ Regards,`);
       "
     >
       {label}
-    </a>
+    </Link>
   ))}
 </nav>
           </div>
@@ -124,14 +125,14 @@ Regards,`);
           <div className="mt-3 rounded-3xl border border-cyan-400/20 bg-[#072d4d]/95 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:hidden">
             <nav className="flex flex-col gap-5">
               {navItems.map(([label, href]) => (
-                <a
+                <Link
                   key={label}
                   href={href}
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-slate-200 transition hover:text-cyan-300"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
 
               <a

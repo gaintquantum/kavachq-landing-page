@@ -11,7 +11,7 @@ import TargetSectorSection from "@/components/sections/TargetSectorSection";
 import CTASection from "@/components/sections/CTASection";
 import FloatingButton from "@/components/sections/FloatingButton";
 import QueueSection from "@/components/sections/QueueSection";
-import ComplianceMarquee from "@/components/sections/ComplianceMarquee";
+import Bot from "@/components/Bot/Bot";
 export default function Home() {
   return (
     <>
@@ -29,6 +29,7 @@ export default function Home() {
         <DeploymentSection />
         <CTASection />
         <FloatingButton />
+        <Bot />
         {/* <ComplianceMarquee /> */}
       </main>
     </>

@@ -107,10 +107,10 @@ export default function Hero() {
               </a>
 
               <a
-                href="#pipeline"
+                href="/faqs"
                 className="rounded-xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
               >
-                Watch the Pipeline
+                Learn About Kavach-Q
               </a>
             </div>
 

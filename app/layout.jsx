@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import CursorField from "@/components/layout/CursorField";
+import FaqFloatingButton from "@/components/ui/FaqFloatingButton";
 
 export const metadata = {
   title: "KAVACH-Q",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body>
         <CursorField />
         {children}
+        <FaqFloatingButton />
         <Footer />
       </body>
     </html>

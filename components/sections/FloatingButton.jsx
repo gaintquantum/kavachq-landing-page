@@ -13,7 +13,7 @@ export default function ScrollNavigatorButton() {
       const windowHeight = window.innerHeight;
       const documentHeight = Math.max(
         document.body.scrollHeight,
-        document.documentElement.scrollHeight
+        document.documentElement.scrollHeight,
       );
 
       setAtBottom(scrollTop + windowHeight >= documentHeight - 100);
@@ -30,7 +30,7 @@ export default function ScrollNavigatorButton() {
   const handleClick = () => {
     const documentHeight = Math.max(
       document.body.scrollHeight,
-      document.documentElement.scrollHeight
+      document.documentElement.scrollHeight,
     );
 
     if (atBottom) {
@@ -70,30 +70,30 @@ export default function ScrollNavigatorButton() {
         aria-label={atBottom ? "Scroll to top" : "Scroll to bottom"}
         onClick={handleClick}
         className="
-          float-y
-          fixed
-          bottom-[max(1rem,env(safe-area-inset-bottom))]
-          right-[max(1rem,env(safe-area-inset-right))]
-          z-[999]
-          flex
-          h-14
-          w-14
-          items-center
-          justify-center
-          rounded-full
-          border
-          border-cyan-400/20
-          bg-[#081223]
-          text-cyan-300
-          shadow-[0_0_35px_rgba(0,212,255,0.25)]
-          transition-all
-          duration-300
-          hover:bg-cyan-500
-          hover:text-black
-          hover:shadow-[0_0_45px_rgba(0,212,255,0.45)]
-          sm:bottom-8
-          sm:right-8
-        "
+  float-y
+  fixed
+  bottom-[max(6rem,calc(env(safe-area-inset-bottom)+6rem))]
+  right-[max(1rem,env(safe-area-inset-right))]
+  z-999
+  flex
+  h-14
+  w-14
+  items-center
+  justify-center
+  rounded-full
+  border
+  border-cyan-400/20
+  bg-[#081223]
+  text-cyan-300
+  shadow-[0_0_35px_rgba(0,212,255,0.25)]
+  transition-all
+  duration-300
+  hover:bg-cyan-500
+  hover:text-black
+  hover:shadow-[0_0_45px_rgba(0,212,255,0.45)]
+  sm:bottom-28
+  sm:right-8
+"
       >
         {atBottom ? (
           <ChevronUp size={26} strokeWidth={2.5} />

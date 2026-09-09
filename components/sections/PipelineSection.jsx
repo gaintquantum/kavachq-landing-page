@@ -147,19 +147,19 @@ export default function AutomationStages() {
           </div>
 
           <h2 className="mt-6 text-3xl font-normal leading-tight tracking-wider text-white md:text-5xl lg:text-6xl">
-            <span className="block bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+            <span className="block mb-2 bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
               Six <span className="text-white">Stages</span>
             </span>
 
-            <span className="block">
-              <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+            <span className="block mb-2">
+              <span className="bg-linear-to-r  from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
                 One
               </span>{" "}
               platform.
             </span>
 
-            <span className="block">
-              <span className="bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
+            <span className="block mb-2">
+              <span className="bg-linear-to-r mb-4 from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
                 Zero
               </span>{" "}
               quantum blindspots.
