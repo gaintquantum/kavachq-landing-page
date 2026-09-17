@@ -11,6 +11,7 @@ const navItems = [
   ["QVS", "/#qvs"],
   ["Compliance", "/#compliance"],
   ["Deployment", "/#deployment"],
+  ["Pricing", "/pricing"],
 ];
 
 export default function Navbar() {
@@ -53,7 +54,7 @@ Preferred Demo Date:
 Regards,`);
 
   const demoRequestHref = `mailto:gaintquantum@gmail.com?subject=${encodeURIComponent(
-    "KAVACH-Q Enterprise Demo Request"
+    "KAVACH-Q Enterprise Demo Request",
   )}&body=${demoRequestBody}`;
 
   return (
@@ -62,7 +63,11 @@ Regards,`);
         <div className="flex h-16 items-center justify-between rounded-full border border-cyan-400/20 bg-linear-to-r from-[#055085] via-[#17a0ca] to-[#055085] px-4 shadow-[0_0_40px_rgba(6,182,212,0.12)] backdrop-blur-2xl lg:h-20 lg:px-8">
           <div className="flex min-w-0 items-center gap-8 xl:gap-10">
             {/* Logo */}
-            <Link href="/" aria-label="KAVACH-Q home" className="flex shrink-0 items-center">
+            <Link
+              href="/"
+              aria-label="KAVACH-Q home"
+              className="flex shrink-0 items-center"
+            >
               <img
                 src="/KAVACH-Q logo with TM.png"
                 alt="KAVACH-Q"
@@ -71,14 +76,13 @@ Regards,`);
             </Link>
 
             {/* Desktop Menu */}
-        
 
-<nav className="hidden items-center rounded-full border border-white/10 bg-white/8 p-1.5 shadow-inner backdrop-blur-md lg:flex">
-  {navItems.map(([label, href]) => (
-    <Link
-      key={label}
-      href={href}
-      className="
+            <nav className="hidden items-center rounded-full border border-white/10 bg-white/8 p-1.5 shadow-inner backdrop-blur-md lg:flex">
+              {navItems.map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="
         rounded-full
         px-4 py-2
         text-sm font-medium
@@ -89,11 +93,11 @@ Regards,`);
         hover:shadow-[0_0_16px_rgba(34,211,238,0.18)]
         xl:px-5
       "
-    >
-      {label}
-    </Link>
-  ))}
-</nav>
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -110,7 +114,9 @@ Regards,`);
             {/* Mobile Menu Button */}
             <button
               type="button"
-              aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={
+                open ? "Close navigation menu" : "Open navigation menu"
+              }
               aria-expanded={open}
               onClick={() => setOpen(!open)}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-cyan-200/60 hover:text-cyan-100 lg:hidden"
