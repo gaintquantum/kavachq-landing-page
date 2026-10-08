@@ -60,7 +60,7 @@ export default function ScannerModules() {
         </p>
 
         <h2 className="mt-4 text-4xl font-black tracking-tight text-white md:text-6xl">
-          Find Every R0SA and ECC Key
+          Find Every RSA and ECC Key
           <span className="block bg-linear-to-r from-cyan-200 via-sky-300 to-violet-200 bg-clip-text text-transparent">
             Before the Quantum Deadline Finds You.
           </span>
@@ -91,8 +91,8 @@ export default function ScannerModules() {
             <h3 className="text-xl font-bold text-cyan-200">Discover</h3>
 
             <p className="mt-4 text-white/75">
-              Every certificate, key, and algorithm—mapped into a
-              Cryptographic Bill of Materials (CBOM).
+              Every certificate, key, and algorithm—mapped into a Cryptographic
+              Bill of Materials (CBOM).
             </p>
           </div>
 
