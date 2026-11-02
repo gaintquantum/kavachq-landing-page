@@ -2,8 +2,8 @@ import { ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const themes = {
-  blue: { card: "border-sky-200 from-[#edf7ff] to-[#f8fbff]", accent: "bg-sky-500", header: "bg-[#dceeff]", text: "text-[#60A5FA]", button: "border-[#4285F4] bg-[#4285F4] text-white! hover:border-[#3574db] hover:bg-[#3574db]" },
-  green: { card: "border-emerald-200 from-[#e9f8ef] to-[#f6fcf9]", accent: "bg-emerald-500", header: "bg-[#d7f1e2]", text: "text-[#34D399]", button: "border-[#10b981] bg-[#10b981] text-white! hover:border-[#059669] hover:bg-[#059669]" },
+  blue: { card: "border-sky-200 from-[#edf7ff] to-[#f8fbff]", accent: "bg-sky-500", header: "bg-[#dceeff]", text: "text-[#60A5FA]", button: "border-brand bg-brand text-white! hover:border-[#3574db] hover:bg-[#3574db]" },
+  green: { card: "border-emerald-200 from-[#e9f8ef] to-[#f6fcf9]", accent: "bg-emerald-500", header: "bg-[#d7f1e2]", text: "text-[#34D399]", button: "border-emerald-700 bg-emerald-700 text-white! hover:border-emerald-800 hover:bg-emerald-800" },
   enterprise: { card: "border-blue-500 from-[#e5efff] to-[#f3f7ff] ring-2 ring-blue-400/35 shadow-[0_18px_48px_-16px_rgba(37,99,235,0.4)]", accent: "bg-blue-600", header: "bg-[#075ec5] text-[#ffffff]", text: "text-[#60A5FA]", button: "border-[#075ec5] bg-[#075ec5] text-[#ffffff]! hover:bg-[#064fa7]" },
   purple: { card: "border-violet-200 from-[#f0eaff] to-[#fbf9ff]", accent: "bg-violet-500", header: "bg-[#e7dcfc]", text: "text-[#A78BFA]", button: "border-[#4820cb] bg-[#4820cb] text-[#ffffff]! hover:bg-[#3919a5]" },
 };

@@ -1,5 +1,6 @@
 import "./globals.css";
 import SiteChrome from "@/components/layout/SiteChrome";
+import MotionProvider from "@/components/layout/MotionProvider";
 
 export const metadata = {
   title: "KAVACH-Q",
@@ -15,8 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body>
-        {children}
-        <SiteChrome />
+        <MotionProvider>
+          {children}
+          <SiteChrome />
+        </MotionProvider>
       </body>
     </html>
   );

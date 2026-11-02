@@ -101,7 +101,7 @@ export default function FAQPage() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition ${
                         isOpen
-                          ? "bg-[#123b63] text-white"
+                          ? "bg-[#123b63] text-slate-50"
                           : "bg-white text-[#123b63] shadow-sm"
                       }`}
                     >
@@ -158,7 +158,7 @@ export default function FAQPage() {
                   onClick={() => changeCategory(category.id)}
                   className={`rounded-full px-3.5 py-2 text-[10px] font-semibold transition-all ${
                     isActive
-                      ? "bg-[#123b63] text-white shadow-sm"
+                      ? "bg-[#123b63] text-slate-50 shadow-sm"
                       : "border border-slate-200 bg-[#f8fafc] text-slate-500 hover:border-cyan-300 hover:text-[#123b63]"
                   }`}
                 >
@@ -203,7 +203,7 @@ export default function FAQPage() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition ${
                         isOpen
-                          ? "bg-[#123b63] text-white"
+                          ? "bg-[#123b63] text-slate-50"
                           : "bg-white text-[#123b63] shadow-sm"
                       }`}
                     >

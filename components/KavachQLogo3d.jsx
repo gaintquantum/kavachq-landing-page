@@ -11,24 +11,19 @@ export default function KavachQLogo3D() {
         }}
         className="
           whitespace-nowrap
-          bg-linear-to-r
-          from-cyan-100
-          via-sky-300
-          to-emerald-200
-          bg-clip-text
           text-[clamp(1.15rem,8vw,3.5rem)]
           font-normal
           uppercase
           leading-none
           tracking-[0.12em]
-          text-transparent
+          text-ink
           sm:tracking-[0.18em]
         "
       >
         KAVACH-
-        <span className="relative inline-block text-cyan-600">
+        <span className="relative inline-block text-cyan-700">
           Q
-          <sup className="absolute -right-3 -top-1 text-[11px] tracking-normal text-cyan-200 sm:-right-4 sm:text-[10px]">
+          <sup className="absolute -right-3 -top-1 text-[11px] tracking-normal text-cyan-700 sm:-right-4 sm:text-[10px]">
             ™
           </sup>
         </span>

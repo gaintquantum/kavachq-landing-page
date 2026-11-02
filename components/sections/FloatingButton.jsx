@@ -74,7 +74,7 @@ export default function ScrollNavigatorButton() {
   hover:text-blue-700
   focus-visible:outline-none
   focus-visible:ring-2
-  focus-visible:ring-[#4285F4]
+  focus-visible:ring-brand
   focus-visible:ring-offset-2
   motion-reduce:transform-none
   sm:inline-flex

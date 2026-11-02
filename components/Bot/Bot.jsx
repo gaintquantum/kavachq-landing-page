@@ -83,7 +83,7 @@ export default function Bot() {
             hover:border-blue-300
             focus-visible:outline-none
             focus-visible:ring-2
-            focus-visible:ring-[#4285F4]
+            focus-visible:ring-brand
             focus-visible:ring-offset-2
             motion-reduce:transform-none
             sm:bottom-[max(1.5rem,env(safe-area-inset-bottom))]
