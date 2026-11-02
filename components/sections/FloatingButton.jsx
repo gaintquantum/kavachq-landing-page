@@ -47,52 +47,37 @@ export default function ScrollNavigatorButton() {
   };
 
   return (
-    <>
-      <style>
-        {`
-          @keyframes floatY {
-            0%,100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-
-          .float-y {
-            animation: floatY 3s ease-in-out infinite;
-          }
-        `}
-      </style>
-
       <button
         type="button"
         aria-label={atBottom ? "Scroll to top" : "Scroll to bottom"}
         onClick={handleClick}
         className="
-  float-y
   fixed
-  bottom-[max(6rem,calc(env(safe-area-inset-bottom)+6rem))]
-  right-[max(1rem,env(safe-area-inset-right))]
-  z-999
-  flex
-  h-14
-  w-14
+  bottom-[max(6.25rem,calc(env(safe-area-inset-bottom)+6.25rem))]
+  right-[max(1.5rem,env(safe-area-inset-right))]
+  z-40
+  hidden
+  h-12
+  w-12
   items-center
   justify-center
   rounded-full
   border
-  border-cyan-400/20
-  bg-[#081223]
-  text-cyan-300
-  shadow-[0_0_35px_rgba(0,212,255,0.25)]
+  border-slate-200
+  bg-white/95
+  text-slate-700
+  shadow-[0_10px_30px_rgba(15,23,42,0.12)]
   transition-all
   duration-300
-  hover:bg-cyan-500
-  hover:text-black
-  hover:shadow-[0_0_45px_rgba(0,212,255,0.45)]
-  sm:bottom-28
-  sm:right-8
+  hover:-translate-y-0.5
+  hover:border-blue-200
+  hover:text-blue-700
+  focus-visible:outline-none
+  focus-visible:ring-2
+  focus-visible:ring-[#4285F4]
+  focus-visible:ring-offset-2
+  motion-reduce:transform-none
+  sm:inline-flex
 "
       >
         {atBottom ? (
@@ -101,6 +86,5 @@ export default function ScrollNavigatorButton() {
           <ChevronDown size={26} strokeWidth={2.5} />
         )}
       </button>
-    </>
   );
 }

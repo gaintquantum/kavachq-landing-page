@@ -329,11 +329,7 @@ function ShieldTrace({ mobile, reduced }) {
   return (
     <group
       ref={shieldRef}
-      position={
-        mobile
-          ? [0, 0.15, -2.5]
-          : [2.1, 0.25, -2.4]
-      }
+      position={mobile ? [0, 0.15, -2.5] : [2.45, 0.3, -2.4]}
       scale={mobile ? 1.25 : 1.5}
     >
       {/* Soft glow behind shield */}
@@ -374,7 +370,7 @@ function ShieldTrace({ mobile, reduced }) {
       {/* Main bright shield border */}
       <Ring
         points={shieldPoints}
-        opacity={0.48}
+        opacity={0.62}
         color={BRAND_BLUE}
       />
 
@@ -517,7 +513,7 @@ function DataParticles({ mobile, reduced }) {
         color={LIGHT_CYAN}
         size={0.027}
         transparent
-        opacity={0.34}
+        opacity={0.16}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
         depthWrite={false}
@@ -537,14 +533,10 @@ function Scene({ mouseRef, mobile, reduced }) {
 
   return (
     <group ref={scene}>
-      <BlochSphere position={mobile ? [-1.35, 2.15, -3.4] : [-4.35, 1.55, -3.2]} scale={mobile ? 0.82 : 1.08} speed={0.09} mouseRef={mouseRef} reduced={reduced} />
-      <BlochSphere position={mobile ? [1.45, -0.15, -4.2] : [5.15, 1.55, -3.8]} scale={mobile ? 0.68 : 0.92} speed={-0.12} mouseRef={mouseRef} reduced={reduced} />
-      {!mobile && (
-        <BlochSphere position={[-0.75, -2.2, -3.9]} scale={0.7} speed={0.14} mouseRef={mouseRef} reduced={reduced} />
-      )}
+      <BlochSphere position={mobile ? [1.45, -0.15, -4.2] : [5.35, 1.65, -3.8]} scale={mobile ? 0.68 : 0.82} speed={-0.12} mouseRef={mouseRef} reduced={reduced} />
       <QubitNetwork mobile={mobile} mouseRef={mouseRef} reduced={reduced} />
       <MigrationSignals mobile={mobile} reduced={reduced} />
-      <ShieldTrace mobile={mobile} />
+      <ShieldTrace mobile={mobile} reduced={reduced} />
       <DataParticles mobile={mobile} reduced={reduced} />
     </group>
   );
@@ -592,13 +584,13 @@ export default function QuantumBackground({ mouseRef }) {
 
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-svh overflow-hidden contain-strict md:h-full"
+      className="hero-quantum-background pointer-events-none absolute inset-x-0 top-0 z-0 h-svh overflow-hidden opacity-20 contain-strict md:h-full lg:opacity-100"
       aria-hidden="true"
     >
       <div className="absolute left-[70%] top-[36%] aspect-square w-136 max-w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(66,133,244,0.055),rgba(66,133,244,0.025)_30%,transparent_68%)] opacity-40 blur-[22px] md:left-[68%] md:top-[43%] md:w-[min(50vw,44rem)] md:opacity-55" />
       {webgl ? (
         <Canvas
-          className="opacity-70 md:opacity-95"
+          className="opacity-65 md:opacity-90"
           style={{
             position: "absolute",
             inset: 0,
@@ -618,24 +610,23 @@ export default function QuantumBackground({ mouseRef }) {
       )}
 
       <div
-        className="absolute bottom-32 right-[4vw] z-2 hidden w-auto flex-nowrap items-center justify-center gap-2 rounded-full border border-cyan-200/10 bg-[rgba(11,49,83,0.45)] px-4 py-2.5 opacity-70 shadow-[0_0_24px_rgba(25,216,242,0.08)] backdrop-blur-sm md:flex"
+        className="absolute bottom-24 right-[4vw] z-2 hidden w-auto flex-nowrap items-center justify-center gap-2 rounded-full border border-blue-100 bg-white/90 px-4 py-2.5 text-slate-600 backdrop-blur-sm md:flex"
         role="presentation"
       >
         {[
           ["01", "SCAN"], ["02", "QUEUE"], ["03", "SCORE"],
           ["04", "PLAN"], ["05", "MIGRATE"], ["06", "COMPLY"],
         ].map(([number, label], index) => (
-          <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.43rem] tracking-[0.09em] text-[#c5d9e8] md:gap-1.5 md:text-[0.55rem] md:tracking-[0.16em]" key={label}>
-            <span className="hidden text-[0.45rem] text-[#7fefff] md:inline">{number}</span>
+          <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.43rem] tracking-[0.09em] text-slate-600 md:gap-1.5 md:text-[0.55rem] md:tracking-[0.16em]" key={label}>
+            <span className="hidden text-[0.45rem] text-blue-600 md:inline">{number}</span>
             <strong className="font-semibold">{label}</strong>
-            {index < 5 && <i className="h-px w-2 bg-linear-to-r from-[#19d8f233] to-[#7fefff] shadow-[0_0_7px_rgba(25,216,242,0.5)] md:w-[clamp(0.75rem,1.6vw,1.75rem)]" />}
+            {index < 5 && <i className="h-px w-2 bg-blue-200 md:w-[clamp(0.75rem,1.6vw,1.75rem)]" />}
           </div>
         ))}
       </div>
 
-      <span className="absolute left-[7%] top-[54%] hidden rounded-full border border-[#ff78493d] bg-[#08233e5c] px-2 py-1 text-[0.6rem] tracking-[0.13em] text-[#ffb491b8] shadow-[0_0_14px_rgba(25,216,242,0.08)] backdrop-blur-[5px] md:block">RSA-2048</span>
-      <span className="absolute right-[9%] top-[43%] hidden rounded-full border border-[#7fefff24] bg-[#08233e5c] px-2 py-1 text-[0.6rem] tracking-[0.13em] text-[#c5d9e8ad] shadow-[0_0_14px_rgba(25,216,242,0.08)] backdrop-blur-[5px] md:block">ML-KEM-768</span>
-      <span className="absolute right-[14%] top-[67%] hidden rounded-full border border-[#7fefff24] bg-[#08233e5c] px-2 py-1 text-[0.6rem] tracking-[0.13em] text-[#c5d9e8ad] shadow-[0_0_14px_rgba(25,216,242,0.08)] backdrop-blur-[5px] md:block">ML-DSA-65 · SLH-DSA</span>
+      <span className="absolute right-[9%] top-[43%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.1em] text-slate-600 backdrop-blur-sm md:block">ML-KEM-768</span>
+      <span className="absolute right-[14%] top-[67%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.1em] text-slate-600 backdrop-blur-sm md:block">ML-DSA-65 · SLH-DSA</span>
     </div>
   );
 }

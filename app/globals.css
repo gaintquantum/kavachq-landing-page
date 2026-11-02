@@ -12,15 +12,13 @@
   --cursor-x: 65%;
   --cursor-y: 45%;
 
-  --background: #1f4a75;
-  --foreground: #f8fafc;
-
-  --primary: #5cc6ff;
-  --secondary: #9d7dff;
-  --accent: #6ee7b7;
-
-  --card: rgba(255, 255, 255, 0.16);
-  --border: rgba(255, 255, 255, 0.22);
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #2563eb;
+  --secondary: #0891b2;
+  --accent: #10b981;
+  --card: #ffffff;
+  --border: #dbe4ef;
 }
 
 @theme {
@@ -42,14 +40,6 @@ h2 {
   font-family: var(--font-heading) !important;
 }
 
-main h1,
-main h1 span,
-main h2,
-main h2 span {
-  font-size: clamp(2rem, 4vw, 3.5rem) !important;
-  font-weight: 400 !important;
-}
-
 html {
   scroll-behavior: smooth;
   background: var(--background);
@@ -61,6 +51,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
 .cursor-field {
@@ -914,7 +905,7 @@ html[data-theme="light"] section [class*="bg-emerald-400/10"] {
   }
 }
 
-/* White canvas with consistently black editorial text. */
+/* Enterprise light theme and shared interaction language. */
 html[data-theme="light"] :where(main, footer) :where(
   h1,
   h2,
@@ -932,8 +923,35 @@ html[data-theme="light"] :where(main, footer) :where(
   code,
   span
 ) {
-  color: #000000 !important;
+  color: #0f172a !important;
   -webkit-text-fill-color: currentColor !important;
+}
+
+.enterprise-hero {
+  background:
+    radial-gradient(circle at 72% 38%, rgba(66, 133, 244, 0.09), transparent 30%),
+    radial-gradient(circle at 92% 12%, rgba(6, 182, 212, 0.07), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+}
+
+.hero-headline {
+  font-size: clamp(2rem, 4.4vw, 4.9rem) !important;
+  font-weight: 400 !important;
+}
+
+.hero-headline span {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+html[data-theme="light"] .pricing-dark-section :is(h1, h2, h3, p, small) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="light"] .pricing-dark-section .pricing-accent {
+  color: #4285f4 !important;
+  -webkit-text-fill-color: #4285f4 !important;
 }
 
 html[data-theme="light"] :where(a, button) span {
@@ -963,7 +981,8 @@ html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, f
 ) {
   background-color: #ffffff !important;
   background-image: none !important;
-  color: #000000 !important;
+  color: #0f172a !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
 }
 
 html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, form, section, div:not([class*="items-center"][class*="justify-center"])):is(
@@ -973,13 +992,29 @@ html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, f
   [class*="rounded-3xl"],
   [class*="rounded-4xl"]
 ) :where(h1, h2, h3, h4, h5, h6, p, li, small, strong, span) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 
 html[data-theme="light"] main :where(article, aside, form, section, div) :where(a, button) span {
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid #4285f4;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Icon boxes keep their soft accent fills, without raised shadows. */

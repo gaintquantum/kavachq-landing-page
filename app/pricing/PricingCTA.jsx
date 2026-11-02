@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function PricingCTA() {
   return (
-    <section className="bg-[#03131e]! text-[#ffffff]!">
+    <section className="pricing-dark-section bg-[#03131e]! text-[#ffffff]!">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-5 px-6 py-5 lg:px-10">
         <ShieldCheck className="shrink-0 text-blue-500" size={48} />
         <div className="min-w-0 flex-1">

@@ -1,6 +1,6 @@
 export default function PricingHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#02111c]! text-[#ffffff]!">
+    <section className="pricing-dark-section relative isolate overflow-hidden bg-[#02111c]! text-[#ffffff]!">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[70%] bg-[url('/pricing-globe.png')] bg-size-[auto_310px] bg-position-right-top bg-no-repeat opacity-60 sm:w-[62%] sm:opacity-100 lg:right-24 lg:w-[52%]"
@@ -20,7 +20,7 @@ export default function PricingHero() {
             Quantum-safe your
             <br />
             organization{" "}
-            <span className="text-[32px]! font-bold! text-[#338bec]! sm:text-[42px]!">
+            <span className="pricing-accent text-[32px]! font-bold! text-[#338bec]! sm:text-[42px]!">
               today.
             </span>
           </h1>

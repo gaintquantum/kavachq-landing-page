@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import KavachQLogo3D from "@/components/KavachQLogo3d";
-import Shield3D from "./Shield3D";
 import QuantumBackground from "./QuantumBackground";
 
 export default function Hero() {
@@ -34,87 +33,74 @@ export default function Hero() {
       ref={heroRef}
       onPointerMove={handlePointerMove}
       onPointerLeave={resetPointer}
-      style={{
-        "--mouse-x": "65%",
-        "--mouse-y": "45%",
-        background:
-          "radial-gradient(circle at var(--mouse-x, 65%) var(--mouse-y, 45%), rgba(219, 242, 255, 0.38), transparent 22%), radial-gradient(circle at 65% 40%, rgba(25, 216, 242, 0.16), transparent 30%), linear-gradient(112deg, #21507c 0%, #1d5f86 48%, #234a78 100%)",
-      }}
-      className="relative min-h-screen overflow-hidden pt-24 text-[#f5fbff] sm:pt-28 lg:pt-24"
+      style={{ "--mouse-x": "65%", "--mouse-y": "45%" }}
+      className="enterprise-hero relative min-h-screen overflow-hidden bg-white pt-24 text-slate-950 sm:pt-28 lg:pt-24"
     >
       <QuantumBackground mouseRef={mouseRef} />
 
-      {/* Background glow */}
-      <div className="absolute left-[-40%] top-[18%] z-1 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl sm:left-[-20%] sm:h-96 sm:w-96 lg:left-[-10%] lg:h-105 lg:w-105" />
-      <div className="absolute right-[-40%] top-[8%] z-1 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl sm:right-[-20%] sm:h-96 sm:w-96 lg:right-[-10%] lg:h-105 lg:w-105" />
-
       {/* Grid background */}
-      <div className="hero-grid absolute inset-0 z-1 opacity-20 sm:opacity-30" />
+      <div className="hero-grid absolute inset-0 z-1 opacity-35" />
 
       <div className="relative z-10 mx-auto max-w-[112rem] px-5 sm:px-8 lg:px-12 xl:px-16">
-        <div className="grid min-h-[calc(100vh-96px)] items-center gap-10 py-10 sm:py-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8 lg:py-0">
+        <div className="grid min-h-[calc(100vh-96px)] items-center gap-8 pb-24 pt-8 sm:pb-16 sm:pt-10 lg:grid-cols-[48fr_52fr] lg:gap-6 lg:py-0">
           {/* Left Content */}
-          <div className="relative z-30 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-3 -inset-y-5 -z-10 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_center,rgba(16,47,76,0.56),rgba(16,47,76,0.16)_65%,transparent_82%)] sm:-inset-x-10 sm:-inset-y-8 lg:bg-[radial-gradient(ellipse_at_35%_48%,rgba(16,47,76,0.56),rgba(16,47,76,0.2)_48%,transparent_74%)]"
-            />
-            <div className="mb-5 flex flex-wrap items-center justify-center gap-2 sm:mb-6 lg:justify-start">
-              <div className="inline-flex mt-2 items-center rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:px-4">
-                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
+          <div className="relative z-30 mx-auto max-w-[43rem] text-center lg:mx-0 lg:text-left">
+            <div className="mb-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50/90 px-3 py-1.5 sm:px-4">
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-blue-700 sm:text-xs sm:tracking-[0.2em]">
                   🛡️ ISO/IEC 27001:2022
                 </span>
               </div>
 
-              <div className="inline-flex max-w-full mt-2 items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 sm:px-4">
-                <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.9)]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-200 sm:text-xs sm:tracking-[0.22em]">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50/90 px-3 py-1.5 sm:px-4">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-800 sm:text-xs sm:tracking-[0.2em]">
                   GAINT · National PQC Platform · 2026
                 </span>
               </div>
             </div>
-            <div className="mb-5 flex justify-center sm:mb-6 lg:justify-start">
+            <div className="mb-3 flex justify-center sm:mb-4 lg:justify-start">
               <KavachQLogo3D />
             </div>
             <h1
               style={{
                 fontFamily: '"Michroma", Futura, "Trebuchet MS", sans-serif',
               }}
-              className="text-xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl"
+              className="hero-headline text-balance text-[clamp(2.25rem,4.4vw,4.9rem)] leading-[1.06] tracking-[-0.045em] text-slate-950"
             >
               Secure Your
               <br />
               Enterprise For
               <br />
               The{" "}
-              <span className="mt-2 inline-block text-6xl rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2 py-1 text-cyan-100 shadow-[0_0_32px_rgba(34,211,238,0.22)] sm:px-3">
+              <span className="mt-1 inline-block text-[#1677a8]">
                 Quantum Era
               </span>
             </h1>
 
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#c5d9e8] sm:mt-6 sm:text-lg sm:leading-8 lg:mx-0">
+            <p className="mx-auto mt-5 max-w-[40rem] text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:mx-0">
               KAVACH-Q discovers vulnerable cryptography, calculates Quantum
               Vulnerability Scores, and helps enterprises migrate to
               post-quantum-safe algorithms with audit-ready compliance.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
               <a
                 href="https://kavachq.com"
-                className="visit-kavachq-button rounded-xl bg-[#4285F4] px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-1 hover:bg-[#3574db]"
+                className="visit-kavachq-button inline-flex h-12 items-center justify-center rounded-xl bg-[#4285F4] px-6 text-center font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#2f6fda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 motion-reduce:transform-none"
               >
                 Visit KAVACH-Q
               </a>
 
               <a
                 href="/faqs"
-                className="learn-kavachq-button rounded-xl border border-white/15 px-6 py-3 text-center font-semibold text-[#4285F4] transition hover:-translate-y-1 hover:border-[#4285F4] hover:text-[#3574db]"
+                className="learn-kavachq-button inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 text-center font-bold text-[#2563eb] transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 motion-reduce:transform-none"
               >
                 Learn About Kavach-Q
               </a>
             </div>
 
-            <div className="mx-auto mb-2 mt-2 grid max-w-md grid-cols-1 gap-2 sm:mt-10 sm:gap-3 lg:mx-0 lg:max-w-sm">
+            <div className="mx-auto mt-6 flex max-w-[42rem] flex-wrap justify-center gap-2 lg:mx-0 lg:justify-start">
               <TrustChip text="CERT-IN Aligned" />
               <TrustChip text="RBI Framework" />
               <TrustChip text="ISO 27001:2022" />
@@ -123,10 +109,8 @@ export default function Hero() {
           </div>
 
           {/* Right Animation */}
-          <div className="relative z-20 flex min-w-0 justify-center lg:justify-end">
-            <div className="relative z-20 flex min-w-0 w-full max-w-2xl items-center justify-center py-10">
-              {/* <Shield3D /> */}
-            </div>
+          <div className="relative z-20 hidden min-h-[36rem] min-w-0 lg:block" aria-hidden="true">
+            <div className="absolute inset-8 rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(145deg,rgba(239,246,255,0.62),rgba(236,254,255,0.24),transparent)]" />
           </div>
         </div>
       </div>
@@ -136,8 +120,8 @@ export default function Hero() {
 
 function TrustChip({ text }) {
   return (
-    <div className="flex min-h-8 items-center justify-center gap-1.5 rounded-md border border-cyan-400/15 bg-cyan-400/5 px-2 py-1.5 text-center text-[8px] uppercase tracking-[0.08em] text-[#c5d9e8] sm:min-h-0 sm:gap-2 sm:px-3 sm:py-2 sm:text-xs sm:tracking-[0.16em] lg:justify-start lg:text-left">
-      <span className="grid h-4 w-4 shrink-0 place-items-center text-emerald-400 sm:h-5 sm:w-5">
+    <div className="inline-flex min-h-9 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-[0.1em] text-slate-700 sm:text-xs sm:tracking-[0.12em]">
+      <span className="grid h-4 w-4 shrink-0 place-items-center text-emerald-600">
         <svg
           viewBox="0 0 24 24"
           className="h-full w-full"

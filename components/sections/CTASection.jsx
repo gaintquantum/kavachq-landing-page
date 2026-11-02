@@ -36,12 +36,6 @@ Regards,`);
       id="cta"
       className="relative scroll-mt-20 overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
     >
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-position-[44px_44px]" />
-
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.18),transparent_34%),radial-gradient(circle_at_12%_80%,rgba(16,185,129,0.1),transparent_28%)]" />
-
       {/* Top Accent */}
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/40 to-transparent" />
 
@@ -86,7 +80,7 @@ Regards,`);
                 {/* Primary CTA */}
                 <a
                   href={demoRequestHref}
-                  className="group inline-flex items-center justify-center rounded-full bg-[#4285F4] px-8 py-4 text-sm font-black text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
+                  className="group inline-flex h-12 items-center justify-center rounded-xl bg-[#4285F4] px-6 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#2f6fda] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 motion-reduce:transform-none"
                 >
                   Request a Demo
 
@@ -98,7 +92,7 @@ Regards,`);
                 {/* Lower-Friction CTA */}
                 <a
                   href="#sample-report"
-                  className="group inline-flex items-center justify-center rounded-full border border-cyan-200/25 bg-white/5 px-8 py-4 text-sm font-bold text-white transition-all duration-300 hover:border-cyan-200/45 hover:bg-cyan-300/10"
+                  className="group inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-bold text-blue-700 transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 motion-reduce:transform-none"
                 >
                   View Sample Report
 
@@ -110,7 +104,7 @@ Regards,`);
                 {/* Deployment CTA */}
                 <a
                   href="#deployment"
-                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/3 px-8 py-4 text-sm font-bold text-slate-300 transition-all duration-300 hover:border-cyan-200/30 hover:bg-white/5 hover:text-white"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 motion-reduce:transform-none"
                 >
                   View Deployment Flow
                 </a>

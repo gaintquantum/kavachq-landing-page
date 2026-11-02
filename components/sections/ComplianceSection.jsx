@@ -77,8 +77,6 @@ export default function ComplianceSection() {
       id="compliance"
       className="relative scroll-mt-20 overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-position-[44px_44px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,211,238,0.12),transparent_30%),radial-gradient(circle_at_88%_12%,rgba(16,185,129,0.1),transparent_28%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/45 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/25 to-transparent" />
 

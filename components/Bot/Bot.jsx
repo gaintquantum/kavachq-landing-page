@@ -63,29 +63,36 @@ export default function Bot() {
           title="KAVACH-Q Assistant"
           className="
             fixed
-            bottom-6
-            right-6
+            bottom-[max(1rem,env(safe-area-inset-bottom))]
+            right-[max(1rem,env(safe-area-inset-right))]
             z-50
             flex
-            h-15
-            w-15
+            h-12
+            w-12
             items-center
             justify-center
-            rounded-full
+            rounded-2xl
             border
-            border-cyan-300/30
-            bg-linear-to-br
-            from-[#055085]
-            to-[#17a0ca]
+            border-blue-300/40
+            bg-[#0f2f55]
             text-white
-            shadow-[0_10px_35px_rgba(5,80,133,0.38)]
+            shadow-[0_10px_30px_rgba(15,23,42,0.18)]
             transition-all
             duration-300
             hover:-translate-y-1
-            hover:scale-105
+            hover:border-blue-300
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-[#4285F4]
+            focus-visible:ring-offset-2
+            motion-reduce:transform-none
+            sm:bottom-[max(1.5rem,env(safe-area-inset-bottom))]
+            sm:right-[max(1.5rem,env(safe-area-inset-right))]
+            sm:h-15
+            sm:w-15
           "
         >
-          <Image src={Logo} alt="KAVACH-Q Logo" className="h-10 w-10" />
+          <Image src={Logo} alt="KAVACH-Q Logo" className="h-8 w-8 sm:h-10 sm:w-10" />
 
           {/* Online indicator */}
           <span

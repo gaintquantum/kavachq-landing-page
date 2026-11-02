@@ -65,7 +65,7 @@ export default function AutomationStages() {
   return (
     <section
       id="pipeline"
-      className="relative isolate overflow-hidden bg-[#1f4a75] px-5 py-24 text-white sm:px-6 lg:px-8 lg:py-32"
+      className="relative isolate overflow-hidden bg-[#1f4a75] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24 xl:px-16"
     >
       {/* Top wave */}
       <div
@@ -126,9 +126,9 @@ export default function AutomationStages() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/60 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/35 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="relative z-10 mx-auto w-full max-w-[112rem]">
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <div
             className="
               inline-flex items-center gap-2 rounded-full
@@ -146,7 +146,7 @@ export default function AutomationStages() {
             </p>
           </div>
 
-          <h2 className="mt-6 text-3xl font-normal leading-tight tracking-wider text-white md:text-5xl lg:text-6xl">
+          <h2 className="mt-5 text-3xl font-normal leading-[1.08] tracking-wide text-white md:text-5xl lg:text-[3.5rem]">
             <span className="block mb-2 bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
               Six <span className="text-white">Stages</span>
             </span>
@@ -166,14 +166,14 @@ export default function AutomationStages() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
             Each stage automatically hands off to the next—from discovery and
             prioritisation to secure migration and compliance evidence.
           </p>
         </div>
 
         {/* Stage cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
           {stages.map((stage, index) => (
             <StageCard
               key={stage.no}
@@ -194,16 +194,15 @@ function StageCard({ stage, isLast }) {
   return (
     <article
       className="
-        group relative isolate flex min-h-97.5 overflow-hidden rounded-3xl
+        group relative isolate flex min-h-[22rem] overflow-hidden rounded-3xl
         border border-white/14
         bg-linear-to-br from-white/14 via-[#173f68]/75 to-[#0a2949]/95
-        p-6
+        p-6 lg:p-7
         shadow-[0_22px_65px_rgba(2,12,30,0.28)]
         backdrop-blur-xl
         transition-all duration-500 ease-out
         hover:-translate-y-2 hover:border-cyan-100/35
         hover:shadow-[0_30px_90px_rgba(34,211,238,0.16)]
-        sm:p-7
       "
     >
       {/* Individual card glow */}
@@ -286,13 +285,15 @@ function StageCard({ stage, isLast }) {
           </span>
         </div>
 
-        <h3 className="mt-7 text-3xl font-black tracking-tight text-white">
+        <h3 className="mt-6 text-2xl font-black tracking-tight text-white 2xl:text-3xl">
           {stage.title}
         </h3>
 
-        <p className="mt-4 text-sm leading-7 text-white/70">{stage.desc}</p>
+        <p className="mt-3 text-sm leading-6 text-white/70 2xl:leading-7">
+          {stage.desc}
+        </p>
 
-        <div className="mt-auto flex items-end justify-between gap-4 pt-7">
+        <div className="mt-auto flex items-end justify-between gap-4 pt-6">
           <div
             className={`
               inline-flex max-w-[85%] rounded-full border
