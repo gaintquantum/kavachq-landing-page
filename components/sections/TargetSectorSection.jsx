@@ -149,7 +149,7 @@ function getTone(tone) {
       badge: "border-cyan-300/25 bg-cyan-300/10 text-cyan-100",
       check: "text-cyan-200",
       glow: "bg-cyan-300/18",
-      card: "border-cyan-300/20 bg-cyan-400/10 hover:border-cyan-200/35 hover:bg-cyan-400/15",
+      card: "border-cyan-300/20 bg-white hover:border-cyan-200/35 hover:bg-white",
     },
     amber: {
       bar: "bg-amber-300",
@@ -158,7 +158,7 @@ function getTone(tone) {
       badge: "border-amber-300/25 bg-amber-300/10 text-amber-100",
       check: "text-amber-200",
       glow: "bg-amber-300/16",
-      card: "border-amber-300/20 bg-amber-400/10 hover:border-amber-200/35 hover:bg-amber-400/15",
+      card: "border-amber-300/20 bg-white hover:border-amber-200/35 hover:bg-white",
     },
     rose: {
       bar: "bg-rose-300",
@@ -167,7 +167,7 @@ function getTone(tone) {
       badge: "border-rose-300/25 bg-rose-300/10 text-rose-100",
       check: "text-rose-200",
       glow: "bg-rose-300/16",
-      card: "border-rose-300/20 bg-rose-400/10 hover:border-rose-200/35 hover:bg-rose-400/15",
+      card: "border-rose-300/20 bg-white hover:border-rose-200/35 hover:bg-white",
     },
   };
 

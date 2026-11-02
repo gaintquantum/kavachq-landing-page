@@ -62,7 +62,7 @@ export default function QueueSection() {
             Secure Processing Pipeline
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-cyan-50/75">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-black">
             The operational backbone of KAVACH-Q—enabling scalable security
             assessments, real-time progress visibility, automatic recovery,
             and compliance-ready audit traceability.
@@ -106,11 +106,11 @@ export default function QueueSection() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {metrics.map((metric, index) => (
               <div key={metric.label} className="relative text-center">
-                <div className="text-3xl font-black text-cyan-300 md:text-4xl">
+                <div className="text-3xl font-black text-black md:text-4xl">
                   {metric.value}
                 </div>
 
-                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-50/60">
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-black">
                   {metric.label}
                 </div>
 

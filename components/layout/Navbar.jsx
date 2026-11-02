@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navItems = [
   ["Pipeline", "/#pipeline"],
@@ -16,20 +15,6 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [contrastTheme, setContrastTheme] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("kavachq-theme");
-    const useLightTheme = savedTheme === "light";
-    setContrastTheme(useLightTheme);
-    document.documentElement.dataset.theme = useLightTheme ? "light" : "blue";
-  }, []);
-
-  const changeTheme = (enabled) => {
-    setContrastTheme(enabled);
-    document.documentElement.dataset.theme = enabled ? "light" : "blue";
-    window.localStorage.setItem("kavachq-theme", enabled ? "light" : "blue");
-  };
 
   const demoRequestBody = encodeURIComponent(`Dear KAVACH-Q Team,
 
@@ -59,8 +44,8 @@ Regards,`);
 
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-3 sm:px-4">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex h-16 items-center justify-between rounded-full border border-cyan-400/20 bg-linear-to-r from-[#055085] via-[#17a0ca] to-[#055085] px-4 shadow-[0_0_40px_rgba(6,182,212,0.12)] backdrop-blur-2xl lg:h-20 lg:px-8">
+      <div className="mx-auto max-w-[112rem]">
+        <div className="flex h-16 items-center justify-between rounded-full border border-cyan-700/15 bg-white/95 px-4 shadow-[0_12px_36px_rgba(8,145,178,0.1)] backdrop-blur-2xl lg:h-20 lg:px-8">
           <div className="flex min-w-0 items-center gap-8 xl:gap-10">
             {/* Logo */}
             <Link
@@ -77,7 +62,7 @@ Regards,`);
 
             {/* Desktop Menu */}
 
-            <nav className="hidden items-center rounded-full border border-white/10 bg-white/8 p-1.5 shadow-inner backdrop-blur-md lg:flex">
+            <nav className="hidden items-center rounded-full border border-[#4285F4] bg-[#4285F4] p-1.5 lg:flex">
               {navItems.map(([label, href]) => (
                 <Link
                   key={label}
@@ -86,11 +71,10 @@ Regards,`);
         rounded-full
         px-4 py-2
         text-sm font-medium
-        text-white/80
+        text-white
         transition-all duration-300
-        hover:bg-white/12
-        hover:text-white
-        hover:shadow-[0_0_16px_rgba(34,211,238,0.18)]
+        hover:bg-white
+        hover:text-black
         xl:px-5
       "
                 >
@@ -101,12 +85,10 @@ Regards,`);
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <ThemeToggle checked={contrastTheme} onChange={changeTheme} />
-
             {/* Desktop Button */}
             <a
               href={demoRequestHref}
-              className="hidden rounded-full border border-cyan-500/30 bg-cyan-500 px-5 py-2 text-sm font-medium text-white transition hover:bg-cyan-600 lg:block"
+              className="hidden rounded-full border border-[#4285F4] bg-[#4285F4] px-5 py-2 text-sm font-medium text-white transition hover:border-[#3574db] hover:bg-[#3574db] lg:block"
             >
               Request Demo
             </a>
@@ -119,7 +101,7 @@ Regards,`);
               }
               aria-expanded={open}
               onClick={() => setOpen(!open)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-cyan-200/60 hover:text-cyan-100 lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cyan-700/20 text-cyan-800 transition hover:border-cyan-600 hover:bg-cyan-50 lg:hidden"
             >
               {open ? <X size={26} /> : <Menu size={26} />}
             </button>
@@ -128,14 +110,14 @@ Regards,`);
 
         {/* Mobile Drawer */}
         {open && (
-          <div className="mt-3 rounded-3xl border border-cyan-400/20 bg-[#072d4d]/95 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:hidden">
+          <div className="mt-3 rounded-3xl border border-cyan-700/15 bg-white/98 p-6 shadow-[0_24px_70px_rgba(8,145,178,0.12)] backdrop-blur-xl lg:hidden">
             <nav className="flex flex-col gap-5">
               {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-slate-200 transition hover:text-cyan-300"
+                  className="text-sm font-medium text-slate-700 transition hover:text-cyan-700"
                 >
                   {label}
                 </Link>
@@ -144,7 +126,7 @@ Regards,`);
               <a
                 href={demoRequestHref}
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-cyan-500 px-5 py-3 text-center text-sm font-medium text-white transition hover:bg-cyan-400 hover:text-slate-950"
+                className="mt-2 rounded-full border border-[#4285F4] bg-[#4285F4] px-5 py-3 text-center text-sm font-medium text-white transition hover:border-[#3574db] hover:bg-[#3574db]"
               >
                 Request Demo
               </a>

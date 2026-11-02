@@ -33,7 +33,7 @@ const addons = [
 
 export default function ComplianceAddons() {
   return (
-    <section className="rounded-2xl border border-violet-200 bg-[#f3edff]! p-5 shadow-sm sm:p-6">
+    <section className="rounded-2xl border border-violet-200 bg-white! p-5 shadow-sm sm:p-6">
       <div className="flex items-start gap-3">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#e5d9fb] text-violet-700">
           <ShieldCheck className="h-7 w-7" />

@@ -86,7 +86,7 @@ Regards,`);
                 {/* Primary CTA */}
                 <a
                   href={demoRequestHref}
-                  className="group inline-flex items-center justify-center rounded-full bg-cyan-300 px-8 py-4 text-sm font-black text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
+                  className="group inline-flex items-center justify-center rounded-full bg-[#4285F4] px-8 py-4 text-sm font-black text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
                 >
                   Request a Demo
 

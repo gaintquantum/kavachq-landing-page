@@ -87,7 +87,7 @@ export default function ScannerModules() {
         </p>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-cyan-300/30 bg-cyan-400/10 p-8 backdrop-blur-xl">
+          <div className="rounded-3xl border border-cyan-300/30 bg-white p-8">
             <h3 className="text-xl font-bold text-cyan-200">Discover</h3>
 
             <p className="mt-4 text-white/75">
@@ -96,7 +96,7 @@ export default function ScannerModules() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-amber-300/30 bg-amber-400/10 p-8 backdrop-blur-xl">
+          <div className="rounded-3xl border border-amber-300/30 bg-white p-8">
             <h3 className="text-xl font-bold text-amber-100">Assess</h3>
 
             <p className="mt-4 text-white/75">
@@ -105,7 +105,7 @@ export default function ScannerModules() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-emerald-300/30 bg-emerald-400/10 p-8 backdrop-blur-xl">
+          <div className="rounded-3xl border border-emerald-300/30 bg-white p-8">
             <h3 className="text-xl font-bold text-emerald-100">Prepare</h3>
 
             <p className="mt-4 text-white/75">

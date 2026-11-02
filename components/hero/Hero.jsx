@@ -51,8 +51,8 @@ export default function Hero() {
       {/* Grid background */}
       <div className="hero-grid absolute inset-0 z-1 opacity-20 sm:opacity-30" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid min-h-[calc(100vh-96px)] items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1fr_0.9fr] lg:gap-8 lg:py-0">
+      <div className="relative z-10 mx-auto max-w-[112rem] px-5 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid min-h-[calc(100vh-96px)] items-center gap-10 py-10 sm:py-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8 lg:py-0">
           {/* Left Content */}
           <div className="relative z-30 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
             <div
@@ -101,14 +101,14 @@ export default function Hero() {
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
               <a
                 href="https://kavachq.com"
-                className="rounded-xl bg-cyan-500 px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950"
+                className="visit-kavachq-button rounded-xl bg-[#4285F4] px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-1 hover:bg-[#3574db]"
               >
                 Visit KAVACH-Q
               </a>
 
               <a
                 href="/faqs"
-                className="rounded-xl border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300"
+                className="learn-kavachq-button rounded-xl border border-white/15 px-6 py-3 text-center font-semibold text-[#4285F4] transition hover:-translate-y-1 hover:border-[#4285F4] hover:text-[#3574db]"
               >
                 Learn About Kavach-Q
               </a>

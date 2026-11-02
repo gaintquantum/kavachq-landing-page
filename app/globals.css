@@ -205,7 +205,7 @@ html[data-theme="light"] main [class*="border-white"] {
 html[data-theme="light"] .glass,
 html[data-theme="light"] .status-card,
 html[data-theme="light"] .metrics-bar {
-  background: rgba(248, 250, 252, 0.92) !important;
+  background: #ffffff !important;
   border-color: rgba(8, 145, 178, 0.18) !important;
   color: #1e293b !important;
 }
@@ -223,15 +223,26 @@ html[data-theme="light"] section [class*="bg-[radial-gradient(ellipse"] {
 /* Pipeline cards use gradient stops, so give them an explicit light surface. */
 html[data-theme="light"] #pipeline article {
   --tw-gradient-from: #ffffff !important;
-  --tw-gradient-via: #f8fafc !important;
-  --tw-gradient-to: #e2e8f0 !important;
+  --tw-gradient-via: #ffffff !important;
+  --tw-gradient-to: #ffffff !important;
+  background: #ffffff !important;
   border-color: rgba(8, 145, 178, 0.22) !important;
   box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] #pipeline article :where(h3, p, span, small) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 html[data-theme="light"] #pipeline article:hover {
   border-color: rgba(8, 145, 178, 0.42) !important;
   box-shadow: 0 24px 60px rgba(8, 145, 178, 0.16) !important;
+}
+
+html[data-theme="light"] #pipeline article :where([class*="text-7xl"], [class*="tracking-widest"]) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 html[data-theme="light"] #pipeline article [class*="text-7xl"] {
@@ -902,3 +913,124 @@ html[data-theme="light"] section [class*="bg-emerald-400/10"] {
     padding: 0.85rem;
   }
 }
+
+/* White canvas with consistently black editorial text. */
+html[data-theme="light"] :where(main, footer) :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  label,
+  small,
+  strong,
+  dt,
+  dd,
+  code,
+  span
+) {
+  color: #000000 !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html[data-theme="light"] :where(a, button) span {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html[data-theme="light"] .visit-kavachq-button {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .learn-kavachq-button {
+  color: #4285f4 !important;
+}
+
+html[data-theme="light"] .learn-kavachq-button:hover {
+  color: #3574db !important;
+}
+
+/* Keep every structural card on a clean white surface. */
+html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, form, section, div:not([class*="items-center"][class*="justify-center"])):is(
+  [class*="rounded-lg"],
+  [class*="rounded-xl"],
+  [class*="rounded-2xl"],
+  [class*="rounded-3xl"],
+  [class*="rounded-4xl"]
+) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+}
+
+html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, form, section, div:not([class*="items-center"][class*="justify-center"])):is(
+  [class*="rounded-lg"],
+  [class*="rounded-xl"],
+  [class*="rounded-2xl"],
+  [class*="rounded-3xl"],
+  [class*="rounded-4xl"]
+) :where(h1, h2, h3, h4, h5, h6, p, li, small, strong, span) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+html[data-theme="light"] main :where(article, aside, form, section, div) :where(a, button) span {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Icon boxes keep their soft accent fills, without raised shadows. */
+html[data-theme="light"] body main div[class*="items-center"][class*="justify-center"]:is(
+  [class*="rounded-lg"],
+  [class*="rounded-xl"],
+  [class*="rounded-2xl"]
+) {
+  box-shadow: none !important;
+}
+
+/* Pricing plans use a high-contrast dark treatment. */
+html[data-theme="light"] body main article.pricing-plan-card {
+  background: #000000 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] body main article.pricing-plan-card .pricing-card-header {
+  background: #000000 !important;
+  background-image: none !important;
+}
+
+html[data-theme="light"] body main article.pricing-plan-card :where(h3, p, span, small, strong, li) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="light"] body main article.pricing-plan-card > div[class*="border-b"] {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] body main article.pricing-plan-card a {
+  color: #ffffff !important;
+}
+
+/* ID-scoped pricing rules intentionally outrank the global white-card theme. */
+html[data-theme="light"] body main #pricing-plans article.pricing-plan-card {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] body main #pricing-plans article.pricing-plan-card .pricing-card-header {
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+html[data-theme="light"] body main #pricing-plans article.pricing-plan-card :is(h3, p, span, small, strong, li, a) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+

@@ -104,8 +104,8 @@ function StepCard({ step }) {
             <Icon className={`h-7 w-7 ${tone.icon}`} strokeWidth={1.8} />
           </div>
 
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200/25 bg-[#1f4a75] text-sm font-black text-cyan-100 shadow-[0_0_0_8px_rgba(31,74,117,0.95)]">
-            {step.no}
+          <div className="rounded-full border border-[#4285F4]/30 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#4285F4] shadow-sm">
+            Step {step.no}
           </div>
         </div>
 
@@ -126,22 +126,22 @@ function getTone(tone) {
     cyan: {
       icon: "text-cyan-200",
       iconBox: "border-cyan-300/35 bg-cyan-300/15 shadow-cyan-300/20",
-      card: "border-cyan-300/20 bg-cyan-400/10 hover:border-cyan-200/35 hover:bg-cyan-400/15",
+      card: "border-cyan-300/20 bg-white hover:border-cyan-200/35 hover:bg-white",
     },
     emerald: {
       icon: "text-emerald-200",
       iconBox: "border-emerald-300/35 bg-emerald-300/15 shadow-emerald-300/20",
-      card: "border-emerald-300/20 bg-emerald-400/10 hover:border-emerald-200/35 hover:bg-emerald-400/15",
+      card: "border-emerald-300/20 bg-white hover:border-emerald-200/35 hover:bg-white",
     },
     violet: {
       icon: "text-violet-200",
       iconBox: "border-violet-300/35 bg-violet-300/15 shadow-violet-300/20",
-      card: "border-violet-300/20 bg-violet-400/10 hover:border-violet-200/35 hover:bg-violet-400/15",
+      card: "border-violet-300/20 bg-white hover:border-violet-200/35 hover:bg-white",
     },
     amber: {
       icon: "text-amber-200",
       iconBox: "border-amber-300/35 bg-amber-300/15 shadow-amber-300/20",
-      card: "border-amber-300/20 bg-amber-400/10 hover:border-amber-200/35 hover:bg-amber-400/15",
+      card: "border-amber-300/20 bg-white hover:border-amber-200/35 hover:bg-white",
     },
   };
 

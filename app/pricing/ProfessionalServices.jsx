@@ -16,7 +16,7 @@ const services = [
 
 export default function ProfessionalServices() {
   return (
-    <section className="rounded-2xl border border-sky-200 bg-[#edf6ff]! p-5 shadow-sm sm:p-6">
+    <section className="rounded-2xl border border-sky-200 bg-white! p-5 shadow-sm sm:p-6">
       <div className="flex items-start gap-3">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9ebff] text-blue-600">
           <Settings className="h-7 w-7" />

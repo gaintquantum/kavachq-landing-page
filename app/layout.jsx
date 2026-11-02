@@ -13,14 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{document.documentElement.dataset.theme=localStorage.getItem("kavachq-theme")==="light"?"light":"blue"}catch(e){document.documentElement.dataset.theme="blue"}`,
-          }}
-        />
-      </head>
+    <html lang="en" data-theme="light">
       <body>
         {children}
         <SiteChrome />

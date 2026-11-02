@@ -6,6 +6,7 @@ import * as THREE from "three";
 
 const CYAN = new THREE.Color("#19d8f2");
 const LIGHT_CYAN = new THREE.Color("#7fefff");
+const BRAND_BLUE = new THREE.Color("#4285f4");
 const SAFE_GREEN = new THREE.Color("#63f3b1");
 const RISK_ORANGE = new THREE.Color("#ff7849");
 
@@ -52,7 +53,7 @@ function circlePoints(radius, y = 0, axis = "y") {
   });
 }
 
-function Ring({ points, opacity = 0.25 }) {
+function Ring({ points, opacity = 0.25, color = LIGHT_CYAN }) {
   const geometry = useMemo(
     () => new THREE.BufferGeometry().setFromPoints(points),
     [points]
@@ -63,7 +64,7 @@ function Ring({ points, opacity = 0.25 }) {
   return (
     <lineLoop geometry={geometry}>
       <lineBasicMaterial
-        color={LIGHT_CYAN}
+        color={color}
         transparent
         opacity={opacity}
         blending={THREE.AdditiveBlending}
@@ -333,16 +334,16 @@ function ShieldTrace({ mobile, reduced }) {
           ? [0, 0.15, -2.5]
           : [2.1, 0.25, -2.4]
       }
-      scale={mobile ? 1.35 : 1.75}
+      scale={mobile ? 1.25 : 1.5}
     >
       {/* Soft glow behind shield */}
-      <mesh position={[0, 0, -0.22]} scale={1.3}>
+      <mesh position={[0, 0, -0.22]} scale={1.18}>
         <circleGeometry args={[1.45, 48]} />
 
         <meshBasicMaterial
-          color={CYAN}
+          color={BRAND_BLUE}
           transparent
-          opacity={0.055}
+          opacity={0.018}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
@@ -353,9 +354,9 @@ function ShieldTrace({ mobile, reduced }) {
         <shapeGeometry args={[shieldShape]} />
 
         <meshBasicMaterial
-          color="#0a5c7c"
+          color={BRAND_BLUE}
           transparent
-          opacity={0.16}
+          opacity={0.025}
           side={THREE.DoubleSide}
           depthWrite={false}
         />
@@ -365,21 +366,24 @@ function ShieldTrace({ mobile, reduced }) {
       <group scale={1.025}>
         <Ring
           points={shieldPoints}
-          opacity={0.16}
+          opacity={0.08}
+          color={BRAND_BLUE}
         />
       </group>
 
       {/* Main bright shield border */}
       <Ring
         points={shieldPoints}
-        opacity={0.82}
+        opacity={0.48}
+        color={BRAND_BLUE}
       />
 
       {/* Inner shield border */}
       <group scale={0.82}>
         <Ring
           points={shieldPoints}
-          opacity={0.28}
+          opacity={0.16}
+          color={BRAND_BLUE}
         />
       </group>
 
@@ -394,9 +398,9 @@ function ShieldTrace({ mobile, reduced }) {
           />
 
           <meshBasicMaterial
-            color={LIGHT_CYAN}
+            color={BRAND_BLUE}
             transparent
-            opacity={0.5}
+            opacity={0.3}
             side={THREE.DoubleSide}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
@@ -409,9 +413,9 @@ function ShieldTrace({ mobile, reduced }) {
           />
 
           <meshBasicMaterial
-            color={CYAN}
+            color={BRAND_BLUE}
             transparent
-            opacity={0.22}
+            opacity={0.14}
             side={THREE.DoubleSide}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
@@ -428,9 +432,9 @@ function ShieldTrace({ mobile, reduced }) {
           <circleGeometry args={[0.3, 48]} />
 
           <meshBasicMaterial
-            color="#073f60"
+            color={BRAND_BLUE}
             transparent
-            opacity={0.9}
+            opacity={0.86}
           />
         </mesh>
 
@@ -440,7 +444,7 @@ function ShieldTrace({ mobile, reduced }) {
           />
 
           <meshBasicMaterial
-            color={LIGHT_CYAN}
+            color={BRAND_BLUE}
             transparent
             opacity={0.95}
             side={THREE.DoubleSide}
@@ -591,7 +595,7 @@ export default function QuantumBackground({ mouseRef }) {
       className="pointer-events-none absolute inset-x-0 top-0 z-0 h-svh overflow-hidden contain-strict md:h-full"
       aria-hidden="true"
     >
-      <div className="absolute left-[70%] top-[36%] aspect-square w-136 max-w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(245,251,255,0.18),rgba(25,216,242,0.09)_28%,transparent_67%)] opacity-[0.65] blur-[18px] md:left-[68%] md:top-[43%] md:w-[min(54vw,48rem)] md:opacity-100" />
+      <div className="absolute left-[70%] top-[36%] aspect-square w-136 max-w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(66,133,244,0.055),rgba(66,133,244,0.025)_30%,transparent_68%)] opacity-40 blur-[22px] md:left-[68%] md:top-[43%] md:w-[min(50vw,44rem)] md:opacity-55" />
       {webgl ? (
         <Canvas
           className="opacity-70 md:opacity-95"
