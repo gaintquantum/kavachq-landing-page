@@ -7,6 +7,8 @@ import {
   ScanSearch,
   ShieldCheck,
 } from "lucide-react";
+import { SectionHeader } from "@/components/ui/Section";
+import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
 export default function DeploymentSection() {
   const steps = [
@@ -47,38 +49,20 @@ export default function DeploymentSection() {
   return (
     <section
       id="deployment"
-      className="relative scroll-mt-20 overflow-hidden bg-[#1f4a75] px-6 py-24 text-white"
+      aria-labelledby="deployment-heading" data-native
+      className="relative scroll-mt-24 overflow-hidden px-4 py-16 text-ink sm:px-8 lg:px-10 lg:py-20"
     >
-      <div className="relative mx-auto max-w-7xl">
-        <div className="max-w-3xl">
-          <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-cyan-200">
-            <span className="h-px w-6 bg-cyan-300" />
-            Secure Deployment
-          </div>
+      <div className="relative mx-auto w-full max-w-7xl">
+        <SectionHeader align="left" eyebrow="Secure Deployment" id="deployment-heading" title="Built for private" accent="national-scale rollout."
+          description="KAVACH-Q is deployed as a controlled platform for government and regulated institutions: tenant isolation, SSO, data residency, scoped asset discovery, QVS scoring, migration controls, and audit-ready compliance evidence." />
+        <div className="relative mt-10">
+          <div className="absolute left-0 right-0 top-11 hidden h-px border-t-2 border-dashed border-cyan-200 shadow-[0_0_22px_rgba(103,232,249,0.22)] xl:block" />
 
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
-            Built for private
-            <span className="block bg-linear-to-r from-cyan-200 via-sky-300 to-emerald-200 bg-clip-text text-transparent">
-              national-scale rollout.
-            </span>
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-white/78">
-            KAVACH-Q is deployed as a controlled platform for government and
-            regulated institutions: tenant isolation, SSO, data residency,
-            scoped asset discovery, QVS scoring, migration controls, and
-            audit-ready compliance evidence.
-          </p>
-        </div>
-
-        <div className="relative mt-16">
-          <div className="absolute left-0 right-0 top-11 hidden h-px border-t-2 border-dashed border-cyan-100/50 shadow-[0_0_22px_rgba(103,232,249,0.22)] xl:block" />
-
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <RevealGroup stagger={0.1} className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {steps.map((step) => (
               <StepCard key={step.no} step={step} />
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </div>
     </section>
@@ -90,55 +74,56 @@ function StepCard({ step }) {
   const tone = getTone(step.tone);
 
   return (
-    <article
-      className={`group relative rounded-3xl border p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}
+    <RevealItem
+      as="article"
+      className={`group relative h-full rounded-3xl border p-6 shadow-[0_24px_80px_rgba(2,8,23,0.26)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${tone.card}`}
     >
       <div className="relative z-10">
         <div className="flex items-center justify-between gap-4">
           <div
-            className={`flex h-16 w-16 items-center justify-center rounded-2xl border shadow-lg ring-1 ring-white/10 ${tone.iconBox}`}
+            className={`flex h-16 w-16 items-center justify-center rounded-2xl border shadow-lg  ${tone.iconBox}`}
           >
             <Icon className={`h-7 w-7 ${tone.icon}`} strokeWidth={1.8} />
           </div>
 
-          <div className="rounded-full border border-[#4285F4]/30 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#4285F4] shadow-sm">
+          <div className="rounded-full border border-brand/30 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand shadow-sm">
             Step {step.no}
           </div>
         </div>
 
-        <h3 className="mt-8 text-xl font-black tracking-tight text-white">
+        <h3 className="mt-6 text-xl font-black tracking-tight text-ink">
           {step.title}
         </h3>
 
-        <p className="mt-4 text-sm leading-7 text-slate-300">
+        <p className="mt-2.5 text-sm leading-6 text-ink-soft">
           {step.description}
         </p>
       </div>
-    </article>
+    </RevealItem>
   );
 }
 
 function getTone(tone) {
   const tones = {
     cyan: {
-      icon: "text-cyan-200",
-      iconBox: "border-cyan-300/35 bg-cyan-300/15 shadow-cyan-300/20",
-      card: "border-cyan-300/20 bg-white hover:border-cyan-200/35 hover:bg-white",
+      icon: "text-cyan-700",
+      iconBox: "border-cyan-200 bg-cyan-50 ",
+      card: "border-cyan-200 bg-white hover:border-cyan-300 hover:bg-white",
     },
     emerald: {
-      icon: "text-emerald-200",
-      iconBox: "border-emerald-300/35 bg-emerald-300/15 shadow-emerald-300/20",
-      card: "border-emerald-300/20 bg-white hover:border-emerald-200/35 hover:bg-white",
+      icon: "text-emerald-700",
+      iconBox: "border-emerald-200 bg-emerald-50 ",
+      card: "border-emerald-200 bg-white hover:border-emerald-300 hover:bg-white",
     },
     violet: {
-      icon: "text-violet-200",
-      iconBox: "border-violet-300/35 bg-violet-300/15 shadow-violet-300/20",
-      card: "border-violet-300/20 bg-white hover:border-violet-200/35 hover:bg-white",
+      icon: "text-violet-700",
+      iconBox: "border-violet-200 bg-violet-50 ",
+      card: "border-violet-200 bg-white hover:border-violet-300 hover:bg-white",
     },
     amber: {
-      icon: "text-amber-200",
-      iconBox: "border-amber-300/35 bg-amber-300/15 shadow-amber-300/20",
-      card: "border-amber-300/20 bg-white hover:border-amber-200/35 hover:bg-white",
+      icon: "text-amber-700",
+      iconBox: "border-amber-200 bg-amber-50 ",
+      card: "border-amber-200 bg-white hover:border-amber-300 hover:bg-white",
     },
   };
 

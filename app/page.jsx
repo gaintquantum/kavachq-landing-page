@@ -6,6 +6,7 @@ import QVSSection from "@/components/sections/QVSSection";
 import ScannerModules from "@/components/sections/ScannerModules";
 import ComplianceSection from "@/components/sections/ComplianceSection";
 import LiveTerminal from "@/components/sections/LiveTerminal";
+import MigrationSection from "@/components/sections/MigrationSection";
 import DeploymentSection from "@/components/sections/DeploymentSection";
 import TargetSectorSection from "@/components/sections/TargetSectorSection";
 import CTASection from "@/components/sections/CTASection";
@@ -24,6 +25,7 @@ export default function Home() {
         <QueueSection />
         <QVSSection />
         <LiveTerminal />
+        <MigrationSection />
         <ComplianceSection />
         <TargetSectorSection />
         <DeploymentSection />

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 @import "tailwindcss";
 @source "../components";
 @source "../app";
@@ -8,7 +7,7 @@
 
 :root {
   --font-century-gothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  --font-heading: "Michroma", Futura, "Trebuchet MS", sans-serif;
+  --font-heading: var(--font-michroma), "Michroma", Futura, "Trebuchet MS", sans-serif;
   --cursor-x: 65%;
   --cursor-y: 45%;
 
@@ -21,9 +20,71 @@
   --border: #dbe4ef;
 }
 
+/* KAVACH-Q design tokens (light theme). Use these via Tailwind: text-ink, bg-surface-muted, shadow-card, rounded-card, text-title... */
 @theme {
   --font-sans: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  --font-mono: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --font-display: var(--font-michroma), "Michroma", Futura, "Trebuchet MS", sans-serif;
+  --color-ink: #0f172a;
+  --color-ink-soft: #334155;
+  --color-ink-muted: #64748b;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-surface-tint: #f0f9ff;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+  /* Brand blue deepened from #4285f4 so white button text and blue link text meet WCAG AA (4.5:1). */
+  --color-brand: #2f6fda;
+  --color-brand-strong: #2558b8;
+  --color-quantum-cyan: #06b6d4;
+  --color-quantum-indigo: #6366f1;
+  --color-quantum-violet: #8b5cf6;
+  --radius-card: 1.25rem;
+  --radius-panel: 1.375rem;
+  --radius-tile: 0.875rem;
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 16px 36px rgba(15, 23, 42, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(99, 102, 241, 0.08), 0 18px 44px rgba(6, 182, 212, 0.14);
+  --text-display: clamp(2rem, 1.25rem + 3vw, 3.25rem);
+  --text-display--line-height: 1.1;
+  --text-title: clamp(1.875rem, 1.2rem + 2vw, 2.875rem);
+  --text-title--line-height: 1.12;
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.75rem;
+  --animate-float-slow: float-slow 7s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  --animate-border-spin: border-spin 6s linear infinite;
+  --animate-scan-line: scan-line 3.2s ease-in-out infinite;
+  --animate-radar: radar 8s linear infinite;
+  --animate-dash-flow: dash-flow 1.6s linear infinite;
+  @keyframes radar { to { transform: rotate(360deg); } }
+  @keyframes dash-flow { to { stroke-dashoffset: -16; } }
+  @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes pulse-ring { 0% { transform: scale(0.85); opacity: 0.7; } 100% { transform: scale(1.9); opacity: 0; } }
+  @keyframes border-spin { to { --border-angle: 360deg; } }
+  @keyframes scan-line { 0%, 100% { transform: translateY(0); opacity: 0; } 10%, 90% { opacity: 1; } 50% { transform: translateY(var(--scan-distance, 160px)); } }
+}
+@property --border-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+/* Gradient text must outrank the legacy light-theme span/heading colour overrides below (specificity up to 0,4,4). */
+.text-gradient.text-gradient.text-gradient.text-gradient.text-gradient {
+  background-image: linear-gradient(90deg, #0891b2, #4f46e5 55%, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+/* Token text colours outrank the legacy light-theme `:where(main) …` colour reset. */
+html[data-theme="light"] :is(main, footer) .text-ink { color: var(--color-ink) !important; -webkit-text-fill-color: currentColor !important; }
+html[data-theme="light"] :is(main, footer) .text-ink-soft { color: var(--color-ink-soft) !important; -webkit-text-fill-color: currentColor !important; }
+html[data-theme="light"] :is(main, footer) .text-ink-muted { color: var(--color-ink-muted) !important; -webkit-text-fill-color: currentColor !important; }
+html[data-theme="light"] :is(main, footer) :is(.hover\:text-ink:hover, .group:hover .group-hover\:text-ink) { color: var(--color-ink) !important; }
+/* Animated conic gradient border; pair with rounded-* and a solid inner background. */
+@utility border-glow {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box, conic-gradient(from var(--border-angle), rgba(6, 182, 212, 0.15), rgba(99, 102, 241, 0.75), rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.75), rgba(6, 182, 212, 0.15)) border-box;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
 html,
@@ -94,102 +155,102 @@ html[data-theme="light"] {
   color-scheme: light;
 }
 
-html[data-theme="light"] body,
-html[data-theme="light"] section,
-html[data-theme="light"] footer,
-html[data-theme="light"] main {
+html[data-theme="light"] body:not([data-native] *),
+html[data-theme="light"] section:not([data-native] *),
+html[data-theme="light"] footer:not([data-native] *),
+html[data-theme="light"] main:not([data-native] *) {
   background: #ffffff !important;
   color: #0f172a !important;
 }
 
-html[data-theme="light"] section,
-html[data-theme="light"] footer,
-html[data-theme="light"] main {
+html[data-theme="light"] section:not([data-native] *),
+html[data-theme="light"] footer:not([data-native] *),
+html[data-theme="light"] main:not([data-native] *) {
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-html[data-theme="light"] section [class~="text-white"],
-html[data-theme="light"] section [class*="text-white/"],
-html[data-theme="light"] section [class~="text-slate-200"],
-html[data-theme="light"] section [class~="text-slate-300"],
-html[data-theme="light"] section [class~="text-slate-400"],
-html[data-theme="light"] section [class~="text-[#c5d9e8]"],
-html[data-theme="light"] footer [class~="text-white"],
-html[data-theme="light"] footer [class*="text-white/"],
-html[data-theme="light"] footer [class~="text-slate-300"],
-html[data-theme="light"] footer [class~="text-slate-400"],
-html[data-theme="light"] main [class~="text-white"],
-html[data-theme="light"] main [class*="text-white/"],
-html[data-theme="light"] main [class~="text-slate-300"],
-html[data-theme="light"] main [class~="text-slate-400"] {
+html[data-theme="light"] section [class~="text-white"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-white/"]:not([data-native] *),
+html[data-theme="light"] section [class~="text-slate-200"]:not([data-native] *),
+html[data-theme="light"] section [class~="text-slate-300"]:not([data-native] *),
+html[data-theme="light"] section [class~="text-slate-400"]:not([data-native] *),
+html[data-theme="light"] section [class~="text-[#c5d9e8]"]:not([data-native] *),
+html[data-theme="light"] footer [class~="text-white"]:not([data-native] *),
+html[data-theme="light"] footer [class*="text-white/"]:not([data-native] *),
+html[data-theme="light"] footer [class~="text-slate-300"]:not([data-native] *),
+html[data-theme="light"] footer [class~="text-slate-400"]:not([data-native] *),
+html[data-theme="light"] main [class~="text-white"]:not([data-native] *),
+html[data-theme="light"] main [class*="text-white/"]:not([data-native] *),
+html[data-theme="light"] main [class~="text-slate-300"]:not([data-native] *),
+html[data-theme="light"] main [class~="text-slate-400"]:not([data-native] *) {
   color: #1e293b !important;
 }
 
-html[data-theme="light"] section [class*="text-[#f5fbff]"],
-html[data-theme="light"] section [class*="text-[#c8dced]"],
-html[data-theme="light"] section [class*="text-[#7fefff]"],
-html[data-theme="light"] section [class*="text-cyan-"],
-html[data-theme="light"] footer [class*="text-cyan-"] {
+html[data-theme="light"] section [class*="text-[#f5fbff]"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-[#c8dced]"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-[#7fefff]"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-cyan-"]:not([data-native] *),
+html[data-theme="light"] footer [class*="text-cyan-"]:not([data-native] *) {
   color: #0e7490 !important;
 }
 
-html[data-theme="light"] section [class*="text-emerald-"],
-html[data-theme="light"] section [class*="text-green-"],
-html[data-theme="light"] footer [class*="text-emerald-"] {
+html[data-theme="light"] section [class*="text-emerald-"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-green-"]:not([data-native] *),
+html[data-theme="light"] footer [class*="text-emerald-"]:not([data-native] *) {
   color: #047857 !important;
 }
 
-html[data-theme="light"] section [class*="text-violet-"] {
+html[data-theme="light"] section [class*="text-violet-"]:not([data-native] *) {
   color: #6d28d9 !important;
 }
 
-html[data-theme="light"] section [class*="text-sky-"] {
+html[data-theme="light"] section [class*="text-sky-"]:not([data-native] *) {
   color: #0369a1 !important;
 }
 
-html[data-theme="light"] section [class*="text-[#6b8faf]"] {
+html[data-theme="light"] section [class*="text-[#6b8faf]"]:not([data-native] *) {
   color: #475569 !important;
 }
 
-html[data-theme="light"] section [class*="text-[#ffb491b8]"] {
+html[data-theme="light"] section [class*="text-[#ffb491b8]"]:not([data-native] *) {
   color: #c2410c !important;
 }
 
-html[data-theme="light"] section [class*="text-amber-"],
-html[data-theme="light"] section [class*="text-yellow-"] {
+html[data-theme="light"] section [class*="text-amber-"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-yellow-"]:not([data-native] *) {
   color: #a16207 !important;
 }
 
-html[data-theme="light"] section [class*="text-orange-"] {
+html[data-theme="light"] section [class*="text-orange-"]:not([data-native] *) {
   color: #c2410c !important;
 }
 
-html[data-theme="light"] section [class*="text-red-"],
-html[data-theme="light"] section [class*="text-rose-"] {
+html[data-theme="light"] section [class*="text-red-"]:not([data-native] *),
+html[data-theme="light"] section [class*="text-rose-"]:not([data-native] *) {
   color: #be123c !important;
 }
 
-html[data-theme="light"] section [class*="bg-[#071426]"],
-html[data-theme="light"] section [class*="bg-[#06101f]"],
-html[data-theme="light"] section [class*="bg-[#091628]"],
-html[data-theme="light"] section [class*="bg-[#010a16]"],
-html[data-theme="light"] section [class*="bg-[#081223]"],
-html[data-theme="light"] section [class*="bg-[#08233e5c]"],
+html[data-theme="light"] section [class*="bg-[#071426]"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#06101f]"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#091628]"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#010a16]"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#081223]"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#08233e5c]"]:not([data-native] *),
 html[data-theme="light"] section [class*="bg-[rgba(11,49,83"],
 html[data-theme="light"] section [class*="bg-slate-950"],
-html[data-theme="light"] footer [class*="bg-slate-950"] {
+html[data-theme="light"] footer [class*="bg-slate-950"]:not([data-native] *) {
   background-color: rgba(248, 250, 252, 0.94) !important;
 }
 
-html[data-theme="light"] section [class*="bg-white/"],
-html[data-theme="light"] footer [class*="bg-white/"],
-html[data-theme="light"] main [class*="bg-white/"] {
+html[data-theme="light"] section [class*="bg-white/"]:not([data-native] *),
+html[data-theme="light"] footer [class*="bg-white/"]:not([data-native] *),
+html[data-theme="light"] main [class*="bg-white/"]:not([data-native] *) {
   background-color: rgba(241, 245, 249, 0.78) !important;
 }
 
-html[data-theme="light"] section [class*="border-white"],
-html[data-theme="light"] footer [class*="border-white"],
-html[data-theme="light"] main [class*="border-white"] {
+html[data-theme="light"] section [class*="border-white"]:not([data-native] *),
+html[data-theme="light"] footer [class*="border-white"]:not([data-native] *),
+html[data-theme="light"] main [class*="border-white"]:not([data-native] *) {
   border-color: rgba(15, 23, 42, 0.14) !important;
 }
 
@@ -207,78 +268,45 @@ html[data-theme="light"] .hero-grid {
     linear-gradient(90deg, rgba(8, 145, 178, 0.07) 1px, transparent 1px);
 }
 
-html[data-theme="light"] section [class*="bg-[radial-gradient(ellipse"] {
+html[data-theme="light"] section [class*="bg-[radial-gradient(ellipse"]:not([data-native] *) {
   opacity: 0.08 !important;
 }
 
-/* Pipeline cards use gradient stops, so give them an explicit light surface. */
-html[data-theme="light"] #pipeline article {
-  --tw-gradient-from: #ffffff !important;
-  --tw-gradient-via: #ffffff !important;
-  --tw-gradient-to: #ffffff !important;
-  background: #ffffff !important;
-  border-color: rgba(8, 145, 178, 0.22) !important;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12) !important;
-}
-
-html[data-theme="light"] #pipeline article :where(h3, p, span, small) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-html[data-theme="light"] #pipeline article:hover {
-  border-color: rgba(8, 145, 178, 0.42) !important;
-  box-shadow: 0 24px 60px rgba(8, 145, 178, 0.16) !important;
-}
-
-html[data-theme="light"] #pipeline article :where([class*="text-7xl"], [class*="tracking-widest"]) {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-}
-
-html[data-theme="light"] #pipeline article [class*="text-7xl"] {
-  opacity: 0.1 !important;
-}
-
-html[data-theme="light"] #pipeline > div > svg path {
-  fill: #ffffff !important;
-}
-
 /* Flat light surfaces for cards that use dark or translucent theme fills. */
-html[data-theme="light"] section [class*="bg-[#010a16"],
-html[data-theme="light"] section [class*="bg-[#06101f"],
-html[data-theme="light"] section [class*="bg-[#071426"],
-html[data-theme="light"] section [class*="bg-[#091628"],
-html[data-theme="light"] section [class*="bg-slate-950"],
-html[data-theme="light"] section [class*="bg-slate-250"] {
+html[data-theme="light"] section [class*="bg-[#010a16"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#06101f"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#071426"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-[#091628"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-slate-950"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-slate-250"]:not([data-native] *) {
   background: var(--surface) !important;
   border-color: var(--surface-border) !important;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08) !important;
   backdrop-filter: none !important;
 }
 
-html[data-theme="light"] section [class*="bg-cyan-400/5"],
-html[data-theme="light"] section [class*="bg-cyan-400/10"],
-html[data-theme="light"] section [class*="bg-cyan-500/5"],
-html[data-theme="light"] section [class*="bg-cyan-500/10"] {
+html[data-theme="light"] section [class*="bg-cyan-400/5"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-cyan-400/10"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-cyan-500/5"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-cyan-500/10"]:not([data-native] *) {
   background: var(--surface-cyan) !important;
   border-color: #b8e3ed !important;
 }
 
-html[data-theme="light"] section [class*="bg-violet-400/10"],
-html[data-theme="light"] section [class*="bg-violet-500/10"] {
+html[data-theme="light"] section [class*="bg-violet-400/10"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-violet-500/10"]:not([data-native] *) {
   background: var(--surface-violet) !important;
   border-color: #d8ccff !important;
 }
 
-html[data-theme="light"] section [class*="bg-amber-400/4"],
-html[data-theme="light"] section [class*="bg-amber-400/10"] {
+html[data-theme="light"] section [class*="bg-amber-400/4"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-amber-400/10"]:not([data-native] *) {
   background: var(--surface-amber) !important;
   border-color: #f5d98b !important;
 }
 
-html[data-theme="light"] section [class*="bg-blue-400/10"],
-html[data-theme="light"] section [class*="bg-emerald-400/10"] {
+html[data-theme="light"] section [class*="bg-blue-400/10"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-emerald-400/10"]:not([data-native] *) {
   background: #f0f9ff !important;
   border-color: #bfdbfe !important;
 }
@@ -922,7 +950,7 @@ html[data-theme="light"] :where(main, footer) :where(
   dd,
   code,
   span
-) {
+):not([data-native] *) {
   color: #0f172a !important;
   -webkit-text-fill-color: currentColor !important;
 }
@@ -935,7 +963,7 @@ html[data-theme="light"] :where(main, footer) :where(
 }
 
 .hero-headline {
-  font-size: clamp(2rem, 4.4vw, 4.9rem) !important;
+  font-size: clamp(2.125rem, 0.9rem + 3vw, 3.75rem) !important;
   font-weight: 400 !important;
 }
 
@@ -954,21 +982,22 @@ html[data-theme="light"] .pricing-dark-section .pricing-accent {
   -webkit-text-fill-color: #4285f4 !important;
 }
 
-html[data-theme="light"] :where(a, button) span {
+html[data-theme="light"] :where(a, button) span:not([data-native] *) {
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
 }
 
-html[data-theme="light"] .visit-kavachq-button {
+/* Outranks the legacy `section [class~="text-white"]` remap so primary buttons stay white. */
+html[data-theme="light"] main a.visit-kavachq-button.visit-kavachq-button {
   color: #ffffff !important;
 }
 
 html[data-theme="light"] .learn-kavachq-button {
-  color: #4285f4 !important;
+  color: var(--color-brand) !important;
 }
 
 html[data-theme="light"] .learn-kavachq-button:hover {
-  color: #3574db !important;
+  color: var(--color-brand-strong) !important;
 }
 
 /* Keep every structural card on a clean white surface. */
@@ -978,7 +1007,7 @@ html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, f
   [class*="rounded-2xl"],
   [class*="rounded-3xl"],
   [class*="rounded-4xl"]
-) {
+):not([data-native] *) {
   background-color: #ffffff !important;
   background-image: none !important;
   color: #0f172a !important;
@@ -991,12 +1020,12 @@ html[data-theme="light"] body main :is(article:not(.pricing-plan-card), aside, f
   [class*="rounded-2xl"],
   [class*="rounded-3xl"],
   [class*="rounded-4xl"]
-) :where(h1, h2, h3, h4, h5, h6, p, li, small, strong, span) {
+) :where(h1, h2, h3, h4, h5, h6, p, li, small, strong, span):not([data-native] *) {
   color: #0f172a !important;
   -webkit-text-fill-color: #0f172a !important;
 }
 
-html[data-theme="light"] main :where(article, aside, form, section, div) :where(a, button) span {
+html[data-theme="light"] main :where(article, aside, form, section, div) :where(a, button) span:not([data-native] *) {
   color: inherit !important;
   -webkit-text-fill-color: currentColor !important;
 }
@@ -1022,7 +1051,7 @@ html[data-theme="light"] body main div[class*="items-center"][class*="justify-ce
   [class*="rounded-lg"],
   [class*="rounded-xl"],
   [class*="rounded-2xl"]
-) {
+):not([data-native] *) {
   box-shadow: none !important;
 }
 

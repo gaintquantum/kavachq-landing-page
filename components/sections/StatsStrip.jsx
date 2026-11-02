@@ -36,7 +36,7 @@ const stats = [
     tone: "violet",
     icon: BookOpenCheck,
     source:
-      "https://www.cert-in.org.in/PDF/TechnicalGuidelines-on-SBOM%2CQBOM%26CBOM%2CAIBOM_and_HBOM_ver2.0.pdf",
+      "https://www.cert-in.org.in/PDF/TechnicalGuidelines-on-SBOM,QBOM&CBOM,AIBOM_and_HBOM_ver2.0.pdf",
   },
 ];
 
@@ -44,6 +44,7 @@ export default function StatsStrip() {
   return (
     <section
       aria-label="Quantum security standards and policy context"
+      data-native
       className="relative overflow-hidden border-y border-slate-200 bg-slate-50 px-5 py-10 text-slate-950 transition-colors duration-500 dark:border-cyan-100/10 dark:bg-[#1f4a75] dark:text-white sm:px-6"
     >
       <div
@@ -65,7 +66,7 @@ export default function StatsStrip() {
           return (
             <article
               key={item.label}
-              className={`group relative flex min-h-[17rem] overflow-hidden rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-[0_8px_24px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,23,42,0.11)] dark:border-cyan-100/15 dark:bg-slate-950/40 dark:hover:bg-slate-950/55 ${tone.hoverBorder}`}
+              className={`group relative flex min-h-68 overflow-hidden rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-[0_8px_24px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,23,42,0.11)] dark:border-cyan-100/15 dark:bg-slate-950/40 dark:hover:bg-slate-950/55 ${tone.hoverBorder}`}
             >
               <div
                 aria-hidden="true"
@@ -109,7 +110,7 @@ export default function StatsStrip() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`Official source for ${item.label} (opens in a new tab)`}
-                  className="mt-auto w-fit pt-4 text-xs font-semibold text-cyan-700 underline decoration-cyan-500/30 underline-offset-4 transition-colors hover:text-cyan-600 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4285F4] focus-visible:ring-offset-2 dark:text-cyan-200 dark:hover:text-cyan-100"
+                  className="mt-auto w-fit pt-4 text-xs font-semibold text-cyan-700 underline decoration-cyan-500/30 underline-offset-4 transition-colors hover:text-cyan-600 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:text-cyan-200 dark:hover:text-cyan-100"
                 >
                   Official source
                 </a>

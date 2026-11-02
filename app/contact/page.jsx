@@ -80,7 +80,7 @@ ${form.name}
           {/* ================================================= */}
 
           <div className="max-w-3xl">
-            
+            <h1 className="sr-only">Contact KAVACH-Q</h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
               Tell us what you are securing. We will help you map your exposure,
               prioritize the work, and plan a practical path to post-quantum
@@ -183,7 +183,7 @@ ${form.name}
                     value={form.name}
                     onChange={handleChange}
                     autoComplete="name"
-                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                     placeholder="Your full name"
                   />
                 </label>
@@ -198,7 +198,7 @@ ${form.name}
                     value={form.email}
                     onChange={handleChange}
                     autoComplete="email"
-                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -215,7 +215,7 @@ ${form.name}
                   value={form.company}
                   onChange={handleChange}
                   autoComplete="organization"
-                  className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                  className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                   placeholder="Your organisation"
                 />
               </label>
@@ -231,7 +231,7 @@ ${form.name}
                   value={form.message}
                   onChange={handleChange}
                   rows={6}
-                  className="mt-2 w-full resize-y border border-white/15 bg-[#071b31] px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                  className="mt-2 w-full resize-y border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                   placeholder="Tell us about your environment, goals, or timeline."
                 />
               </label>

@@ -235,7 +235,7 @@ function MigrationSignals({ mobile, reduced }) {
     if (!group.current || reduced) return;
     group.current.children.forEach((signal, index) => {
       const progress = (state.clock.elapsedTime * 0.075 + index / count) % 1;
-      signal.position.x = mobile ? -2.4 + progress * 2.8 : -5.4 + progress * 7.4;
+      signal.position.x = mobile ? -2.4 + progress * 2.8 : -0.2 + progress * 2.9; // desktop path stays right of the headline
       signal.position.y = 0.55 + Math.sin(progress * Math.PI * 2 + index) * 0.45;
       signal.scale.setScalar(0.65 + Math.sin(progress * Math.PI) * 0.65);
       signal.material.color.copy(progress < 0.76 ? RISK_ORANGE : SAFE_GREEN);
@@ -625,8 +625,8 @@ export default function QuantumBackground({ mouseRef }) {
         ))}
       </div>
 
-      <span className="absolute right-[9%] top-[43%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.1em] text-slate-600 backdrop-blur-sm md:block">ML-KEM-768</span>
-      <span className="absolute right-[14%] top-[67%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.1em] text-slate-600 backdrop-blur-sm md:block">ML-DSA-65 · SLH-DSA</span>
+      <span className="absolute right-[9%] top-[43%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-widest text-slate-600 backdrop-blur-sm md:block">ML-KEM-768</span>
+      <span className="absolute right-[14%] top-[67%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-widest text-slate-600 backdrop-blur-sm md:block">ML-DSA-65 · SLH-DSA</span>
     </div>
   );
 }

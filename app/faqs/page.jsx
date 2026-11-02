@@ -41,7 +41,7 @@ export default function FAQPage() {
           <div className="mx-auto mt-14 max-w-3xl text-center">
             <h1
               style={{
-                fontFamily: 'Michroma, Futura, "Trebuchet MS", sans-serif',
+                fontFamily: 'var(--font-michroma), Michroma, Futura, "Trebuchet MS", sans-serif',
               }}
               className="mt-4 bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-3xl leading-tight text-transparent sm:text-4xl lg:text-5xl"
             >
@@ -101,7 +101,7 @@ export default function FAQPage() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition ${
                         isOpen
-                          ? "bg-[#123b63] text-white"
+                          ? "bg-[#123b63] text-slate-50"
                           : "bg-white text-[#123b63] shadow-sm"
                       }`}
                     >
@@ -158,7 +158,7 @@ export default function FAQPage() {
                   onClick={() => changeCategory(category.id)}
                   className={`rounded-full px-3.5 py-2 text-[10px] font-semibold transition-all ${
                     isActive
-                      ? "bg-[#123b63] text-white shadow-sm"
+                      ? "bg-[#123b63] text-slate-50 shadow-sm"
                       : "border border-slate-200 bg-[#f8fafc] text-slate-500 hover:border-cyan-300 hover:text-[#123b63]"
                   }`}
                 >
@@ -203,7 +203,7 @@ export default function FAQPage() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition ${
                         isOpen
-                          ? "bg-[#123b63] text-white"
+                          ? "bg-[#123b63] text-slate-50"
                           : "bg-white text-[#123b63] shadow-sm"
                       }`}
                     >
