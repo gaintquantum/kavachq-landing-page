@@ -1,10 +1,10 @@
-import { Michroma } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SiteChrome from "@/components/layout/SiteChrome";
 import MotionProvider from "@/components/layout/MotionProvider";
 
 // Self-hosted heading font (replaces the render-blocking Google Fonts @import).
-const michroma = Michroma({ weight: "400", subsets: ["latin"], display: "swap", variable: "--font-michroma" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], display: "swap", variable: "--font-space-grotesk" });
 export const metadata = {
   title: "KAVACH-Q",
   description: "Quantum Safe Security Platform",
@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light" className={michroma.variable}>
+    <html lang="en" data-theme="light" className={spaceGrotesk.variable}>
       <body>
         <MotionProvider>
           {children}

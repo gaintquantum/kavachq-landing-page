@@ -86,9 +86,9 @@ function DiscoveryExplorer() {
         <div className="relative mx-auto mt-4 aspect-square w-full max-w-sm" aria-hidden="true">
           <svg viewBox="0 0 100 100" className="absolute inset-0 size-full overflow-visible">
             <circle cx="50" cy="50" r="38" fill="none" stroke="#e2e8f0" strokeWidth="0.4" />
-            <circle cx="50" cy="50" r="24" fill="none" stroke="#e2e8f0" strokeWidth="0.4" strokeDasharray="1 1.5" />
+            <circle cx="50" cy="50" r="24" fill="none" stroke="#fdba74" strokeWidth="0.4" strokeDasharray="1 1.5" />
             {nodes.map((n, i) => (
-              <line key={i} x1="50" y1="50" x2={n.x} y2={n.y} stroke={i === active ? "#6366f1" : "#bae6fd"} strokeWidth={i === active ? 0.8 : 0.45} strokeDasharray="2 2" className="animate-dash-flow" style={{ transition: "stroke 300ms" }} />
+              <line key={i} x1="50" y1="50" x2={n.x} y2={n.y} stroke={i === active ? "#ea580c" : "#fdba74"} strokeWidth={i === active ? 0.8 : 0.45} strokeDasharray="2 2" className="animate-dash-flow" style={{ transition: "stroke 300ms" }} />
             ))}
           </svg>
           <div className="absolute inset-[12%] animate-radar rounded-full bg-[conic-gradient(from_0deg,rgba(6,182,212,0.18),transparent_22%)] motion-reduce:hidden" />

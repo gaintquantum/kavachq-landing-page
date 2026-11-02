@@ -6,11 +6,11 @@ export default function HeroNetworkLite() {
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
       <div className="absolute -right-16 top-24 size-72 rounded-full bg-[radial-gradient(circle,rgba(66,133,244,0.14),transparent_65%)] blur-2xl" />
       <svg viewBox="0 0 390 360" className="absolute -right-10 top-20 w-[115%] max-w-136 opacity-50" fill="none">
-        <g stroke="#7dd3fc" strokeWidth="1">{links.map(([a, b]) => <line key={`${a}-${b}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} />)}</g>
+        <g stroke="#93b4f2" strokeWidth="1">{links.map(([a, b]) => <line key={`${a}-${b}`} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]} />)}</g>
         {nodes.map(([x, y], i) => (
           <g key={i} className="animate-float-slow" style={{ animationDelay: `${(i % 5) * -1.3}s`, transformBox: "fill-box" }}>
-            <circle cx={x} cy={y} r={i % 3 === 0 ? 5 : 3.5} fill={i % 4 === 0 ? "#6366f1" : "#06b6d4"} />
-            {i % 3 === 0 && <circle cx={x} cy={y} r="11" stroke="#22d3ee" strokeOpacity="0.45" />}
+            <circle cx={x} cy={y} r={i % 3 === 0 ? 5 : 3.5} fill="#2f6fda" />
+            {i % 3 === 0 && <circle cx={x} cy={y} r="11" stroke="#2f6fda" strokeOpacity="0.4" />}
           </g>
         ))}
       </svg>

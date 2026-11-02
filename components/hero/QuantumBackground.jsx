@@ -1,12 +1,14 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 const CYAN = new THREE.Color("#19d8f2");
 const LIGHT_CYAN = new THREE.Color("#7fefff");
-const BRAND_BLUE = new THREE.Color("#4285f4");
+// Matches the Request a Demo button (--color-brand); hover uses a lighter tint of it.
+const BRAND_BLUE = new THREE.Color("#2f6fda");
+const BRAND_LIGHT = new THREE.Color("#6b9bf0");
 const SAFE_GREEN = new THREE.Color("#63f3b1");
 const RISK_ORANGE = new THREE.Color("#ff7849");
 
@@ -97,7 +99,7 @@ function BlochSphere({ position, scale = 1, speed = 0.08, mouseRef, reduced }) {
       <mesh scale={1.12}>
         <sphereGeometry args={[1, 24, 18]} />
         <meshBasicMaterial
-          color={CYAN}
+          color={BRAND_BLUE}
           transparent
           opacity={0.025}
           blending={THREE.AdditiveBlending}
@@ -108,7 +110,7 @@ function BlochSphere({ position, scale = 1, speed = 0.08, mouseRef, reduced }) {
       <mesh>
         <sphereGeometry args={[1, 20, 14]} />
         <meshBasicMaterial
-          color={CYAN}
+          color={BRAND_BLUE}
           wireframe
           transparent
           opacity={0.14}
@@ -117,22 +119,22 @@ function BlochSphere({ position, scale = 1, speed = 0.08, mouseRef, reduced }) {
         />
       </mesh>
       {latitudeRings.map((points, index) => (
-        <Ring key={`lat-${index}`} points={points} opacity={index === 1 ? 0.48 : 0.3} />
+        <Ring key={`lat-${index}`} points={points} opacity={index === 1 ? 0.48 : 0.3} color={BRAND_BLUE} />
       ))}
       {[0, Math.PI / 3, (Math.PI * 2) / 3].map((rotation) => (
         <group key={rotation} rotation={[0, rotation, 0]}>
-          <Ring points={longitudeRing} opacity={0.34} />
+          <Ring points={longitudeRing} opacity={0.34} color={BRAND_BLUE} />
         </group>
       ))}
 
       <group rotation={[0, 0, -0.68]}>
         <mesh position={[0, 0.52, 0]}>
           <cylinderGeometry args={[0.018, 0.018, 1.04, 8]} />
-          <meshBasicMaterial color={LIGHT_CYAN} transparent opacity={0.9} />
+          <meshBasicMaterial color={BRAND_LIGHT} transparent opacity={0.9} />
         </mesh>
         <mesh position={[0, 1.12, 0]}>
           <coneGeometry args={[0.085, 0.22, 12]} />
-          <meshBasicMaterial color={LIGHT_CYAN} />
+          <meshBasicMaterial color={BRAND_LIGHT} />
         </mesh>
       </group>
       <mesh>
@@ -186,7 +188,7 @@ function QubitNetwork({ mobile, mouseRef, reduced }) {
       dummy.scale.setScalar(1 + hover * 0.75);
       dummy.updateMatrix();
       mesh.current.setMatrixAt(index, dummy.matrix);
-      mesh.current.setColorAt(index, hover > 0.08 ? LIGHT_CYAN : CYAN);
+      mesh.current.setColorAt(index, hover > 0.08 ? BRAND_LIGHT : BRAND_BLUE);
     });
     mesh.current.instanceMatrix.needsUpdate = true;
     if (mesh.current.instanceColor) mesh.current.instanceColor.needsUpdate = true;
@@ -199,16 +201,16 @@ function QubitNetwork({ mobile, mouseRef, reduced }) {
 
   return (
     <group
-      position={mobile ? [0.7, -1.7, -2.4] : [5.15, -1.4, -2]}
+      position={mobile ? [0.7, -1.7, -2.4] : [5.4, -0.95, -2]}
       rotation={[-0.42, -0.22, 0.06]}
-      scale={mobile ? 1 : 1.12}
+      scale={mobile ? 1 : 0.9}
     >
       <lineSegments ref={lines}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
         </bufferGeometry>
         <lineBasicMaterial
-          color={CYAN}
+          color={BRAND_BLUE}
           transparent
           opacity={0.26}
           blending={THREE.AdditiveBlending}
@@ -218,7 +220,7 @@ function QubitNetwork({ mobile, mouseRef, reduced }) {
       <instancedMesh ref={mesh} args={[null, null, nodes.length]}>
         <sphereGeometry args={[0.075, 12, 12]} />
         <meshBasicMaterial
-          color={CYAN}
+          color={BRAND_BLUE}
           toneMapped={false}
           blending={THREE.AdditiveBlending}
         />
@@ -238,8 +240,8 @@ function MigrationSignals({ mobile, reduced }) {
       signal.position.x = mobile ? -2.4 + progress * 2.8 : -0.2 + progress * 2.9; // desktop path stays right of the headline
       signal.position.y = 0.55 + Math.sin(progress * Math.PI * 2 + index) * 0.45;
       signal.scale.setScalar(0.65 + Math.sin(progress * Math.PI) * 0.65);
-      signal.material.color.copy(progress < 0.76 ? RISK_ORANGE : SAFE_GREEN);
-      signal.material.opacity = Math.min(progress * 6, (1 - progress) * 7, 0.75);
+      signal.material.color.copy(BRAND_BLUE);
+      signal.material.opacity = Math.min(progress * 6, (1 - progress) * 7, 0.9);
     });
   });
 
@@ -249,10 +251,9 @@ function MigrationSignals({ mobile, reduced }) {
         <mesh key={index}>
           <sphereGeometry args={[0.052, 10, 10]} />
           <meshBasicMaterial
-            color={index < count - 1 ? RISK_ORANGE : SAFE_GREEN}
+            color={BRAND_BLUE}
             transparent
             opacity={0.65}
-            blending={THREE.AdditiveBlending}
             depthWrite={false}
           />
         </mesh>
@@ -329,8 +330,8 @@ function ShieldTrace({ mobile, reduced }) {
   return (
     <group
       ref={shieldRef}
-      position={mobile ? [0, 0.15, -2.5] : [2.45, 0.3, -2.4]}
-      scale={mobile ? 1.25 : 1.5}
+      position={mobile ? [0, 0.15, -2.5] : [2.1, 0.5, -2.4]}
+      scale={mobile ? 1.25 : 1.32}
     >
       {/* Soft glow behind shield */}
       <mesh position={[0, 0, -0.22]} scale={1.18}>
@@ -339,8 +340,7 @@ function ShieldTrace({ mobile, reduced }) {
         <meshBasicMaterial
           color={BRAND_BLUE}
           transparent
-          opacity={0.018}
-          blending={THREE.AdditiveBlending}
+          opacity={0.04}
           depthWrite={false}
         />
       </mesh>
@@ -352,7 +352,7 @@ function ShieldTrace({ mobile, reduced }) {
         <meshBasicMaterial
           color={BRAND_BLUE}
           transparent
-          opacity={0.025}
+          opacity={0.06}
           side={THREE.DoubleSide}
           depthWrite={false}
         />
@@ -362,7 +362,7 @@ function ShieldTrace({ mobile, reduced }) {
       <group scale={1.025}>
         <Ring
           points={shieldPoints}
-          opacity={0.08}
+          opacity={0.55}
           color={BRAND_BLUE}
         />
       </group>
@@ -370,7 +370,7 @@ function ShieldTrace({ mobile, reduced }) {
       {/* Main bright shield border */}
       <Ring
         points={shieldPoints}
-        opacity={0.62}
+        opacity={0.9}
         color={BRAND_BLUE}
       />
 
@@ -378,7 +378,7 @@ function ShieldTrace({ mobile, reduced }) {
       <group scale={0.82}>
         <Ring
           points={shieldPoints}
-          opacity={0.16}
+          opacity={0.45}
           color={BRAND_BLUE}
         />
       </group>
@@ -398,7 +398,6 @@ function ShieldTrace({ mobile, reduced }) {
             transparent
             opacity={0.3}
             side={THREE.DoubleSide}
-            blending={THREE.AdditiveBlending}
             depthWrite={false}
           />
         </mesh>
@@ -411,9 +410,8 @@ function ShieldTrace({ mobile, reduced }) {
           <meshBasicMaterial
             color={BRAND_BLUE}
             transparent
-            opacity={0.14}
+            opacity={0.35}
             side={THREE.DoubleSide}
-            blending={THREE.AdditiveBlending}
             depthWrite={false}
           />
         </mesh>
@@ -444,7 +442,6 @@ function ShieldTrace({ mobile, reduced }) {
             transparent
             opacity={0.95}
             side={THREE.DoubleSide}
-            blending={THREE.AdditiveBlending}
           />
         </mesh>
 
@@ -453,8 +450,7 @@ function ShieldTrace({ mobile, reduced }) {
           <octahedronGeometry args={[0.11]} />
 
           <meshBasicMaterial
-            color={SAFE_GREEN}
-            blending={THREE.AdditiveBlending}
+            color="#ffffff"
           />
         </mesh>
       </group>
@@ -473,10 +469,9 @@ function ShieldTrace({ mobile, reduced }) {
           <circleGeometry args={[0.035, 16]} />
 
           <meshBasicMaterial
-            color={index < 2 ? LIGHT_CYAN : SAFE_GREEN}
+            color={BRAND_BLUE}
             transparent
             opacity={0.8}
-            blending={THREE.AdditiveBlending}
           />
         </mesh>
       ))}
@@ -510,7 +505,7 @@ function DataParticles({ mobile, reduced }) {
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        color={LIGHT_CYAN}
+        color={BRAND_BLUE}
         size={0.027}
         transparent
         opacity={0.16}
@@ -524,6 +519,9 @@ function DataParticles({ mobile, reduced }) {
 
 function Scene({ mouseRef, mobile, reduced }) {
   const scene = useRef(null);
+  // Scene is framed by the hero card; shrink it on narrower (laptop) cards so nothing spills out.
+  const { width, height } = useThree((state) => state.size);
+  const fit = Math.max(0.5, Math.min(1, width / 660, height / 512));
 
   useFrame(() => {
     if (!scene.current) return;
@@ -532,12 +530,14 @@ function Scene({ mouseRef, mobile, reduced }) {
   });
 
   return (
-    <group ref={scene}>
-      <BlochSphere position={mobile ? [1.45, -0.15, -4.2] : [5.35, 1.65, -3.8]} scale={mobile ? 0.68 : 0.82} speed={-0.12} mouseRef={mouseRef} reduced={reduced} />
-      <QubitNetwork mobile={mobile} mouseRef={mouseRef} reduced={reduced} />
-      <MigrationSignals mobile={mobile} reduced={reduced} />
-      <ShieldTrace mobile={mobile} reduced={reduced} />
-      <DataParticles mobile={mobile} reduced={reduced} />
+    <group scale={fit}>
+      <group ref={scene} position={[-3.6, 0.2, 0]}>
+        <BlochSphere position={mobile ? [1.45, -0.15, -4.2] : [5.9, 2.15, -3.8]} scale={mobile ? 0.68 : 0.7} speed={-0.12} mouseRef={mouseRef} reduced={reduced} />
+        <QubitNetwork mobile={mobile} mouseRef={mouseRef} reduced={reduced} />
+        <MigrationSignals mobile={mobile} reduced={reduced} />
+        <ShieldTrace mobile={mobile} reduced={reduced} />
+        <DataParticles mobile={mobile} reduced={reduced} />
+      </group>
     </group>
   );
 }
@@ -576,57 +576,37 @@ function FallbackVisual() {
   );
 }
 
+// Renders inside the hero card (desktop only); fov is narrowed to the card's height so objects keep their size.
+const STAGES = [["01", "SCAN"], ["02", "QUEUE"], ["03", "SCORE"], ["04", "PLAN"], ["05", "MIGRATE"], ["06", "COMPLY"]];
+const label = "absolute rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-widest text-slate-600 backdrop-blur-sm";
 export default function QuantumBackground({ mouseRef }) {
   const { mobile, reduced } = useVisualPreferences();
   const [webgl, setWebgl] = useState(null);
-
   useEffect(() => setWebgl(supportsWebGL()), []);
-
   return (
-    <div
-      className="hero-quantum-background pointer-events-none absolute inset-x-0 top-0 z-0 h-svh overflow-hidden opacity-20 contain-strict md:h-full lg:opacity-100"
-      aria-hidden="true"
-    >
-      <div className="absolute left-[70%] top-[36%] aspect-square w-136 max-w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(66,133,244,0.055),rgba(66,133,244,0.025)_30%,transparent_68%)] opacity-40 blur-[22px] md:left-[68%] md:top-[43%] md:w-[min(50vw,44rem)] md:opacity-55" />
+    <div className="hero-quantum-background pointer-events-none absolute inset-0 overflow-hidden rounded-panel contain-strict" aria-hidden="true">
+      <div className="absolute left-1/2 top-1/2 aspect-square w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(66,133,244,0.06),rgba(66,133,244,0.025)_30%,transparent_68%)] blur-[22px]" />
       {webgl ? (
-        <Canvas
-          className="opacity-65 md:opacity-90"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-          }}
-          camera={{ position: [0, 0, 9], fov: mobile ? 58 : 48, near: 0.1, far: 50 }}
-          dpr={mobile ? 1 : [1, 1.5]}
-          frameloop={reduced ? "demand" : "always"}
-          gl={{ alpha: true, antialias: !mobile, powerPreference: "high-performance" }}
-        >
+        <Canvas className="opacity-90" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
+          camera={{ position: [0, 0, 9], fov: 28, near: 0.1, far: 50 }} dpr={[1, 1.5]} frameloop={reduced ? "demand" : "always"}
+          gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}>
           <Scene mouseRef={mouseRef} mobile={mobile} reduced={reduced} />
         </Canvas>
       ) : (
         <FallbackVisual />
       )}
-
-      <div
-        className="absolute bottom-24 right-[4vw] z-2 hidden w-auto flex-nowrap items-center justify-center gap-2 rounded-full border border-blue-100 bg-white/90 px-4 py-2.5 text-slate-600 backdrop-blur-sm md:flex"
-        role="presentation"
-      >
-        {[
-          ["01", "SCAN"], ["02", "QUEUE"], ["03", "SCORE"],
-          ["04", "PLAN"], ["05", "MIGRATE"], ["06", "COMPLY"],
-        ].map(([number, label], index) => (
-          <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.43rem] tracking-[0.09em] text-slate-600 md:gap-1.5 md:text-[0.55rem] md:tracking-[0.16em]" key={label}>
-            <span className="hidden text-[0.45rem] text-blue-600 md:inline">{number}</span>
-            <strong className="font-semibold">{label}</strong>
-            {index < 5 && <i className="h-px w-2 bg-blue-200 md:w-[clamp(0.75rem,1.6vw,1.75rem)]" />}
-          </div>
-        ))}
+      <span className={`${label} right-[6%] top-[38%]`}>ML-KEM-768</span>
+      <span className={`${label} right-[5%] bottom-[19%]`}>ML-DSA-65 · SLH-DSA</span>
+      <div className="absolute inset-x-4 bottom-4 flex justify-center">
+        <div className="flex max-w-full items-center gap-1.5 overflow-hidden rounded-full border border-blue-100 bg-white/90 px-3 py-2 backdrop-blur-sm xl:gap-2 xl:px-4">
+          {STAGES.map(([number, name], index) => (
+            <div key={name} className="flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.5rem] tracking-[0.1em] text-slate-600 2xl:gap-1.5 2xl:text-[0.55rem] 2xl:tracking-[0.14em]">
+              <span className="hidden text-blue-600 2xl:inline">{number}</span><strong className="font-semibold">{name}</strong>
+              {index < STAGES.length - 1 && <i className="h-px w-2 bg-blue-200 2xl:w-5" />}
+            </div>
+          ))}
+        </div>
       </div>
-
-      <span className="absolute right-[9%] top-[43%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-widest text-slate-600 backdrop-blur-sm md:block">ML-KEM-768</span>
-      <span className="absolute right-[14%] top-[67%] hidden rounded-full border border-blue-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-semibold tracking-widest text-slate-600 backdrop-blur-sm md:block">ML-DSA-65 · SLH-DSA</span>
     </div>
   );
 }

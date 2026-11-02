@@ -6,7 +6,7 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import KavachQLogo3D from "@/components/KavachQLogo3d";
 import HeroNetworkLite from "./HeroNetworkLite";
 import { demoRequestHref } from "@/lib/demoRequest";
-// three.js scene is code-split and only fetched on tablet/desktop.
+// three.js scene is code-split and only fetched on desktop (lg+), where the hero card is shown.
 const QuantumBackground = dynamic(() => import("./QuantumBackground"), { ssr: false });
 const ease = [0.22, 1, 0.36, 1];
 const item = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
@@ -18,7 +18,7 @@ export default function Hero() {
   const reduce = useReducedMotion();
   const [desktop, setDesktop] = useState(null);
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 1024px)");
     const update = () => setDesktop(mq.matches);
     update();
     mq.addEventListener("change", update);
@@ -44,7 +44,6 @@ export default function Hero() {
   return (
     <section ref={heroRef} onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={{ "--mouse-x": "65%", "--mouse-y": "45%" }} aria-labelledby="hero-heading" data-native
       className="enterprise-hero relative min-h-svh overflow-hidden bg-white pt-24 text-slate-950 sm:pt-28 lg:pt-24">
-      {desktop === true && <QuantumBackground mouseRef={mouseRef} />}
       {desktop === false && <HeroNetworkLite />}
       <div className="hero-grid absolute inset-0 z-1 opacity-35" />
       {/* Soft spotlight that follows the pointer */}
@@ -86,7 +85,9 @@ export default function Hero() {
             </motion.div>
           </motion.div>
           <div className="relative z-20 hidden min-h-144 min-w-0 lg:block" aria-hidden="true">
-            <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease, delay: 0.3 }} className="absolute inset-8 rounded-panel border border-blue-100/80 bg-[linear-gradient(145deg,rgba(239,246,255,0.62),rgba(236,254,255,0.24),transparent)]" />
+            <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease, delay: 0.3 }} className="absolute inset-8 rounded-panel border border-blue-100/80 bg-[linear-gradient(145deg,rgba(239,246,255,0.62),rgba(236,254,255,0.24),transparent)]">
+              {desktop === true && <QuantumBackground mouseRef={mouseRef} />}
+            </motion.div>
           </div>
         </div>
       </div>

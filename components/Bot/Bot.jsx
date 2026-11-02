@@ -117,6 +117,8 @@ export default function Bot() {
 
       {open && (
         <section
+          data-native
+          aria-label="KAVACH-Q Assistant"
           className="
             fixed
             bottom-5

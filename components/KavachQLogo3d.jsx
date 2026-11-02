@@ -7,12 +7,12 @@ export default function KavachQLogo3D() {
     >
       <span
         style={{
-          fontFamily: 'var(--font-michroma), Michroma, Futura, "Trebuchet MS", sans-serif',
+          fontFamily: 'var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif',
         }}
         className="
           whitespace-nowrap
           text-[clamp(1.15rem,8vw,3.5rem)]
-          font-normal
+          font-semibold
           uppercase
           leading-none
           tracking-[0.12em]
