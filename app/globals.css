@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 @import "tailwindcss";
 @source "../components";
 @source "../app";
@@ -8,7 +7,7 @@
 
 :root {
   --font-century-gothic: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  --font-heading: "Michroma", Futura, "Trebuchet MS", sans-serif;
+  --font-heading: var(--font-michroma), "Michroma", Futura, "Trebuchet MS", sans-serif;
   --cursor-x: 65%;
   --cursor-y: 45%;
 
@@ -25,7 +24,7 @@
 @theme {
   --font-sans: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --font-display: "Michroma", Futura, "Trebuchet MS", sans-serif;
+  --font-display: var(--font-michroma), "Michroma", Futura, "Trebuchet MS", sans-serif;
   --color-ink: #0f172a;
   --color-ink-soft: #334155;
   --color-ink-muted: #64748b;

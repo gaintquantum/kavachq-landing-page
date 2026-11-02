@@ -36,7 +36,7 @@ const stats = [
     tone: "violet",
     icon: BookOpenCheck,
     source:
-      "https://www.cert-in.org.in/PDF/TechnicalGuidelines-on-SBOM%2CQBOM%26CBOM%2CAIBOM_and_HBOM_ver2.0.pdf",
+      "https://www.cert-in.org.in/PDF/TechnicalGuidelines-on-SBOM,QBOM&CBOM,AIBOM_and_HBOM_ver2.0.pdf",
   },
 ];
 

@@ -10,6 +10,8 @@ import { demoRequestHref } from "@/lib/demoRequest";
 const QuantumBackground = dynamic(() => import("./QuantumBackground"), { ssr: false });
 const ease = [0.22, 1, 0.36, 1];
 const item = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
+// Headline stays opaque from first paint (it is the LCP element); it only slides into place.
+const headline = { hidden: { opacity: 1, y: 14 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
 export default function Hero() {
   const heroRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -61,7 +63,7 @@ export default function Hero() {
               </div>
             </motion.div>
             <motion.div variants={item} className="mb-3 flex justify-center sm:mb-4 lg:justify-start"><KavachQLogo3D /></motion.div>
-            <motion.h1 variants={item} id="hero-heading" className="hero-headline text-balance font-display leading-[1.08] tracking-[-0.04em] text-slate-950">
+            <motion.h1 variants={headline} id="hero-heading" className="hero-headline text-balance font-display leading-[1.08] tracking-[-0.04em] text-slate-950">
               Secure Your Enterprise for the <span className="text-gradient">Quantum Era</span>
             </motion.h1>
             <motion.p variants={item} className="mx-auto mt-5 max-w-160 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:mx-0">

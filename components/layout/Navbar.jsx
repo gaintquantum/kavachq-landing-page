@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className={`flex h-16 items-center justify-between rounded-2xl border px-3 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 lg:h-18 lg:px-5 ${scrolled || open ? "border-slate-200/90 bg-white/90 shadow-[0_12px_40px_rgba(15,23,42,0.08)]" : "border-white/60 bg-white/55 shadow-none"}`}>
           <div className="flex min-w-0 items-center gap-5 xl:gap-8">
             <Link href="/" aria-label="KAVACH-Q home" className="flex shrink-0 items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">
-              <img src="/KAVACH-Q logo with TM.png" alt="KAVACH-Q" className="size-11 object-contain transition-transform duration-300 hover:scale-105 lg:size-14" />
+              <img src="/kavachq-logo-256.png" alt="KAVACH-Q" width={56} height={56} className="size-11 object-contain transition-transform duration-300 hover:scale-105 lg:size-14" />
             </Link>
             <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-xl border border-slate-200/80 bg-slate-50/80 p-1 lg:flex">
               {navItems.map(([label, href]) => {

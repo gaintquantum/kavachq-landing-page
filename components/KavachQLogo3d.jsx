@@ -7,7 +7,7 @@ export default function KavachQLogo3D() {
     >
       <span
         style={{
-          fontFamily: 'Michroma, Futura, "Trebuchet MS", sans-serif',
+          fontFamily: 'var(--font-michroma), Michroma, Futura, "Trebuchet MS", sans-serif',
         }}
         className="
           whitespace-nowrap

@@ -41,7 +41,7 @@ export default function FAQPage() {
           <div className="mx-auto mt-14 max-w-3xl text-center">
             <h1
               style={{
-                fontFamily: 'Michroma, Futura, "Trebuchet MS", sans-serif',
+                fontFamily: 'var(--font-michroma), Michroma, Futura, "Trebuchet MS", sans-serif',
               }}
               className="mt-4 bg-linear-to-r from-cyan-100 via-sky-300 to-emerald-200 bg-clip-text text-3xl leading-tight text-transparent sm:text-4xl lg:text-5xl"
             >
