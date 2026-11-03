@@ -68,12 +68,7 @@ ${form.name}
     <>
       <Navbar />
 
-      <main className="relative min-h-screen overflow-hidden bg-[#071b31] px-5 pb-24 pt-36 text-white sm:px-8 lg:px-12">
-        {/* Background effects */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_88%_72%,rgba(16,185,129,0.12),transparent_26%)]" />
-
-        <div className="pointer-events-none absolute left-1/2 top-40 h-px w-[min(90%,1100px)] -translate-x-1/2 bg-linear-to-r from-transparent via-cyan-300/40 to-transparent" />
-
+      <main data-native className="contact-page relative min-h-screen overflow-hidden bg-white px-5 pb-20 pt-32 text-slate-950 sm:px-8 sm:pt-36 lg:px-12">
         <div className="relative mx-auto max-w-7xl">
           {/* ================================================= */}
           {/* HEADING                                           */}
@@ -81,7 +76,7 @@ ${form.name}
 
           <div className="max-w-3xl">
             <h1 className="sr-only">Contact KAVACH-Q</h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               Tell us what you are securing. We will help you map your exposure,
               prioritize the work, and plan a practical path to post-quantum
               resilience.
@@ -92,18 +87,18 @@ ${form.name}
           {/* CONTENT                                           */}
           {/* ================================================= */}
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div className="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             {/* ================================================= */}
             {/* LEFT SIDE                                         */}
             {/* ================================================= */}
 
             <aside className="space-y-4">
-              <div className="border-l-2 border-cyan-300/60 pl-5">
-                <p className="text-sm font-semibold text-cyan-100">
+              <div className="border-l-2 border-cyan-500 pl-5">
+                <p className="text-sm font-semibold text-cyan-800">
                   What happens next
                 </p>
 
-                <p className="mt-2 text-sm leading-7 text-slate-300">
+                <p className="mt-2 text-sm leading-7 text-slate-600">
                   A security specialist reviews your context and responds with
                   the right next step, whether that is a technical walkthrough,
                   a discovery session, or a direct answer.
@@ -115,10 +110,10 @@ ${form.name}
 
                 <a
                   href="mailto:info@gaintclout.com"
-                  className="group flex items-start gap-4 border border-white/10 bg-white/5 p-5 transition hover:border-cyan-300/40 hover:bg-white/10"
+                  className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:border-cyan-300 hover:bg-cyan-50/60"
                 >
                   <Mail
-                    className="mt-0.5 text-cyan-200"
+                    className="mt-0.5 text-cyan-700"
                     size={20}
                     aria-hidden="true"
                   />
@@ -128,13 +123,13 @@ ${form.name}
                       Email
                     </span>
 
-                    <span className="mt-1 block text-sm text-white">
+                    <span className="mt-1 block text-sm font-semibold text-slate-900">
                       info@gaintclout.com
                     </span>
                   </span>
 
                   <ArrowUpRight
-                    className="ml-auto text-slate-500 transition group-hover:text-cyan-200"
+                    className="ml-auto text-slate-400 transition group-hover:text-cyan-700"
                     size={17}
                     aria-hidden="true"
                   />
@@ -142,9 +137,9 @@ ${form.name}
 
                 {/* LOCATION */}
 
-                <div className="flex items-start gap-4 border border-white/10 bg-white/5 p-5">
+                <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                   <MapPin
-                    className="mt-0.5 text-emerald-200"
+                    className="mt-0.5 text-emerald-700"
                     size={20}
                     aria-hidden="true"
                   />
@@ -154,7 +149,7 @@ ${form.name}
                       Based in
                     </span>
 
-                    <span className="mt-1 block text-sm text-white">
+                    <span className="mt-1 block text-sm font-semibold text-slate-900">
                       Hyderabad, India
                     </span>
                   </span>
@@ -168,13 +163,14 @@ ${form.name}
 
             <form
               onSubmit={handleSubmit}
-              className="border border-cyan-200/15 bg-[#0b2944]/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-8"
+              className="contact-form relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.10)] sm:p-7 lg:p-8"
             >
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" aria-hidden="true" />
               {/* NAME + EMAIL */}
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="text-sm text-slate-200">
-                  Name <span className="text-cyan-300">*</span>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="text-sm font-semibold text-slate-700">
+                  Name <span className="text-cyan-700">*</span>
 
                   <input
                     required
@@ -183,13 +179,13 @@ ${form.name}
                     value={form.name}
                     onChange={handleChange}
                     autoComplete="name"
-                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                    className="contact-field mt-2 h-12 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
                     placeholder="Your full name"
                   />
                 </label>
 
-                <label className="text-sm text-slate-200">
-                  Work email <span className="text-cyan-300">*</span>
+                <label className="text-sm font-semibold text-slate-700">
+                  Work email <span className="text-cyan-700">*</span>
 
                   <input
                     required
@@ -198,7 +194,7 @@ ${form.name}
                     value={form.email}
                     onChange={handleChange}
                     autoComplete="email"
-                    className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                    className="contact-field mt-2 h-12 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -206,7 +202,7 @@ ${form.name}
 
               {/* COMPANY */}
 
-              <label className="mt-5 block text-sm text-slate-200">
+              <label className="mt-4 block text-sm font-semibold text-slate-700">
                 Company / Organisation
 
                 <input
@@ -215,30 +211,30 @@ ${form.name}
                   value={form.company}
                   onChange={handleChange}
                   autoComplete="organization"
-                  className="mt-2 w-full border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                  className="contact-field mt-2 h-12 w-full rounded-xl border border-slate-300 bg-slate-50 px-4 text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
                   placeholder="Your organisation"
                 />
               </label>
 
               {/* MESSAGE */}
 
-              <label className="mt-5 block text-sm text-slate-200">
-                How can we help? <span className="text-cyan-300">*</span>
+              <label className="mt-4 block text-sm font-semibold text-slate-700">
+                How can we help? <span className="text-cyan-700">*</span>
 
                 <textarea
                   required
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  rows={6}
-                  className="mt-2 w-full resize-y border border-white/15 bg-[#071b31] px-4 py-3.5 text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                  rows={5}
+                  className="contact-field mt-2 min-h-32 w-full resize-y rounded-xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
                   placeholder="Tell us about your environment, goals, or timeline."
                 />
               </label>
 
               {/* SEND BUTTON */}
 
-              <div className="mt-6">
+              <div className="mt-5">
                 <button
                   type="submit"
                   className="
@@ -246,15 +242,22 @@ ${form.name}
                     items-center
                     justify-center
                     gap-2
-                    rounded-lg
-                    bg-cyan-400
+                    w-full
+                    rounded-xl
+                    bg-brand
                     px-6
                     py-3.5
                     text-sm
                     font-bold
-                    text-slate-950
+                    text-white
                     transition
-                    hover:bg-cyan-300
+                    hover:bg-brand-strong
+                    focus-visible:outline-none
+                    focus-visible:ring-2
+                    focus-visible:ring-brand
+                    focus-visible:ring-offset-2
+                    focus-visible:ring-offset-white
+                    sm:w-auto
                   "
                 >
                   Send message

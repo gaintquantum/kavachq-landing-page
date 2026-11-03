@@ -13,12 +13,14 @@ import CTASection from "@/components/sections/CTASection";
 import FloatingButton from "@/components/sections/FloatingButton";
 import QueueSection from "@/components/sections/QueueSection";
 import Bot from "@/components/Bot/Bot";
+import RepositoryRiskScanner from "@/components/sections/RepositoryRiskScanner";
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
         <Hero />
+        <RepositoryRiskScanner />
         <PipelineSection />
         <ScannerModules />
         <StatsStrip />

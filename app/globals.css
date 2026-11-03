@@ -163,6 +163,12 @@ html[data-theme="light"] main:not([data-native] *) {
   color: #0f172a !important;
 }
 
+/* Keep the contact page canvas explicitly light and stable across theme overrides. */
+html[data-theme="light"] main.contact-page {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
 html[data-theme="light"] section:not([data-native] *),
 html[data-theme="light"] footer:not([data-native] *),
 html[data-theme="light"] main:not([data-native] *) {
@@ -1096,5 +1102,30 @@ html[data-theme="light"] body main #pricing-plans article.pricing-plan-card .pri
 html[data-theme="light"] body main #pricing-plans article.pricing-plan-card :is(h3, p, span, small, strong, li, a) {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Contact page: force a true white canvas regardless of theme/cascade order. */
+html:has(main.contact-page),
+body:has(main.contact-page),
+main.contact-page,
+main.contact-page .contact-form {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+main.contact-page .contact-field {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+main.contact-page .contact-field:focus {
+  background-color: #ffffff !important;
+}
+
+main.contact-page .contact-field::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 1;
 }
 

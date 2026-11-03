@@ -73,8 +73,8 @@ export default function Hero() {
                 <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/25 opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-100 motion-reduce:hidden" aria-hidden="true" />
                 Request a Demo<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </a>
-              <a href="#pipeline" className="learn-kavachq-button inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 text-center font-bold text-[#2563eb] transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 motion-reduce:transform-none">
-                Explore the Platform
+              <a href="#repository-risk-scanner" className="learn-kavachq-button inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 text-center font-bold text-[#2563eb] transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 motion-reduce:transform-none">
+                Scan Your Repository
               </a>
               <a href="/faqs" className="learn-kavachq-button inline-flex h-12 items-center justify-center gap-1 rounded-xl px-3 text-sm font-bold text-[#2563eb] underline-offset-4 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">
                 Learn about KAVACH-Q<ArrowRight className="size-3.5" aria-hidden="true" />
