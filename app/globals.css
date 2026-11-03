@@ -1061,49 +1061,6 @@ html[data-theme="light"] body main div[class*="items-center"][class*="justify-ce
   box-shadow: none !important;
 }
 
-/* Pricing plans use a high-contrast dark treatment. */
-html[data-theme="light"] body main article.pricing-plan-card {
-  background: #000000 !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-}
-
-html[data-theme="light"] body main article.pricing-plan-card .pricing-card-header {
-  background: #000000 !important;
-  background-image: none !important;
-}
-
-html[data-theme="light"] body main article.pricing-plan-card :where(h3, p, span, small, strong, li) {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-html[data-theme="light"] body main article.pricing-plan-card > div[class*="border-b"] {
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="light"] body main article.pricing-plan-card a {
-  color: #ffffff !important;
-}
-
-/* ID-scoped pricing rules intentionally outrank the global white-card theme. */
-html[data-theme="light"] body main #pricing-plans article.pricing-plan-card {
-  background-color: #000000 !important;
-  background-image: none !important;
-  color: #ffffff !important;
-}
-
-html[data-theme="light"] body main #pricing-plans article.pricing-plan-card .pricing-card-header {
-  background-color: #000000 !important;
-  background-image: none !important;
-}
-
-html[data-theme="light"] body main #pricing-plans article.pricing-plan-card :is(h3, p, span, small, strong, li, a) {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
 /* Contact page: force a true white canvas regardless of theme/cascade order. */
 html:has(main.contact-page),
 body:has(main.contact-page),

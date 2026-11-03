@@ -45,17 +45,17 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <div className="mx-auto max-w-448">
-        <div className={`flex h-16 items-center justify-between rounded-2xl border px-3 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 lg:h-18 lg:px-5 ${scrolled || open ? "border-slate-200/90 bg-white/90 shadow-[0_12px_40px_rgba(15,23,42,0.08)]" : "border-white/60 bg-white/55 shadow-none"}`}>
+        <div className={`flex h-16 items-center justify-between rounded-2xl border px-3 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 lg:h-18 lg:px-5 ${scrolled || open ? "border-slate-200/90 bg-white/90 shadow-[0_12px_40px_rgba(15,23,42,0.08)]" : "border-white/70 bg-white/90 shadow-none"}`}>
           <div className="flex min-w-0 items-center gap-5 xl:gap-8">
             <Link href="/" aria-label="KAVACH-Q home" className="flex shrink-0 items-center rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand">
               <img src="/kavachq-logo-256.png" alt="KAVACH-Q" width={56} height={56} className="size-11 object-contain transition-transform duration-300 hover:scale-105 lg:size-14" />
             </Link>
-            <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-xl border border-slate-200/80 bg-slate-50/80 p-1 lg:flex">
+            <nav aria-label="Primary navigation" className="hidden items-center gap-1 rounded-xl border border-brand bg-brand p-1 lg:flex">
               {navItems.map(([label, href]) => {
                 const active = isActive(label);
                 return (
                   <Link key={label} href={href} aria-current={active ? (label === "Pricing" ? "page" : "location") : undefined}
-                    className={`relative rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 xl:px-4 ${active ? "text-[#1d4ed8]" : "text-slate-600 hover:text-slate-950"}`}>
+                    className={`relative rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand xl:px-4 ${active ? "text-[#1d4ed8]" : "text-white/85 hover:text-white"}`}>
                     {active && <motion.span layoutId="nav-active-pill" className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-slate-200/70" transition={{ type: "spring", stiffness: 420, damping: 34 }} aria-hidden="true" />}
                     <span className="relative">{label}</span>
                   </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
             </nav>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
-            <a href={demoRequestHref} className="group hidden h-11 items-center justify-center gap-1.5 rounded-xl border border-brand bg-brand px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(66,133,244,0.28)] transition hover:-translate-y-0.5 hover:border-brand-strong hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 motion-reduce:transform-none lg:inline-flex">
+            <a href={demoRequestHref} className="group hidden h-11 items-center justify-center gap-1.5 rounded-xl border border-orange-500 bg-orange-500 px-5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(249,115,22,0.3)] transition hover:-translate-y-0.5 hover:border-orange-600 hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 motion-reduce:transform-none lg:inline-flex">
               Request Demo<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
             </a>
             <button type="button" aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}
@@ -80,11 +80,11 @@ export default function Navbar() {
               <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
                 {navItems.map(([label, href]) => (
                   <Link key={label} href={href} onClick={() => setOpen(false)} aria-current={isActive(label) ? "location" : undefined}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${isActive(label) ? "bg-blue-50 text-blue-700" : "text-slate-700 hover:bg-blue-50 hover:text-blue-700"}`}>
-                    {label}{isActive(label) && <span className="size-1.5 rounded-full bg-blue-600" aria-hidden="true" />}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${isActive(label) ? "bg-brand-strong text-white" : "bg-brand text-white hover:bg-brand-strong"}`}>
+                    {label}{isActive(label) && <span className="size-1.5 rounded-full bg-white" aria-hidden="true" />}
                   </Link>
                 ))}
-                <a href={demoRequestHref} onClick={() => setOpen(false)} className="mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-xl border border-brand bg-brand px-5 text-center text-sm font-bold text-white transition hover:border-brand-strong hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+                <a href={demoRequestHref} onClick={() => setOpen(false)} className="mt-2 inline-flex h-11 items-center justify-center gap-1.5 rounded-xl border border-orange-500 bg-orange-500 px-5 text-center text-sm font-bold text-white transition hover:border-orange-600 hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2">
                   Request Demo<ArrowRight className="size-4" aria-hidden="true" />
                 </a>
               </nav>

@@ -6,7 +6,6 @@ const plans = [
     name: "ASSESS",
     subtitle: "Start your PQC journey",
     price: "₹12 Lakh",
-    theme: "blue",
     buttonText: "Start PQC Assessment",
 
     features: [
@@ -27,7 +26,6 @@ const plans = [
     name: "GROWTH",
     subtitle: "Build quantum readiness",
     price: "₹30 Lakh",
-    theme: "green",
     buttonText: "Start Quantum Readiness",
 
     features: [
@@ -48,7 +46,6 @@ const plans = [
     name: "ENTERPRISE",
     subtitle: "Accelerate migration at scale",
     price: "₹60 Lakh",
-    theme: "enterprise",
     popular: true,
     buttonText: "Request Enterprise Demo",
 
@@ -72,7 +69,6 @@ const plans = [
     subtitle: "For mission-critical organizations",
     pricePrefix: "From",
     price: "₹1 Crore",
-    theme: "purple",
     buttonText: "Request Sovereign Deployment",
 
     features: [
