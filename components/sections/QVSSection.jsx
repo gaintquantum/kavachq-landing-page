@@ -5,11 +5,11 @@ import { ArrowRight, Building2, Calculator, Database, FileBadge2, GitBranch, Gau
 import { SectionHeader } from "@/components/ui/Section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 const tones = {
-  cyan: { card: "border-cyan-200 bg-cyan-50 hover:border-cyan-300 hover:bg-cyan-100", chip: "bg-cyan-50 text-cyan-700", text: "text-cyan-700" },
-  blue: { card: "border-blue-200 bg-blue-50 hover:border-blue-300 hover:bg-blue-100", chip: "bg-blue-50 text-sky-700", text: "text-sky-700" },
-  violet: { card: "border-violet-200 bg-violet-50 hover:border-violet-300 hover:bg-violet-100", chip: "bg-violet-50 text-violet-700", text: "text-violet-700" },
-  emerald: { card: "border-emerald-200 bg-emerald-50 hover:border-emerald-300 hover:bg-emerald-100", chip: "bg-emerald-50 text-emerald-700", text: "text-emerald-700" },
-  amber: { card: "border-amber-200 bg-amber-50 hover:border-amber-300 hover:bg-amber-100", chip: "bg-amber-50 text-amber-700", text: "text-amber-700" },
+  cyan: { card: "border-cyan-200 bg-cyan-50 hover:border-cyan-300 hover:bg-cyan-100", chip: "border border-cyan-300 bg-cyan-100 text-cyan-700", text: "text-cyan-700" },
+  blue: { card: "border-blue-200 bg-blue-50 hover:border-blue-300 hover:bg-blue-100", chip: "border border-blue-300 bg-blue-100 text-sky-700", text: "text-sky-700" },
+  violet: { card: "border-violet-200 bg-violet-50 hover:border-violet-300 hover:bg-violet-100", chip: "border border-violet-300 bg-violet-100 text-violet-700", text: "text-violet-700" },
+  emerald: { card: "border-emerald-200 bg-emerald-50 hover:border-emerald-300 hover:bg-emerald-100", chip: "border border-emerald-300 bg-emerald-100 text-emerald-700", text: "text-emerald-700" },
+  amber: { card: "border-amber-200 bg-amber-50 hover:border-amber-300 hover:bg-amber-100", chip: "border border-amber-300 bg-amber-100 text-amber-700", text: "text-amber-700" },
 };
 const riskTiers = [
   { label: "CRITICAL", action: "Immediate remediation", color: "text-red-700", border: "border-red-200 hover:border-red-300", bg: "bg-red-50", bar: "bg-red-400" },
@@ -45,14 +45,10 @@ export default function PatentedScoring() {
       <div className="relative mx-auto w-full max-w-310">
         <SectionHeader size="display" id="qvs-heading" title="The QVS Assessment Model —" accent="quantum risk in one number."
           description="Every cryptographic asset receives a Quantum Vulnerability Score between 0 and 100 — computed using a proprietary scoring methodology and environment-aware risk multipliers.">
-          <p className="mx-auto mt-4 inline-flex max-w-full items-center gap-2 rounded-full border border-line bg-surface-muted px-4 py-1.5 text-xs font-semibold text-ink-soft sm:text-sm">
-            <FileBadge2 className="size-4 shrink-0 text-cyan-600" aria-hidden="true" />
-            <span>Provisional patent filed with IP India before any external demo.</span>
-          </p>
         </SectionHeader>
         <Reveal className="mt-10 rounded-3xl border border-cyan-200 bg-surface p-5 backdrop-blur-xl sm:p-8 lg:p-10">
           <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-700">QVS Assessment Model</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-black">QVS Assessment Model</p>
             <h3 className="mt-3 text-balance text-2xl font-black text-ink sm:text-3xl lg:text-4xl">Multi-factor quantum risk assessment</h3>
             <p className="mx-auto mt-4 max-w-160 text-sm leading-7 text-ink-soft md:text-base">
               QVS combines cryptographic, exposure, data and environmental signals through a proprietary weighted methodology to produce a normalized risk score from 0 to 100.
@@ -171,7 +167,7 @@ function QvsSample() {
       </div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Sample output</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-black">Sample output</p>
           <span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-amber-700">Illustrative · Demo tenant · Not customer data</span>
         </div>
         <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Sample findings">

@@ -86,7 +86,7 @@ function StepCard({ step }) {
             <Icon className={`h-7 w-7 ${tone.icon}`} strokeWidth={1.8} />
           </div>
 
-          <div className="rounded-full border border-brand/30 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand shadow-sm">
+          <div className="rounded-full border border-brand/30 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-black shadow-sm">
             Step {step.no}
           </div>
         </div>

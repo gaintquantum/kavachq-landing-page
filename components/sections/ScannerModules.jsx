@@ -19,9 +19,9 @@ const outcomes = [
   { icon: Route, title: "Prepare", accent: "emerald", desc: "Build a board-ready migration plan mapped to NIST FIPS 203, 204, and 205, with exportable, signed, audit-ready, and auditor-verifiable evidence for applicable ISO 27001:2022 requirements." },
 ];
 const cardTone = {
-  cyan: { card: "border-cyan-200 hover:border-cyan-300", icon: "border-cyan-200 bg-cyan-50 text-cyan-700", label: "text-cyan-800" },
-  amber: { card: "border-amber-200 hover:border-amber-300", icon: "border-amber-200 bg-amber-50 text-amber-700", label: "text-amber-800" },
-  emerald: { card: "border-emerald-200 hover:border-emerald-300", icon: "border-emerald-200 bg-emerald-50 text-emerald-700", label: "text-emerald-800" },
+  cyan: { card: "border-cyan-200 hover:border-cyan-300", icon: "border-cyan-200 bg-cyan-50 text-cyan-700" },
+  amber: { card: "border-amber-200 hover:border-amber-300", icon: "border-amber-200 bg-amber-50 text-amber-700" },
+  emerald: { card: "border-emerald-200 hover:border-emerald-300", icon: "border-emerald-200 bg-emerald-50 text-emerald-700" },
 };
 // Node positions on a circle around the scanner hub (percent of the map box).
 const nodes = capabilities.map((_, i) => {
@@ -41,7 +41,7 @@ export default function ScannerModules() {
             return (
               <RevealItem as="article" key={title} className={`h-full rounded-card border bg-white p-6 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover motion-reduce:transform-none sm:p-7 ${tone.card} ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}>
                 <div className={`flex size-12 items-center justify-center rounded-2xl border ${tone.icon}`}><Icon className="size-6" strokeWidth={1.8} aria-hidden="true" /></div>
-                <h3 className={`mt-5 text-2xl font-black tracking-tight ${tone.label}`}>{title}</h3>
+                <h3 className={`mt-5 text-2xl font-black tracking-tight text-black`}>{title}</h3>
                 <p className="mt-2.5 text-base leading-7 text-ink-soft">{desc}</p>
               </RevealItem>
             );

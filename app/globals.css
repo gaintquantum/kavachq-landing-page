@@ -1086,3 +1086,63 @@ main.contact-page .contact-field::placeholder {
   opacity: 1;
 }
 
+/* Six-stage workflow: glass cards on an ash-gray ground. Layout stays in Tailwind; these rules only cover the look. */
+.stage-section {
+  --stage-bg: #f1f3f7;
+  --stage-bg-2: #e9edf4;
+  --stage-glass: rgba(255, 255, 255, 0.55);
+  --stage-border: rgba(255, 255, 255, 0.85);
+  --stage-text: #101828;
+  --stage-text-soft: #344054;
+  --stage-number: rgba(100, 110, 140, 0.25);
+}
+/* Outranks the legacy light-theme `section` white background, which still matches a data-native section itself. */
+html[data-theme="light"] section.stage-section { background: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(255, 255, 255, 0.8), transparent 70%), linear-gradient(180deg, var(--stage-bg), var(--stage-bg-2)) !important; }
+.stage-orb { position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 70%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45); }
+.stage-card[data-tone="cyan"] { --tone: #0e7490; --tone-rgb: 6, 182, 212; --tone-from: #dbf8fd; --tone-to: #93e4f2; }
+.stage-card[data-tone="violet"] { --tone: #6d28d9; --tone-rgb: 139, 92, 246; --tone-from: #efe9fe; --tone-to: #c9b6fb; }
+.stage-card[data-tone="blue"] { --tone: #1d4ed8; --tone-rgb: 59, 130, 246; --tone-from: #e2edfe; --tone-to: #a9c9fb; }
+.stage-card[data-tone="emerald"] { --tone: #047857; --tone-rgb: 16, 185, 129; --tone-from: #dcfaee; --tone-to: #99ebca; }
+.stage-card[data-tone="amber"] { --tone: #92400e; --tone-rgb: 245, 158, 11; --tone-from: #fef3d6; --tone-to: #fbd585; }
+.stage-card[data-tone="rose"] { --tone: #be185d; --tone-rgb: 236, 72, 153; --tone-from: #fde8f3; --tone-to: #f8b7d7; }
+.stage-card {
+  border: 1px solid rgba(var(--tone-rgb), 0.34);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(var(--tone-rgb), 0.08));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -12px rgba(16, 24, 40, 0.12);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+/* Soft reflection of the stage colour in the corner behind the icon. */
+.stage-card::before { content: ""; position: absolute; top: -70px; left: -70px; width: 220px; height: 220px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgba(var(--tone-rgb), 0.14), transparent 70%); }
+.stage-card:hover { transform: translateY(-4px); border-color: rgba(var(--tone-rgb), 0.58); box-shadow: inset 0 1px 0 #ffffff, 0 2px 4px rgba(16, 24, 40, 0.05), 0 20px 40px -12px rgba(16, 24, 40, 0.18), 0 10px 28px -14px rgba(var(--tone-rgb), 0.35); }
+.stage-card[data-active="true"] { border-color: rgba(var(--tone-rgb), 0.52); box-shadow: inset 0 1px 0 #ffffff, 0 0 0 1px rgba(var(--tone-rgb), 0.18), 0 16px 36px -14px rgba(var(--tone-rgb), 0.32); }
+.stage-number { color: var(--stage-number); font-size: 52px; }
+@media (min-width: 1280px) { .stage-number { font-size: 60px; } }
+.stage-icon { width: 56px; height: 56px; overflow: hidden; border: 1px solid rgba(var(--tone-rgb), 0.38); border-radius: 18px; color: var(--tone); background: linear-gradient(145deg, var(--tone-from), var(--tone-to)); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(var(--tone-rgb), 0.18), 0 10px 20px -8px rgba(var(--tone-rgb), 0.55); }
+.stage-icon::before { content: ""; position: absolute; inset: 3px 5px 52%; border-radius: 14px 14px 22px 22px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)); }
+@media (min-width: 1024px) { .stage-icon { width: 64px; height: 64px; } }
+.stage-label { color: var(--tone); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.stage-title { color: var(--stage-text); font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+.stage-desc { color: var(--stage-text-soft); font-size: 14px; line-height: 1.6; }
+.stage-badge { color: #111827; font-size: 11.5px; font-weight: 600; line-height: 1.3; background-color: #e5e7eb; box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.08); transform: translateY(0) scale(1); will-change: transform, background-color; transition: color 350ms cubic-bezier(0.22, 1, 0.36, 1), background-color 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1), transform 350ms cubic-bezier(0.22, 1, 0.36, 1); }
+.stage-badge:hover { color: #ffffff; background-color: #000000; box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.5); transform: translateY(-2px) scale(1.02); }
+.stage-toggle { color: #111827; background-color: #e5e7eb; font-size: 13px; font-weight: 600; box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.08); transform: translateY(0) scale(1); will-change: transform, background-color; transition: color 350ms cubic-bezier(0.22, 1, 0.36, 1), background-color 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1), transform 350ms cubic-bezier(0.22, 1, 0.36, 1); }
+.stage-toggle:hover { color: #ffffff; background-color: #000000; box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.5); transform: translateY(-2px) scale(1.02); }
+.stage-panel { border-top: 1px solid rgba(16, 24, 40, 0.1); }
+.stage-panel-label { color: var(--stage-text-soft); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.stage-chip { color: var(--stage-text-soft); font-size: 12px; font-weight: 600; background: rgba(255, 255, 255, 0.65); box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.08); }
+.stage-link { color: var(--tone); font-size: 13px; font-weight: 700; }
+.stage-handoff { color: var(--stage-text-soft); font-size: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  .stage-card, .stage-badge, .stage-toggle { transition: none; }
+  .stage-card:hover, .stage-badge:hover, .stage-toggle:hover { transform: none; }
+}
+
+
+
+
+
+/* KAVACH-Q — Premium Six-Stage Cards */
+

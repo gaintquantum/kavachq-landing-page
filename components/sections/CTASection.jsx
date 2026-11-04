@@ -36,7 +36,7 @@ export default function CTASection() {
             <RevealGroup delay={0.2} className="grid content-start gap-3">
               {stats.map(([value, label]) => (
                 <RevealItem key={label} className="group rounded-tile border border-line bg-white/80 p-5 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-card motion-reduce:transform-none">
-                  <p className="text-gradient font-display text-3xl leading-tight sm:text-4xl">{value}</p>
+                  <p className="text-3xl leading-tight text-black sm:text-4xl">{value}</p>
                   <p className="mt-1.5 text-sm font-semibold text-ink-soft">{label}</p>
                 </RevealItem>
               ))}

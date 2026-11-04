@@ -105,8 +105,8 @@ export default function MigrationSection() {
               {algorithms.map(({ name, std, role, tone }) => (
                 <RevealItem key={name} className={`rounded-tile border p-4 transition hover:-translate-y-0.5 hover:shadow-card ${tones[tone].border} ${tones[tone].soft}`}>
                   <KeyRound className={`size-5 ${tones[tone].text}`} strokeWidth={1.9} aria-hidden="true" />
-                  <p className="mt-3 font-mono text-sm font-bold text-ink">{name}</p>
-                  <p className={`mt-1 text-[11px] font-bold uppercase tracking-[0.12em] ${tones[tone].text}`}>{std}</p>
+                  <p className="mt-3 font-mono text-sm font-bold text-black">{name}</p>
+                  <p className={`mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-black`}>{std}</p>
                   <p className="mt-1 text-xs text-ink-soft">{role}</p>
                 </RevealItem>
               ))}

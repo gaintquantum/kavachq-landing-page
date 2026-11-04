@@ -59,7 +59,7 @@ export default function QueueSection() {
           {metrics.map(({ value, label }, i) => (
             <div key={label} className={`relative flex flex-col-reverse items-center justify-end px-2 text-center lg:px-4 ${i === metrics.length - 1 ? "col-span-2 lg:col-span-1" : ""} ${i < metrics.length - 1 ? "lg:after:absolute lg:after:right-0 lg:after:top-1/2 lg:after:h-10 lg:after:w-px lg:after:-translate-y-1/2 lg:after:bg-slate-200" : ""}`}>
               <dt className="mt-2 text-[10px] font-bold uppercase leading-4 tracking-[0.15em] text-slate-600">{label}</dt>
-              <dd className="text-xl font-black leading-none tracking-tight text-cyan-800 sm:text-2xl xl:text-[1.75rem]">{value}</dd>
+              <dd className="text-xl font-black leading-none tracking-tight text-black sm:text-2xl xl:text-[1.75rem]">{value}</dd>
             </div>
           ))}
         </Reveal>

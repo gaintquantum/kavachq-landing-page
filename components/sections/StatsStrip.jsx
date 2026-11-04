@@ -94,7 +94,7 @@ export default function StatsStrip() {
                 </div>
                 <div className="mt-6">
                   <h3
-                    className={`${item.compactValue ? "text-[1.55rem] xl:text-[1.75rem]" : "text-[1.75rem] xl:text-[1.875rem]"} font-black leading-tight tracking-tight ${tone.value}`}
+                    className={`${item.compactValue ? "text-[1.55rem] xl:text-[1.75rem]" : "text-[1.75rem] xl:text-[1.875rem]"} font-black leading-tight tracking-tight text-black dark:text-white`}
                   >
                     {item.value}
                   </h3>
@@ -132,7 +132,6 @@ function getTone(tone) {
       icon: "text-cyan-700 dark:text-cyan-200",
       iconBox:
         "border-cyan-500/25 bg-cyan-100 dark:border-cyan-300/30 dark:bg-cyan-300/10",
-      value: "text-cyan-700 dark:text-cyan-200",
     },
 
     blue: {
@@ -142,7 +141,6 @@ function getTone(tone) {
       icon: "text-sky-700 dark:text-sky-200",
       iconBox:
         "border-sky-500/25 bg-sky-100 dark:border-sky-300/30 dark:bg-sky-300/10",
-      value: "text-sky-700 dark:text-sky-200",
     },
 
     emerald: {
@@ -152,7 +150,6 @@ function getTone(tone) {
       icon: "text-emerald-700 dark:text-emerald-200",
       iconBox:
         "border-emerald-500/25 bg-emerald-100 dark:border-emerald-300/30 dark:bg-emerald-300/10",
-      value: "text-emerald-700 dark:text-emerald-200",
     },
 
     violet: {
@@ -162,7 +159,6 @@ function getTone(tone) {
       icon: "text-violet-700 dark:text-violet-200",
       iconBox:
         "border-violet-500/25 bg-violet-100 dark:border-violet-300/30 dark:bg-violet-300/10",
-      value: "text-violet-700 dark:text-violet-200",
     },
   };
 
