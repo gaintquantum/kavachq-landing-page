@@ -244,8 +244,7 @@ function RepositoryScannerPanel() {
         <div className="p-4 sm:p-6">
           <form onSubmit={handleScan} noValidate>
             <label htmlFor={inputId} className="text-sm font-black text-ink">
-              Public GitHub repository URL
-            </label>
+Scan Your Organization's GitHub Repository            </label>
             <div className="mt-2 flex flex-col gap-3 sm:flex-row">
               <div className="relative flex-1">
                 <Github
