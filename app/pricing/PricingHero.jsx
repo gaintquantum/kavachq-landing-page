@@ -3,7 +3,7 @@ export default function PricingHero() {
     <section className="pricing-dark-section relative isolate overflow-hidden bg-[#02111c]! text-[#ffffff]!">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[70%] bg-[url('/pricing-globe.png')] bg-size-[auto_310px] bg-position-right-top bg-no-repeat opacity-60 sm:w-[62%] sm:opacity-100 lg:right-24 lg:w-[52%]"
+        className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[70%] bg-[url('/pricing-globe.webp')] bg-size-[auto_310px] bg-position-right-top bg-no-repeat opacity-60 sm:w-[62%] sm:opacity-100 lg:right-24 lg:w-[52%]"
         style={{
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0%, black 45%, black 100%)",

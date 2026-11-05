@@ -6,8 +6,11 @@ import AtomBackground from "./AtomBackground";
 import { demoRequestHref } from "@/lib/demoRequest";
 const ease = [0.22, 1, 0.36, 1];
 const item = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
-// Headline stays opaque from first paint (it is the LCP element); it only slides into place.
+// Headline stays opaque from first paint; it only slides into place.
 const headline = { hidden: { opacity: 1, y: 14 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } };
+// The intro paragraph is the mobile LCP element, so .hero-intro animates it in CSS and it never waits for hydration.
+// These empty variants keep its place in the stagger, so the items after it animate on the same beat.
+const staggerSlot = { hidden: {}, show: {} };
 export default function Hero() {
   const heroRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -55,7 +58,7 @@ export default function Hero() {
             <motion.h1 variants={headline} id="hero-heading" className="hero-headline text-balance font-display leading-[1.08] tracking-[-0.04em] text-white">
               Secure Your Enterprise for the <span className="bg-linear-to-r from-cyan-300 via-sky-400 to-blue-400 bg-clip-text text-transparent">Quantum Era</span>
             </motion.h1>
-            <motion.p variants={item} className="mx-auto mt-5 max-w-160 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 lg:mx-0">
+            <motion.p variants={staggerSlot} className="hero-intro mx-auto mt-5 max-w-160 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 lg:mx-0">
               KAVACH-Q discovers vulnerable cryptography, calculates Quantum Vulnerability Scores, and helps enterprises migrate to post-quantum-safe algorithms with audit-ready compliance.
             </motion.p>
             <motion.div variants={item} className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:justify-start">

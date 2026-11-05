@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { demoRequestHref } from "@/lib/demoRequest";
 
-const navItems = [["Pipeline", "#pipeline"], ["Modules", "#modules"], ["QVS", "#qvs"], ["Compliance", "#compliance"], ["Deployment", "#deployment"], ["Pricing", "/pricing"]];
+const navItems = [["Pipeline", "#pipeline"], ["Modules", "#modules"], ["QVS", "#qvs"], ["Compliance", "#compliance"], ["Deployment", "#deployment"] /* , ["Pricing", "/pricing"] */];
 const sectionIds = navItems.filter(([, key]) => key.startsWith("#")).map(([, key]) => key.slice(1));
 // Section links must also work from other routes, so "#pipeline" is rendered as "/#pipeline".
 const toHref = (key) => (key.startsWith("#") ? `/${key}` : key);

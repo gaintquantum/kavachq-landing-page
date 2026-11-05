@@ -978,6 +978,26 @@ html[data-theme="light"] :where(main, footer) :where(
   font-weight: inherit !important;
 }
 
+/* Same fade-up and timing as the other hero items: 0.05s + 2 stagger steps of 0.09s. */
+.hero-intro {
+  animation: hero-intro-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.23s both;
+}
+
+@keyframes hero-intro-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes hero-intro-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
 html[data-theme="light"] .pricing-dark-section :is(h1, h2, h3, p, small) {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -1084,6 +1104,50 @@ main.contact-page .contact-field::placeholder {
   color: #94a3b8 !important;
   -webkit-text-fill-color: #94a3b8 !important;
   opacity: 1;
+}
+
+/* Repository scanner: pill CTA with a restrained spark orbit around its edge. */
+.repository-url-input:focus,
+.repository-url-input:focus-visible {
+  border-color: #64748b;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.28);
+}
+.scanner-submit {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(110deg, #1e3a8a 0%, #2563eb 52%, #0891b2 100%);
+  background-size: 160% 100%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 10px 24px rgba(37, 99, 235, 0.28);
+  transition: background-position 400ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+.scanner-submit::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -20%;
+  bottom: -20%;
+  left: -55%;
+  width: 34%;
+  transform: skewX(-22deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+  animation: scanner-button-sheen 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.scanner-submit:hover {
+  background-position: 100% 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), 0 14px 30px rgba(37, 99, 235, 0.34);
+}
+.scanner-submit:disabled {
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(47, 111, 218, 0.2);
+}
+.scanner-submit:disabled:hover {
+  transform: none;
+}
+@keyframes scanner-button-sheen {
+  0%, 58% { left: -55%; opacity: 0; }
+  66% { opacity: 1; }
+  88%, 100% { left: 125%; opacity: 0; }
 }
 
 /* Six-stage workflow: glass cards on an ash-gray ground. Layout stays in Tailwind; these rules only cover the look. */

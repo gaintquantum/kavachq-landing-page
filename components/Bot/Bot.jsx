@@ -92,7 +92,7 @@ export default function Bot() {
             sm:w-15
           "
         >
-          <Image src={Logo} alt="KAVACH-Q Logo" className="h-8 w-8 sm:h-10 sm:w-10" />
+          <Image src={Logo} sizes="40px" alt="KAVACH-Q Logo" className="h-8 w-8 sm:h-10 sm:w-10" />
 
           {/* Online indicator */}
           <span
@@ -181,7 +181,7 @@ export default function Bot() {
                   bg-white/10
                 "
               >
-                <Image src={Logo} alt="KAVACH-Q Logo" className="h-10 w-10" />
+                <Image src={Logo} sizes="40px" alt="KAVACH-Q Logo" className="h-10 w-10" />
 
                 {/* Online indicator */}
                 <span
@@ -268,7 +268,7 @@ export default function Bot() {
                   text-[#087ba7]
                 "
               >
-                <Image src={Logo} alt="KAVACH-Q Logo" className="h-10 w-10" />
+                <Image src={Logo} sizes="40px" alt="KAVACH-Q Logo" className="h-10 w-10" />
               </div>
 
               {/* Label */}

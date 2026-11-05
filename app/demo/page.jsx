@@ -1,3 +1,13 @@
+import { pageMetadata } from "@/lib/seo";
+import DemoForm from "./DemoForm";
+
+export const metadata = pageMetadata({
+  title: "Request a Demo",
+  description:
+    "Request a KAVACHQ by GAINT demo and see how it discovers cryptographic assets, scores quantum risk and plans your post-quantum migration.",
+  path: "/demo",
+});
+
 export default function DemoPage() {
   return (
     <main className="min-h-screen bg-[#050816] px-6 py-32 text-white">
@@ -10,15 +20,7 @@ export default function DemoPage() {
           See how KAVACH-Q discovers cryptographic assets, calculates QVS, and creates a post-quantum migration plan.
         </p>
 
-        <div className="glass mx-auto mt-10 max-w-2xl rounded-3xl p-8 text-left">
-          <input className="mb-4 w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Full Name" />
-          <input className="mb-4 w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Work Email" />
-          <input className="mb-4 w-full rounded-xl border border-white/10 bg-white/5 p-4" placeholder="Company Name" />
-
-          <button className="w-full rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-950">
-            Request Demo
-          </button>
-        </div>
+        <DemoForm />
       </div>
     </main>
   );

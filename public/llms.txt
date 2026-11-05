@@ -1,0 +1,25 @@
+# KAVACHQ by GAINT
+
+> KAVACHQ by GAINT (also written KAVACH-Q or KAVACH Q) is a quantum-safe cybersecurity and post-quantum cryptography (PQC) migration platform built by GAINT Clout Technologies Private Limited, a technology company based in Hyderabad, Telangana, India.
+
+KAVACHQ by GAINT is not affiliated with "KavachQ" at kavachq.in, which is a separate product by V Innovation Labs.
+
+## What it does
+- Cryptographic discovery: finds the algorithms, certificates and keys an organisation uses.
+- Quantum risk scoring: ranks assets by exposure to future quantum attacks.
+- Migration planning: sequences the move to NIST post-quantum standards (ML-KEM, ML-DSA, SLH-DSA).
+- Compliance reporting: produces evidence for management, auditors and regulators.
+
+## Company
+- Legal name: GAINT Clout Technologies Private Limited
+- CIN: U62013TS2024PTC186957
+- Address: Sy No 83/1, Plot No: 25 30/C, Knowledge City, Raidurg Panmaktha, Hyderabad, Telangana 500032, India
+- Email: info@gaintclout.com
+- Website: https://kavachq.com
+- Company website: https://gaintclout.com
+
+## Key pages
+- [Home](https://kavachq.com/): overview of the KAVACHQ by GAINT platform
+- [FAQs](https://kavachq.com/faqs): common questions about the platform, quantum risk and PQC migration
+- [Request a demo](https://kavachq.com/demo): ask for a demonstration of the platform
+- [Contact](https://kavachq.com/contact): reach the KAVACHQ by GAINT team
