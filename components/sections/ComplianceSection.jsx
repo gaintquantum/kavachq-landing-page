@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { BadgeCheck, Banknote, Info, Landmark, ShieldCheck } from "lucide-react";
 import { SectionHeader } from "@/components/ui/Section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
@@ -42,8 +43,19 @@ export default function ComplianceSection() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/45 to-transparent" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-300/25 to-transparent" aria-hidden="true" />
       <div className="relative mx-auto w-full max-w-330">
-        <SectionHeader align="left" eyebrow="Stage 6 · Comply" id="compliance-heading" title="Legally defensible reports." accent="Zero manual mapping."
-          description="Claude Citations API maps every finding to the relevant regulatory clause, page, and section. Reports are digitally signed, timestamped, and archived for audit review." />
+        <SectionHeader align="left" eyebrow="Stage 6 · Comply" id="compliance-heading" title="Evidence-led compliance reporting." accent="Scope stays visible."
+          description="Connect technical findings to the applicable requirement, source and review evidence without implying regulator approval or product certification." />
+        <div className="mt-8 grid gap-4 rounded-panel border border-emerald-200 bg-emerald-50/60 p-4 sm:grid-cols-[1fr_1fr_auto] sm:items-center sm:p-5">
+          <Link href="/compliance" className="flex items-center gap-4 rounded-xl bg-white p-3 shadow-sm transition hover:-translate-y-0.5">
+            <img src="/ISO-IEC.jpeg" alt="ISO IEC 27001:2022 certificate held by GAINT Clout Technologies Private Limited" width="72" height="102" loading="lazy" className="h-24 w-auto rounded border border-slate-200 object-contain" />
+            <span><strong className="block text-sm text-slate-950">ISO/IEC 27001:2022</strong><span className="mt-1 block text-xs leading-5 text-slate-600">GAINT certificate · view scope and verification</span></span>
+          </Link>
+          <Link href="/compliance" className="flex items-center gap-4 rounded-xl bg-white p-3 shadow-sm transition hover:-translate-y-0.5">
+            <img src="/ISO.jpeg" alt="ISO 9001:2015 certificate held by GAINT Clout Technologies Private Limited" width="72" height="102" loading="lazy" className="h-24 w-auto rounded border border-slate-200 object-contain" />
+            <span><strong className="block text-sm text-slate-950">ISO 9001:2015</strong><span className="mt-1 block text-xs leading-5 text-slate-600">GAINT certificate · view scope and verification</span></span>
+          </Link>
+          <Link href="/compliance" className="rounded-xl bg-slate-950 px-5 py-3 text-center text-sm font-bold text-white hover:bg-cyan-900">View certificates</Link>
+        </div>
         <div className="mt-10 grid items-start gap-5 xl:grid-cols-[36fr_64fr] xl:gap-6">
           <RevealGroup className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
             {frameworks.map((f) => <FrameworkCard key={f.title} framework={f} highlighted={f.column && focusCol === f.column} onHighlight={setFocusCol} />)}

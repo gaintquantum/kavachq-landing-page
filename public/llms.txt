@@ -20,6 +20,10 @@ KAVACHQ by GAINT is not affiliated with "KavachQ" at kavachq.in, which is a sepa
 
 ## Key pages
 - [Home](https://kavachq.com/): overview of the KAVACHQ by GAINT platform
+- [Solutions](https://kavachq.com/solutions): current, platform and planned capabilities with status labels
+- [Resources](https://kavachq.com/resources): technical guides to PQC, CBOM and migration
+- [Compliance](https://kavachq.com/compliance): GAINT certificates, scope and primary-source alignment links
+- [Security and verification](https://kavachq.com/security-and-verification): public scanner methodology, limitations and disclosure contact
 - [FAQs](https://kavachq.com/faqs): common questions about the platform, quantum risk and PQC migration
 - [Request a demo](https://kavachq.com/demo): ask for a demonstration of the platform
 - [Contact](https://kavachq.com/contact): reach the KAVACHQ by GAINT team

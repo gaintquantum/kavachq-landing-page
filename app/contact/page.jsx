@@ -75,7 +75,8 @@ ${form.name}
           {/* ================================================= */}
 
           <div className="max-w-3xl">
-            <h1 className="sr-only">Contact KAVACH-Q</h1>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">Company contact</p>
+            <h1 className="mt-3 text-4xl font-bold text-slate-950 sm:text-5xl">Contact KAVACH-Q by GAINT</h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               Tell us what you are securing. We will help you map your exposure,
               prioritize the work, and plan a practical path to post-quantum
@@ -264,6 +265,7 @@ ${form.name}
 
                   <ArrowUpRight size={17} aria-hidden="true" />
                 </button>
+                <p className="mt-3 text-xs leading-5 text-slate-500">This contact form opens a pre-filled message in Gmail. Do not include credentials, customer records or sensitive security findings. For a structured technical request, use the <a href="/demo" className="font-bold text-cyan-800 underline">demo form</a>.</p>
               </div>
             </form>
           </div>

@@ -1,9 +1,9 @@
 import { Mail, MapPin } from "lucide-react";
 import ComplianceMarquee from "@/components/sections/ComplianceMarquee";
-// Root-relative anchors so footer links also work from /pricing, /faqs and /contact.
+// Root-relative anchors so footer links also work from /faqs and /contact.
 const footerLinks = [
-  { title: "Platform", links: [["Pipeline", "/#pipeline"], ["Scanner Modules", "/#modules"], ["QVS", "/#qvs"], ["Migration", "/#migration"], ["Compliance", "/#compliance"], ["Deployment", "/#deployment"]] },
-  { title: "Coverage", links: [["Target Sectors", "/#who"], ["Request Demo", "/#cta"], ["Contact Us", "/contact"]] },
+  { title: "Explore", links: [["Solutions", "/solutions"], ["PQC Resources", "/resources"], ["Request Demo", "/demo"]] },
+  { title: "Trust", links: [["Compliance", "/compliance"], ["Security & Verification", "/security-and-verification"], ["FAQs", "/faqs"], ["Contact Us", "/contact"]] },
 ];
 const linkClass = "w-fit text-sm text-slate-600 transition hover:text-cyan-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand";
 export default function Footer() {

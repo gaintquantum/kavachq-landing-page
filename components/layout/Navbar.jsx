@@ -2,10 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight } from "lucide-react";
-import { demoRequestHref } from "@/lib/demoRequest";
-
-const navItems = [["Pipeline", "#pipeline"], ["Modules", "#modules"], ["QVS", "#qvs"], ["Compliance", "#compliance"], ["Deployment", "#deployment"] /* , ["Pricing", "/pricing"] */];
+const navItems = [["Platform", "/"], ["Solutions", "/solutions"], ["Resources", "/resources"], ["Compliance", "/compliance"], ["Security", "/security-and-verification"]];
 const sectionIds = navItems.filter(([, key]) => key.startsWith("#")).map(([, key]) => key.slice(1));
 // Section links must also work from other routes, so "#pipeline" is rendered as "/#pipeline".
 const toHref = (key) => (key.startsWith("#") ? `/${key}` : key);
@@ -96,13 +93,12 @@ function DemoCta({ href, className = "", onClick }) {
   return (
     <a href={href} onClick={onClick} className={`kq-cta h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[15px] font-bold whitespace-nowrap text-white ${className}`}>
       <span>Request Demo</span>
-      <ArrowRight className="size-4" aria-hidden="true" />
     </a>
   );
 }
 
 // logoSrc, demoHref and signInHref are optional. Without activeHref the active link follows the route and scroll position.
-export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, demoHref = demoRequestHref, signInHref }) {
+export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, demoHref = "/demo", signInHref }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(null);
@@ -112,8 +108,8 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
   const burgerRef = useRef(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const activeSection = useActiveSection(isHome);
-  const routeKey = pathname === "/pricing" ? "/pricing" : isHome ? activeSection ?? "#pipeline" : null;
+  const activeSection = useActiveSection(false);
+  const routeKey = pathname === "/" ? "/" : navItems.find(([, key]) => key !== "/" && pathname.startsWith(key))?.[1] ?? null;
   const activeKey = toKey(activeHref) ?? routeKey;
   const pillKey = hovered ?? activeKey;
 
@@ -208,7 +204,6 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
                 <Link key={key} href={toHref(key)} onClick={closeMenu} aria-current={activeKey === key ? "page" : undefined}
                   className="kq-row flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold">
                   {label}
-                  <span className="kq-row-index" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               ))}
             </nav>

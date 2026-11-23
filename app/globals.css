@@ -242,8 +242,8 @@ html[data-theme="light"] section [class*="bg-[#091628]"]:not([data-native] *),
 html[data-theme="light"] section [class*="bg-[#010a16]"]:not([data-native] *),
 html[data-theme="light"] section [class*="bg-[#081223]"]:not([data-native] *),
 html[data-theme="light"] section [class*="bg-[#08233e5c]"]:not([data-native] *),
-html[data-theme="light"] section [class*="bg-[rgba(11,49,83"],
-html[data-theme="light"] section [class*="bg-slate-950"],
+html[data-theme="light"] section [class*="bg-[rgba(11,49,83"]:not([data-native] *),
+html[data-theme="light"] section [class*="bg-slate-950"]:not([data-native] *),
 html[data-theme="light"] footer [class*="bg-slate-950"]:not([data-native] *) {
   background-color: rgba(248, 250, 252, 0.94) !important;
 }

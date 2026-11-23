@@ -25,6 +25,7 @@ export default function FAQPage() {
 
   return (
     <main className="min-h-screen bg-[#f3f7fa]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqData.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }).replace(/</g, "\\u003c") }} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#0b2742] px-5 pb-20 pt-8 text-white sm:px-8 lg:px-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(34,211,238,0.16),transparent_25%),radial-gradient(circle_at_85%_10%,rgba(14,165,233,0.12),transparent_28%)]" />

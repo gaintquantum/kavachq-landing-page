@@ -1,19 +1,25 @@
 import { notFound } from "next/navigation";
 
-// Pricing page is hidden for now. To bring it back, restore the code below and delete
-// this notFound page, then uncomment Pricing in components/layout/Navbar.jsx and
-// app/sitemap.js, and add it back to public/llms.txt.
+// Pricing is intentionally unpublished for now. The implementation remains in
+// this directory so it can be reviewed and restored later without exposing a
+// crawlable URL. To publish it, replace this file with the commented block below,
+// then add /pricing back to the navigation, footer, sitemap and llms.txt.
 //
 // import { pageMetadata } from "@/lib/seo";
 //
 // export { default } from "./pricing";
 //
 // export const metadata = pageMetadata({
-//   title: "Pricing",
+//   title: "PQC Assessment Pricing",
 //   description:
-//     "Plans, professional services and compliance add-ons for KAVACHQ by GAINT, the quantum-safe cybersecurity and PQC migration platform.",
+//     "Indicative KAVACHQ pricing for post-quantum readiness assessment, cryptographic discovery and migration planning. Final scope is confirmed before contract.",
 //   path: "/pricing",
 // });
+
+export const metadata = {
+  title: "Pricing unavailable",
+  robots: { index: false, follow: false },
+};
 
 export default function PricingPage() {
   notFound();

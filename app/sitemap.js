@@ -1,20 +1,17 @@
-// app/sitemap.js  ->  served at https://kavachq.com/sitemap.xml
-const siteUrl = "https://kavachq.com";
+import { resources, solutions } from "@/lib/publicContent";
 
-// List ONLY pages that actually exist. A sitemap pointing at 404s hurts trust.
-// Add each new public page here (about, guides, tools...).
-const routes = [
-  { path: "/", priority: 1.0, changeFrequency: "weekly" },
-  // { path: "/pricing", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/demo", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/faqs", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
-];
+const siteUrl = "https://kavachq.com";
+const core = ["", "/solutions", "/resources", "/compliance", "/security-and-verification", "/demo", "/faqs", "/contact"];
 
 export default function sitemap() {
-  return routes.map(({ path, priority, changeFrequency }) => ({
+  const paths = [
+    ...core,
+    ...Object.keys(solutions).map((slug) => `/solutions/${slug}`),
+    ...Object.keys(resources).map((slug) => `/resources/${slug}`),
+  ];
+  return paths.map((path) => ({
     url: `${siteUrl}${path}`,
-    changeFrequency,
-    priority,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : path.split("/").filter(Boolean).length === 1 ? 0.8 : 0.7,
   }));
 }

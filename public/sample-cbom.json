@@ -1,0 +1,26 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:00000000-0000-4000-8000-000000000001",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-23T00:00:00Z",
+    "properties": [
+      { "name": "kavachq:example", "value": "synthetic-illustration-only" }
+    ]
+  },
+  "cryptoAssets": [
+    {
+      "type": "algorithm",
+      "bom-ref": "crypto/algorithm/example-ml-kem-768",
+      "name": "ML-KEM-768",
+      "description": "Synthetic example record; not observed in a customer environment",
+      "algorithmProperties": {
+        "primitive": "kem",
+        "parameterSetIdentifier": "ML-KEM-768",
+        "nistQuantumSecurityLevel": 3,
+        "cryptoFunctions": ["keygen", "encapsulate", "decapsulate"]
+      }
+    }
+  ]
+}

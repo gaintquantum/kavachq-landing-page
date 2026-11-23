@@ -1,27 +1,6 @@
+import Navbar from "@/components/layout/Navbar";
 import { pageMetadata } from "@/lib/seo";
 import DemoForm from "./DemoForm";
 
-export const metadata = pageMetadata({
-  title: "Request a Demo",
-  description:
-    "Request a KAVACHQ by GAINT demo and see how it discovers cryptographic assets, scores quantum risk and plans your post-quantum migration.",
-  path: "/demo",
-});
-
-export default function DemoPage() {
-  return (
-    <main className="min-h-screen bg-[#050816] px-6 py-32 text-white">
-      <div className="mx-auto max-w-4xl text-center">
-        <h1 className="text-5xl font-bold">
-          Book a <span className="gradient-text">KAVACH-Q Demo</span>
-        </h1>
-
-        <p className="mx-auto mt-6 max-w-2xl text-slate-300">
-          See how KAVACH-Q discovers cryptographic assets, calculates QVS, and creates a post-quantum migration plan.
-        </p>
-
-        <DemoForm />
-      </div>
-    </main>
-  );
-}
+export const metadata = pageMetadata({ title: "Request a PQC Readiness Demo", description: "Request a scoped KAVACHQ demonstration covering cryptographic discovery, CBOM, quantum risk and post-quantum migration planning.", path: "/demo" });
+export default function DemoPage() { return <><Navbar /><main data-native className="min-h-screen bg-[radial-gradient(circle_at_20%_0%,rgba(34,211,238,.12),transparent_28%),#f8fafc] px-5 pb-20 pt-32 text-slate-950 sm:px-8"><div className="mx-auto max-w-5xl text-center"><p className="text-sm font-black uppercase tracking-[.2em] text-cyan-700">Technical demonstration</p><h1 className="mt-3 text-4xl font-bold sm:text-5xl">See where your PQC migration starts</h1><p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">Tell us the environment and outcome you want to evaluate. A demonstration can cover the implemented public source scanner and, where available for your scope, cryptographic inventory, CBOM and readiness planning.</p><div className="mt-7 grid gap-3 text-left text-sm text-slate-700 sm:grid-cols-3"><p className="rounded-2xl border border-slate-200 bg-white p-4"><strong className="block text-slate-950">Before the call</strong>We review your stated scope and confirm which capabilities can be shown.</p><p className="rounded-2xl border border-slate-200 bg-white p-4"><strong className="block text-slate-950">During the demo</strong>We distinguish live functionality, sample data and planned features.</p><p className="rounded-2xl border border-slate-200 bg-white p-4"><strong className="block text-slate-950">No sensitive uploads</strong>Do not send credentials, customer data or private findings through this form.</p></div><DemoForm /></div></main></>; }
