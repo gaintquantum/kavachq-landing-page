@@ -2,8 +2,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-const navItems = [["Platform", "/"], ["Solutions", "/solutions"], ["Resources", "/resources"], ["Compliance", "/compliance"], ["Security", "/security-and-verification"]];
-const sectionIds = navItems.filter(([, key]) => key.startsWith("#")).map(([, key]) => key.slice(1));
+const navItems = [
+  ["Platform", "/"],
+  ["Solutions", "/solutions"],
+  ["Resources", "/resources"],
+  ["Compliance", "/compliance"],
+  ["Security", "/security-and-verification"],
+  ["Watch Demo", "/demo"],
+];
+const sectionIds = navItems
+  .filter(([, key]) => key.startsWith("#"))
+  .map(([, key]) => key.slice(1));
 // Section links must also work from other routes, so "#pipeline" is rendered as "/#pipeline".
 const toHref = (key) => (key.startsWith("#") ? `/${key}` : key);
 const toKey = (href) => href?.replace(/^\/(?=#)/, "");
@@ -78,12 +87,22 @@ function useActiveSection(enabled) {
   useEffect(() => {
     if (!enabled) return setActive(null);
     const visible = new Set();
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id)));
-      const match = sectionIds.find((id) => visible.has(id));
-      setActive(match ? `#${match}` : null);
-    }, { rootMargin: "-40% 0px -55% 0px" });
-    sectionIds.forEach((id) => { const el = document.getElementById(id); if (el) observer.observe(el); });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) =>
+          e.isIntersecting
+            ? visible.add(e.target.id)
+            : visible.delete(e.target.id),
+        );
+        const match = sectionIds.find((id) => visible.has(id));
+        setActive(match ? `#${match}` : null);
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
     return () => observer.disconnect();
   }, [enabled]);
   return active;
@@ -91,14 +110,23 @@ function useActiveSection(enabled) {
 
 function DemoCta({ href, className = "", onClick }) {
   return (
-    <a href={href} onClick={onClick} className={`kq-cta h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[15px] font-bold whitespace-nowrap text-white ${className}`}>
+    <a
+      href={href}
+      onClick={onClick}
+      className={`kq-cta h-10 items-center justify-center gap-1.5 rounded-xl px-5 text-[15px] font-bold whitespace-nowrap text-white ${className}`}
+    >
       <span>Request Demo</span>
     </a>
   );
 }
 
 // logoSrc, demoHref and signInHref are optional. Without activeHref the active link follows the route and scroll position.
-export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, demoHref = "/demo", signInHref }) {
+export default function Navbar({
+  logoSrc = "/kavachq-shield.png",
+  activeHref,
+  demoHref = "/contact",
+  signInHref,
+}) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(null);
@@ -109,14 +137,23 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
   const pathname = usePathname();
   const isHome = pathname === "/";
   const activeSection = useActiveSection(false);
-  const routeKey = pathname === "/" ? "/" : navItems.find(([, key]) => key !== "/" && pathname.startsWith(key))?.[1] ?? null;
+  const routeKey =
+    pathname === "/"
+      ? "/"
+      : (navItems.find(
+          ([, key]) => key !== "/" && pathname.startsWith(key),
+        )?.[1] ?? null);
   const activeKey = toKey(activeHref) ?? routeKey;
   const pillKey = hovered ?? activeKey;
 
   const measurePill = useCallback(() => {
     const el = linkRefs.current[pillKey];
     if (el && !el.offsetWidth) return; // Track is hidden below lg; keep the last position.
-    setPill((prev) => (el ? { left: el.offsetLeft, width: el.offsetWidth, visible: true } : { ...prev, visible: false }));
+    setPill((prev) =>
+      el
+        ? { left: el.offsetLeft, width: el.offsetWidth, visible: true }
+        : { ...prev, visible: false },
+    );
   }, [pillKey]);
 
   useEffect(() => {
@@ -124,7 +161,9 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
     window.addEventListener("resize", measurePill);
     // fonts.ready can resolve before a swapped font has started loading, so also listen for loadingdone.
     let cancelled = false;
-    document.fonts?.ready.then(() => { if (!cancelled) measurePill(); });
+    document.fonts?.ready.then(() => {
+      if (!cancelled) measurePill();
+    });
     document.fonts?.addEventListener("loadingdone", measurePill);
     return () => {
       cancelled = true;
@@ -135,7 +174,9 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
   // Enable the slide only once the pill has painted in place, so it doesn't fly in from the left on load.
   useEffect(() => {
     if (!pill.visible || pillReady) return;
-    let frame = requestAnimationFrame(() => { frame = requestAnimationFrame(() => setPillReady(true)); });
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(() => setPillReady(true));
+    });
     return () => cancelAnimationFrame(frame);
   }, [pill.visible, pillReady]);
   useEffect(() => {
@@ -163,52 +204,133 @@ export default function Navbar({ logoSrc = "/kavachq-shield.png", activeHref, de
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: KQ_CSS }} />
-      <header data-native className="kq-nav fixed inset-x-3 top-3 z-50 mx-auto max-w-7xl" data-scrolled={scrolled} data-solid={solid}>
+      <header
+        data-native
+        className="kq-nav fixed inset-x-3 top-3 z-50 mx-auto max-w-7xl"
+        data-scrolled={scrolled}
+        data-solid={solid}
+      >
         <div className="kq-bar kq-glass kq-hairline">
-          <div className="kq-scan" aria-hidden="true"><span /></div>
+          <div className="kq-scan" aria-hidden="true">
+            <span />
+          </div>
           <div className="kq-bar-inner grid h-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-3 sm:px-4 lg:grid-cols-[auto_minmax(0,1fr)_auto] xl:grid-cols-[1fr_auto_1fr]">
-            <Link href="/" aria-label="KAVACH-Q home" className="flex min-w-0 items-center gap-2.5 justify-self-start rounded-lg">
-              <img src={logoSrc} alt="" width={36} height={36} className="size-9 shrink-0 object-contain" />
+            <Link
+              href="/"
+              aria-label="KAVACH-Q home"
+              className="flex min-w-0 items-center gap-2.5 justify-self-start rounded-lg"
+            >
+              <img
+                src={logoSrc}
+                alt=""
+                width={36}
+                height={36}
+                className="size-9 shrink-0 object-contain"
+              />
               <span className="flex min-w-0 flex-col whitespace-nowrap">
-                <span className="kq-wordmark">KAVACH<span>-Q™</span></span>
+                <span className="kq-wordmark">
+                  KAVACH<span>-Q™</span>
+                </span>
                 <span className="kq-tagline">Post-Quantum Migration</span>
               </span>
             </Link>
 
-            <nav aria-label="Primary navigation" data-ready={pillReady} onMouseLeave={() => setHovered(null)} className="kq-track hidden items-center gap-0.5 justify-self-center rounded-xl p-1 lg:flex">
-              <span className="kq-pill" aria-hidden="true" style={{ width: pill.width, transform: `translateX(${pill.left}px)`, opacity: pill.visible ? 1 : 0 }} />
+            <nav
+              aria-label="Primary navigation"
+              data-ready={pillReady}
+              onMouseLeave={() => setHovered(null)}
+              className="kq-track hidden items-center gap-0.5 justify-self-center rounded-xl p-1 lg:flex"
+            >
+              <span
+                className="kq-pill"
+                aria-hidden="true"
+                style={{
+                  width: pill.width,
+                  transform: `translateX(${pill.left}px)`,
+                  opacity: pill.visible ? 1 : 0,
+                }}
+              />
               {navItems.map(([label, key]) => (
-                <Link key={key} href={toHref(key)} ref={(el) => { linkRefs.current[key] = el; }} aria-current={activeKey === key ? "page" : undefined}
-                  onMouseEnter={() => setHovered(key)} onFocus={() => setHovered(key)} onBlur={() => setHovered(null)}
-                  className="kq-link rounded-lg px-2 py-2 text-[15px] font-bold whitespace-nowrap xl:px-3.5">
+                <Link
+                  key={key}
+                  href={toHref(key)}
+                  ref={(el) => {
+                    linkRefs.current[key] = el;
+                  }}
+                  aria-current={activeKey === key ? "page" : undefined}
+                  onMouseEnter={() => setHovered(key)}
+                  onFocus={() => setHovered(key)}
+                  onBlur={() => setHovered(null)}
+                  className="kq-link rounded-lg px-2 py-2 text-[15px] font-bold whitespace-nowrap xl:px-3.5"
+                >
                   {label}
                 </Link>
               ))}
             </nav>
 
             <div className="flex items-center gap-2 justify-self-end sm:gap-3">
-              {signInHref && <a href={signInHref} className="kq-ghost hidden rounded-lg px-2 py-2 text-[15px] font-bold whitespace-nowrap sm:inline-block">Sign in</a>}
+              {signInHref && (
+                <a
+                  href={signInHref}
+                  className="kq-ghost hidden rounded-lg px-2 py-2 text-[15px] font-bold whitespace-nowrap sm:inline-block"
+                >
+                  Sign in
+                </a>
+              )}
               <DemoCta href={demoHref} className="hidden sm:inline-flex" />
-              <button type="button" ref={burgerRef} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="kq-mobile-nav" onClick={() => setOpen(!open)}
-                className="kq-burger inline-flex size-10 shrink-0 rounded-xl lg:hidden">
-                <span /><span />
+              <button
+                type="button"
+                ref={burgerRef}
+                aria-label={
+                  open ? "Close navigation menu" : "Open navigation menu"
+                }
+                aria-expanded={open}
+                aria-controls="kq-mobile-nav"
+                onClick={() => setOpen(!open)}
+                className="kq-burger inline-flex size-10 shrink-0 rounded-xl lg:hidden"
+              >
+                <span />
+                <span />
               </button>
             </div>
           </div>
         </div>
 
         {open && (
-          <div id="kq-mobile-nav" className="kq-panel kq-glass kq-hairline mt-2 p-2 lg:hidden">
-            <nav aria-label="Mobile navigation" className="flex flex-col gap-0.5">
+          <div
+            id="kq-mobile-nav"
+            className="kq-panel kq-glass kq-hairline mt-2 p-2 lg:hidden"
+          >
+            <nav
+              aria-label="Mobile navigation"
+              className="flex flex-col gap-0.5"
+            >
               {navItems.map(([label, key], i) => (
-                <Link key={key} href={toHref(key)} onClick={closeMenu} aria-current={activeKey === key ? "page" : undefined}
-                  className="kq-row flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold">
+                <Link
+                  key={key}
+                  href={toHref(key)}
+                  onClick={closeMenu}
+                  aria-current={activeKey === key ? "page" : undefined}
+                  className="kq-row flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold"
+                >
                   {label}
                 </Link>
               ))}
             </nav>
-            {signInHref && <a href={signInHref} onClick={closeMenu} className="kq-row mt-0.5 block rounded-xl px-4 py-3 text-base font-bold sm:hidden">Sign in</a>}
-            <DemoCta href={demoHref} onClick={closeMenu} className="mt-2 flex w-full sm:hidden" />
+            {signInHref && (
+              <a
+                href={signInHref}
+                onClick={closeMenu}
+                className="kq-row mt-0.5 block rounded-xl px-4 py-3 text-base font-bold sm:hidden"
+              >
+                Sign in
+              </a>
+            )}
+            <DemoCta
+              href={demoHref}
+              onClick={closeMenu}
+              className="mt-2 flex w-full sm:hidden"
+            />
           </div>
         )}
       </header>

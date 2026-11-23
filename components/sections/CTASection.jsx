@@ -1,4 +1,4 @@
-import { ArrowRight, FileSearch, Workflow } from "lucide-react";
+import { ArrowRight, FileSearch, PlayCircle, Workflow } from "lucide-react";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Section";
 import { demoRequestHref } from "@/lib/demoRequest";
@@ -23,6 +23,9 @@ export default function CTASection() {
                 <a href={demoRequestHref} className="visit-kavachq-button group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-xl bg-brand px-6 text-sm font-bold text-white shadow-[0_10px_28px_rgba(66,133,244,0.32)] transition hover:-translate-y-0.5 hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 motion-reduce:transform-none">
                   <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/25 opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-100 motion-reduce:hidden" aria-hidden="true" />
                   Request a Demo<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                </a>
+                <a href="/demo" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-cyan-300 bg-cyan-50 px-6 text-sm font-bold text-cyan-900 transition hover:-translate-y-0.5 hover:bg-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand motion-reduce:transform-none">
+                  <PlayCircle className="size-4" aria-hidden="true" />Watch Demo
                 </a>
                 <a href="#compliance" className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-line-strong bg-white px-6 text-sm font-bold text-blue-700 transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 motion-reduce:transform-none">
                   <FileSearch className="size-4" aria-hidden="true" />View Sample Report<ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

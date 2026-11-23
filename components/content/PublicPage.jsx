@@ -49,7 +49,8 @@ export function PublicPage({ eyebrow, title, description, breadcrumbs = [], stat
               <h2 className="text-2xl font-bold">Scope a defensible PQC readiness assessment</h2>
               <p className="mt-3 max-w-2xl leading-7 text-slate-300">Start with the systems, data lifetimes and cryptographic evidence that matter most. We will confirm scope and limitations before any engagement.</p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/demo" className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-300">Request a demo</Link>
+                <Link href="/contact" className="rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 hover:bg-cyan-300">Request a demo</Link>
+                <Link href="/demo" className="rounded-xl border border-cyan-700 px-5 py-3 font-bold text-white hover:border-cyan-400">Watch demo</Link>
                 <Link href="/security-and-verification" className="rounded-xl border border-slate-600 px-5 py-3 font-bold text-white hover:border-slate-400">Review security evidence</Link>
               </div>
             </div>

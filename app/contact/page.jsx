@@ -265,7 +265,7 @@ ${form.name}
 
                   <ArrowUpRight size={17} aria-hidden="true" />
                 </button>
-                <p className="mt-3 text-xs leading-5 text-slate-500">This contact form opens a pre-filled message in Gmail. Do not include credentials, customer records or sensitive security findings. For a structured technical request, use the <a href="/demo" className="font-bold text-cyan-800 underline">demo form</a>.</p>
+                <p className="mt-3 text-xs leading-5 text-slate-500">This contact form opens a pre-filled message in Gmail. Do not include credentials, customer records or sensitive security findings.</p>
               </div>
             </form>
           </div>
